@@ -23,7 +23,7 @@ Si le TM est du type "tutoriel", ce chapitre doit contenir les informations suiv
 
 * Présentation très rapide du sujet / domaine
 * Si le tutoriel montre comment développer un projet, présenter très rapidement le projet
-* Objectifs pédagogiques du tutoriel
+* Objectifs pédagogiques du tutoriel / public vis
 * Aperçu des technologies utilisées
 * Configuration matérielle requise pour compiler / utiliser le projet
 * Connaissances requises pour comprendre le projet 

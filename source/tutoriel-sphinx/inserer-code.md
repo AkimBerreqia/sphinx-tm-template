@@ -65,5 +65,21 @@ def foo(a, b):
 Il est également possible d'inclure du code dans la documentation depuis un fichier externe, au lieu d'avoir à écrire copier le code directement dans le fichier `.md`.
 
 ### Titre 2 
-
+````{tip} Listen
+```javascript
+let question = document.write("Hello world");
+function device () {
+    for(var i = 0; i < 1) {
+        ...
+    }
+}
+```
+````
 #### Titre 3
+j'aime les pâtes
+```{figure} figures/make-html.png
+---
+width: 50%
+align: center
+---
+```
