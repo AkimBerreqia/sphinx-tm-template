@@ -1,5 +1,3 @@
-# Titre du chapitre 1
+# Chapitre 1
 
-## Titre 1
-
-### Titre 2
+## Présentation de Phaser.io

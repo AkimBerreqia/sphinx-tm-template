@@ -1,10 +1,10 @@
 # Introduction (version Markdown / MyST)
 
-```{admonition} Information
-Ce chapitre d'introduction doit être complété avec les informations concernant le chapitre d'introduction au TM. 
-```
+## Présentation du projet
 
+```{admonition} Information
 Le tutoriel consiste à confronter l'élève face à plusieurs algorithmes de chiffrement de données, pour qu'ils soit capables de comprendre et de pouvoir manipuler la cryptanalyse, servant à trouver le fonctionnement d'un cryptosystème.
+```
 
 Il n'y a pas besoin à l'étudiant de savoir beaucoup de notions de la cryptographie pour arpenter le tutoriel, il devra seulement avoir les notions de bases des cours d'informatique sur la programmation en python.
 
