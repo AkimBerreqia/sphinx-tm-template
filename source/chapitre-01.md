@@ -1,11 +1,9 @@
-# Chapitre 1
-
-## Apprentissage de méthodes pédagogiques pour l'enseignement de la matière
+# 2. Apprentissage de méthodes pédagogiques pour l'enseignement de la matière
 
 ```{tip}
 Ce domaine du travail de maturité n'est pas à négliger. 
 ```
-### Recherche
+## Recherche
 
 Il a fallu, tout d'abord, chercher s'il existe déjà des tutoriels qui ont le même aspect que celui qui est conçu pour ce travail de maturité.
 
@@ -17,7 +15,7 @@ Ces cours sont structurés en plusieurs chapitres, qui sont eux-mêmes composés
 
 Cette conception paraît intéressante, sachant que ces fenêtres sont accompagnées d'illustrations pour le sujet présenté.
 
-### Développement de l'espace d'étude pour l'élève
+## Développement de l'espace d'étude pour l'élève
 
 Dans un premier temps, le contenu HTML de la page comprend des zones de texte pour que l'étudiant puisse répondre par lui-même aux différentes questions, les explications en tout genre de la matière, telles que de la théorie, des consignes d'exercices ou des indices pour ces derniers seront soutenues par des images et du codes.
 
