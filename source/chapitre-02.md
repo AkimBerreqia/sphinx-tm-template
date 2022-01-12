@@ -2,8 +2,10 @@
 
 ## Présentation de la cryptographie
 
-## Chiffrement CESASR
+La cryptographie est une branche de la cryptologie, qui signifie "science des secrets".
 
-## Chiffrement de Substitution monoalphabétique quelconque
+### Chiffrement César
 
-## Chiffrement de Vigenère
+### Chiffrement de Substitution monoalphabétique quelconque
+
+### Chiffrement de Vigenère
