@@ -1,6 +1,6 @@
 # 2. Apprentissage de méthodes pédagogiques pour l'enseignement de la matière
 
-```{tip}
+```{Warning}
 Ce domaine du travail de maturité n'est pas à négliger. 
 ```
 ## Recherche
