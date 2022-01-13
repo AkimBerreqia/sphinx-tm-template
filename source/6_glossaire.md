@@ -1,20 +1,16 @@
-# 3. Présentation de la cryptographie
-
-La cryptographie est une branche de la cryptologie, qui signifie "science du secret".
-
-## Thermes importants du domaine
+# 6. Glossaire
 
 ### Attaque par force brute
+
+```{Alert}
+Ce système est moins intéressant à exploiter pour le tutoriel, étant donné qu'il est imprécis.
+```
 
 C'est une méthode principalement utilisée par les pirates informatiques, pour accéder à un compte, de manière illégale et qui fonctionne de la manière suivante.
 
 Lorsqu'un individu essaie de trouver un mot de passe inconnu, il va chercher chaque variante possible, jusqu'à ce qu'il trouve la bonne. Cette attaque n'est pas la manière la plus efficace de déchiffrer un texte chiffré, car elle peut prendre beaucoup de temps, étant donné que le nombre de possibilités est énorme. Mais pour un mot de passe, il est déjà plus simple, car le pirate n'a juste qu'à trouver la bonne suite, d'une dizaine de caractères environ.
 
 De nos jours, cet algorithme peut être plus efficace, par le biais de composants performants, tels que les processeurs, aidant à la rapidité de traitement de l'information et permettant de traiter plus de possibilités chaque seconde. La plupart du temps, l'attaque par force brute est accompgnée de plusieurs dictionnaires de mots ou d'enchainements de caractères répandus, pour former une base de données très large, recouvrant les éventuels mots de passe que n'importe qui aurait l'idée de composer.
-
-```{Alert}
-Ce système est moins intéressant à exploiter pour le tutoriel, étant donné qu'il est imprécis.
-```
 
 ### Taille des clés de chiffrement
 
@@ -59,10 +55,3 @@ Ce système est moins intéressant à exploiter pour le tutoriel, étant donné 
 ### Cryptolecte
 
 « Jargon réservé à un groupe restreint de personnes désirant dissimuler leur communication ».
-
-
-## Chiffrement César
-
-## Chiffrement de Substitution monoalphabétique quelconque
-
-## Chiffrement de Vigenère

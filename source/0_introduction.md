@@ -1,4 +1,4 @@
-# 1. Introduction
+# 0. Introduction
 
 ## Présentation du projet
 

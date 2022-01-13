@@ -1,4 +1,4 @@
-# 2. Apprentissage de méthodes pédagogiques pour l'enseignement de la matière
+# 1. Apprentissage de méthodes pédagogiques pour l'enseignement de la matière
 
 ```{Warning}
 Ce domaine du travail de maturité n'est pas à négliger. 
