@@ -1,5 +1,7 @@
 # 2. Histoire de la cryptologie
 
+<iframe src="tuto/tuto1.html" width="100%" height="600"></iframe>
+
 ```{Note}
 Les premiers codes secrets datent de l'Antiquité et ils sont originaires de Mésopotamie, d'Egypte, de Palestine, d'Inde, de Chine et de Grèce.
 ```
@@ -71,3 +73,4 @@ La clé de chiffrement était le nombre de colonnes et de lignes. Au fil des ann
 Cette fois-ci, la méthode est plus moderne. Le chiffrement se fait en convertissant le texte clair en binaire et ensuite, d'utiliser une clé en binaire, avec laquelle il faudra additioner les bits du texte, pour ressortir un cryptotexte, toujours en binaire, qui pourra de nouveau être converti en lettres.
 
 ## Cryptanalyse d'Enigma
+
