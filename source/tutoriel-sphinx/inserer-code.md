@@ -76,7 +76,6 @@ function device () {
 ```
 ````
 #### Titre 3
-j'aime les pâtes
 ```{figure} figures/make-html.png
 ---
 width: 50%
