@@ -10,7 +10,6 @@ Titre du travail de maturité
     :maxdepth: 2
     :caption: Table des matières
 
-    introduction.md
     chapitre-01.md
     chapitre-02.md
     chapitre-03.md
