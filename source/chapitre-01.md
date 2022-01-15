@@ -31,7 +31,7 @@ Ce domaine du travail de maturité n'est pas à négliger.
 
 Il a fallu, tout d'abord, chercher s'il existe déjà des tutoriels qui ont le même aspect que celui qui est conçu pour ce travail de maturité.
 
-Il se trouve que *Unity* possèdent plusieurs sources d'inspirations pour ce séminaires, à ce niveau.
+Il se trouve que *Unity* possèdent plusieurs sources d'inspirations pour ce séminaire, à ce niveau.
 
 *Unity* est un moteur de jeu assez populaire qui exploite principalement les langages C# et C++, pour sa partie de programmation.
 

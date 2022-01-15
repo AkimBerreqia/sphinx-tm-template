@@ -14,7 +14,7 @@ C'est une méthode principalement utilisée par les pirates informatiques, pour 
 
 Lorsqu'un individu essaie de trouver un mot de passe inconnu, il va chercher chaque variante possible, jusqu'à ce qu'il trouve la bonne. Cette attaque n'est pas la manière la plus efficace de déchiffrer un texte chiffré, car elle peut prendre beaucoup de temps, étant donné que le nombre de possibilités est énorme. Mais pour un mot de passe, il est déjà plus simple, car le pirate n'a juste qu'à trouver la bonne suite, d'une dizaine de caractères environ.
 
-De nos jours, cet algorithme peut être plus efficace, par le biais de composants performants, tels que les processeurs, aidant à la rapidité de traitement de l'information et permettant de traiter plus de possibilités chaque seconde. La plupart du temps, l'attaque par force brute est accompgnée de plusieurs dictionnaires de mots ou d'enchainements de caractères répandus, pour former une base de données très large, recouvrant les éventuels mots de passe que n'importe qui aurait l'idée de composer.
+De nos jours, cet algorithme peut être plus efficace, par le biais de composants performants, tels que les processeurs, aidant à la rapidité de traitement de l'information et permettant de traiter plus de possibilités chaque seconde. La plupart du temps, l'attaque par force brute est accompagnée de plusieurs dictionnaires de mots ou d'enchainements de caractères répandus, pour former une base de données très large, recouvrant les éventuels mots de passe que n'importe qui aurait l'idée de composer.
 
 ### Chiffrement
 
@@ -28,7 +28,7 @@ Aussi appelé déchiffrement, ce changement de texte est la méthode opposée au
 
 Sa longueur peut se compter en bits. Chaque algorithme de cryptographie ne possède qu'une seule clé de chiffrement, qui permet à celui qui la connait, de pouvoir chiffrer et déchiffrer un texte clair, en texte chiffré.
 
-Avec le temps, il a fallu rallonger la taile des clés de chiffrement, pour éviter que n'importe qui puisse la trouver. De ce fait, une clé peut faire jusqu'à 4'096 bits.
+Avec le temps, il a fallu rallonger la taille des clés de chiffrement, pour éviter que n'importe qui puisse la trouver. De ce fait, une clé peut faire jusqu'à 4'096 bits.
 
 ### Cryptogramme
 
