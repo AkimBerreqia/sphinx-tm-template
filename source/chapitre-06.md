@@ -1,8 +1,12 @@
 # 6. Glossaire
 
+### Texte clair/chiffré
+
+Le texte clair est le texte de base, qu'il est possible de lire et de comprendre, alors que le texte chiffré, est celui qui est illisible et qui est le produit du chiffrement.
+
 ### Attaque par force brute
 
-```{Alert}
+```{Warning}
 Ce système est moins intéressant à exploiter pour le tutoriel, étant donné qu'il est imprécis.
 ```
 
@@ -12,46 +16,44 @@ Lorsqu'un individu essaie de trouver un mot de passe inconnu, il va chercher cha
 
 De nos jours, cet algorithme peut être plus efficace, par le biais de composants performants, tels que les processeurs, aidant à la rapidité de traitement de l'information et permettant de traiter plus de possibilités chaque seconde. La plupart du temps, l'attaque par force brute est accompgnée de plusieurs dictionnaires de mots ou d'enchainements de caractères répandus, pour former une base de données très large, recouvrant les éventuels mots de passe que n'importe qui aurait l'idée de composer.
 
-### Taille des clés de chiffrement
-
-« La taille ou longueur des clés correspond au nombre de bits de la clé utilisée par un algorithme cryptographique. Seule la bonne clé peut déchiffrer un texte chiffré (sortie) afin de récupérer le texte clair (entrée). Plus les processeurs deviennent puissants, moins il faut de temps pour percer à jour une clé de chiffrement par force brute. Il a donc fallu allonger les clés. Pendant des années, 40 bits suffisaient. Mais, aujourd’hui, les clés en comportent jusqu’à 4 096. »
-
-### Taille des blocs
-
-« Certains algorithmes reposent sur le « chiffrement par bloc », qui chiffre et déchiffre des blocs de données (groupes de bits d’une longueur fixe). Il existe un lien entre la taille des blocs et la quantité de données chiffrables sans duplication des blocs. Toutefois, l’explication de ce lien dépasse largement l’objet de ce billet. Retenons simplement que les recommandations actuelles préconisent l’utilisation de blocs d’au moins 128 bits. »
-
 ### Chiffrement
 
-« Transformation à l'aide d'une clé d'un message en clair (dit texte clair) en un message incompréhensible (dit texte chiffré) pour celui qui ne dispose pas de la clé de déchiffrement (en anglais encryption key ou private key pour la cryptographie asymétrique) »
+Il s'agit du passage entre le texte clair et le texte chiffré, pour lequel, il faudra utiliser la clé de chiffrement qui se rapporte à l'algorithme choisi.
 
-### Chiffre
+### Décryptage
 
-« Un ensemble de règles permettant d'écrire et de lire dans un langage secret »
+Aussi appelé déchiffrement, ce changement de texte est la méthode opposée au chiffrement. Il est possible de retrouver un texte clair à partir d'un texte chiffré, avec ce processus.
+
+### Taille des clés de chiffrement
+
+Sa longueur peut se compter en bits. Chaque algorithme de cryptographie ne possède qu'une seule clé de chiffrement, qui permet à celui qui la connait, de pouvoir chiffrer et déchiffrer un texte clair, en texte chiffré.
+
+Avec le temps, il a fallu rallonger la taile des clés de chiffrement, pour éviter que n'importe qui puisse la trouver. De ce fait, une clé peut faire jusqu'à 4'096 bits.
 
 ### Cryptogramme
 
-« Message chiffré »
+Il s'agit d'un texte chiffré.
 
 ### Cryptosystème
 
-« Algorithme de chiffrement »
-
-### Décrypter
-
-« Retrouver le message clair correspondant à un message chiffré sans posséder la clé de déchiffrement (terme que ne possèdent pas les anglophones, qui eux « cassent » des codes secrets) »
+C'est l'algorithme qui servira à chiffrer.
 
 ### Cryptographie
 
-« Etymologiquement « écriture secrète », devenue par extension l'étude de cet art (donc aujourd'hui la science visant à créer des cryptogrammes, c'est-à-dire à chiffrer) »
+Il s'agit de "l'art du chiffrement" ou de "la science de chiffrement". C'est une des deux grandes catégories de la cryptologie. Son étymologie vient d'"écriture secrète".
 
 ### Cryptanalyse
 
-« Science analysant les cryptogrammes en vue de les décrypter »
+C'est "l'art de casser un algorithme de chiffrement". Cela signifie que la cryptanalyse cherche à trouver la clé de chiffrement, avec des données connues, pour pouvoir déchiffrer et chiffrer à sa guise n'importe quel texte, avec l'algorithme en question. La cryptanalyse est la deuxième science, faisant partie de la cryptologie.
 
 ### Cryptologie
 
-« Science regroupant la cryptographie et la cryptanalyse »
+Il s'agit de la science globale de chiffrement et de déchiffrement d'informations, avec la cryptographie et la cryptanalyse, comme embranchements.
 
 ### Cryptolecte
 
-« Jargon réservé à un groupe restreint de personnes désirant dissimuler leur communication ».
+C'est un langage secret, parlé par un groupe restreint d'individus.
+
+### Chiffre
+
+Les chiffres sont les limites fixées, afin de pouvoir communiquer dans un cryptolecte.
