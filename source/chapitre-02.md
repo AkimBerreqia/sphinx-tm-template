@@ -36,13 +36,6 @@ Il semble difficile de comprendre comment leur langage secret a pu survivre auss
 
 ### Cryptosystème de Scytale
 
-```{figure} figures/scytale-baton.png
----
-width: 50%
-align: center
----
-```
-
 Cette nouvelle démarche vient de Sparte. Les Spartiates prenaient un bâton en bois et une lanière en papyrus, en parchemin ou en cuir, sur laquelle ils enroulaient la lanière autour du bâton et ils écrivaient le mot ou la phrase qu'ils voulaient. Cela permettait de changer l'emplacement des lettres, une fois la lanière décrochée.
 
 ```{Note}

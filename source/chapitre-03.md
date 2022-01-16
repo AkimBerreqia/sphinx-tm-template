@@ -19,22 +19,8 @@ Il s'agit de "l'art du chiffrement" ou de "la science de chiffrement". C'est une
 
 Le cryptosystème César est un chiffrement de substitution monoalphabétique. Cela signifie qu'il utilise deux alphabets, un pour le texte clair qui correspond au notre et un second, qui change l'ordre des lettres. La clé de chiffrement sera un décalage de la position entre la lettre en clair et celle chiffrée. Il faut s'imaginer que chaque a une position initiale, par exemple, dans le texte clair, la lettre "a" est à la position une, alors que la lettre "k" du texte chiffré, qui se réfère à la lettre "a", est également au premier emplacement de son alphabet.
 
-```{figure} figures/decalage-cesar.png
----
-width: 30%
-align: center
----
-```
-
 ```{Tip}
 Si la clé est égale à 2, alors il faudra remplacer la lettre "a", par la lettre "c". Pour l'illustration, le décalage est de 4.
-```
-
-```{figure} figures/roue-cesar.png
----
-width: 30%
-align: center
----
 ```
 
 Il est assez courant d'utiliser la roue de César pour choisir avec aisance le décalage voulu. Il suffit de tourner la roue extérieur qui symbolise l'alphabet clair, afin de changer la clé. A contrario, la roue intérieur fait référence à l'alphabet chiffré.
