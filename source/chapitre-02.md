@@ -10,21 +10,7 @@ Il s'agit de la science globale de chiffrement et de déchiffrement d'informatio
 Les premiers codes secrets datent de l'Antiquité et ils sont originaires de Mésopotamie, d'Egypte, de Palestine, d'Inde, de Chine et de Grèce.
 ```
 
-```{figure} figures/schema-cryptologie.png
----
-width: 60%
-align: center
----
-```
-
 ### Carré de Polybe
-
-```{figure} figures/carre-de-polybe.png
----
-width: 30%
-align: center
----
-```
 
 En Grèce antique, les indigènes utilisaient plusieurs alphabets, qui variaient entre 21 et 28 caractères. Pour le carré de Polybe, ils codaient des textes avec des combinaisons de suites de chiffres. Il suffit de faire un tableau, dans lequel, chaque lettre est alignée de gauche à droite, pour former un carré de 5 lettres, sur 5 lettres. Pour la numérotation, il faut d'abord prendre le chiffre appartenant à la colonne de gauche, puis prendre le chiffre de la ligne du haut. (cf. image)
 
@@ -37,13 +23,6 @@ Le seul problème, pour l'alphabet romain est qu'il possède 26 lettres. Pour y 
 ```
 
 ### Chiffre des Francs-maçons
-
-```{figure} figures/chiffre-franc-macon.png
----
-width: 30%
-align: center
----
-```
 
 ```{Tip}
 Le texte chiffré sous les quatre tableaux, signifie "wikipedia".
@@ -77,12 +56,5 @@ La clé de chiffrement était le nombre de colonnes et de lignes. Au fil des ann
 Cette fois-ci, la méthode est plus moderne. Le chiffrement se fait en convertissant le texte clair en binaire et ensuite, d'utiliser une clé en binaire, avec laquelle il faudra additionner les bits du texte, pour ressortir un cryptotexte, toujours en binaire, qui pourra de nouveau être converti en lettres.
 
 ### Cryptanalyse d'Enigma
-
-```{figure} figures/the-code-book-enigma.png
----
-width: 50%
-align: center
----
-```
 
 Lors de la deuxième Guerre Mondiale, les allemands chiffraient leurs messages avec un algorithme inconnu du point de vu des Alliés. Mais ces derniers ont repérés des répétitions dans les messages et après de nombreuses recherches, ils ont réussi à trouver la clé de chiffrement. A partir de ce moment, la cryptanalyse d'Enigma a permis aux Alliés de gagner la guerre, car ils gardaient une longueur d'avance, face à l'Axe.
