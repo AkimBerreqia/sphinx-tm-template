@@ -17,7 +17,7 @@ Il s'agit de "l'art du chiffrement" ou de "la science de chiffrement". C'est une
 
 ### Définition
 
-Le cryptosystème César est un chiffrement de substitution monoalphabétique. Cela signifie qu'il utilise deux alphabets, un pour le texte clair qui correspond au notre et un second, qui change l'ordre des lettres. La clé de chiffrement sera un décalage de la position entre la lettre en clair et celle chiffrée.
+Le cryptosystème César est un chiffrement de substitution monoalphabétique. Cela signifie qu'il utilise deux alphabets, un pour le texte clair qui correspond au notre et un second, qui change l'ordre des lettres. La clé de chiffrement sera un décalage de la position entre la lettre en clair et celle chiffrée. Il faut s'imaginer que chaque a une position initiale, par exemple, dans le texte clair, la lettre "a" est à la position une, alors que la lettre "k" du texte chiffré, qui se réfère à la lettre "a", est également au premier emplacement de son alphabet.
 
 ```{figure} figures/decalage-cesar.png
 ---
@@ -65,4 +65,18 @@ Le problème reste identique à celui de César. Le procédé est trop limité, 
 
 ## Chiffrement de Vigenère
 
-Cette fois-ci, le raisonnement du chiffrement va être repris, pour y apporter plus de sécurité.
+```{Note}
+Cette fois-ci, le raisonnement du chiffrement César va être repris, pour y apporter plus de spécificités et renforcer la sécurité des nouveaux algorithmes.
+```
+
+Ce cryptosystème reprend l'idée des positions des lettres qu'exploitait déjà César, mais cette fois-ci, la clé de chiffrement sera composée de n'importe quel mot de l'alphabet romain, qui sera répété en chaine, jusqu'au dernier caractère du texte clair. La position de la lettre dans la clé, sera additionnée à celle de la lettre claire, pour former la lettre chiffrée.
+
+```{Tip}
+Pour le texte "voici la porte ou se trouve la cle", il est possible d'utiliser la clé "key" :
+
+Texte en clair : **voici la porte ou se trouve la cle**
+
+Clé : **keyke yk eykey ke yk eykeyk ey key**
+
+Texte chiffré : **fsgmm jk tmbxc yy qo xpyyto py mpc**
+```
