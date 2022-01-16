@@ -42,18 +42,6 @@ Il s'agit d'un texte chiffré.
 
 C'est l'algorithme qui servira à chiffrer.
 
-### Cryptographie
-
-Il s'agit de "l'art du chiffrement" ou de "la science de chiffrement". C'est une des deux grandes catégories de la cryptologie. Son étymologie vient d'"écriture secrète".
-
-### Cryptanalyse
-
-C'est "l'art de casser un algorithme de chiffrement" ou autrement dit, "casser les codes secrets". Cela signifie que la cryptanalyse cherche à trouver la clé de chiffrement, avec des données connues, pour pouvoir déchiffrer et chiffrer à sa guise n'importe quel texte, avec l'algorithme en question. La cryptanalyse est la deuxième science, faisant partie de la cryptologie.
-
-### Cryptologie
-
-Il s'agit de la science globale de chiffrement et de déchiffrement d'informations, avec la cryptographie et la cryptanalyse, comme embranchements.
-
 ### Cryptolecte
 
 C'est un langage secret, parlé par un groupe restreint d'individus.

@@ -1,4 +1,10 @@
-# 2. Histoire de la cryptologie
+# 2. Cryptologie
+
+## Définition
+
+Il s'agit de la science globale de chiffrement et de déchiffrement d'informations, avec la cryptographie et la cryptanalyse, comme embranchements.
+
+## Histoire
 
 ```{Note}
 Les premiers codes secrets datent de l'Antiquité et ils sont originaires de Mésopotamie, d'Egypte, de Palestine, d'Inde, de Chine et de Grèce.
@@ -11,7 +17,7 @@ align: center
 ---
 ```
 
-## Carré de Polybe
+### Carré de Polybe
 
 ```{figure} figures/carre-de-polybe.png
 ---
@@ -30,7 +36,7 @@ Par exemple, la lettre "a" correspond à "11". Le mot "salut", correspond donc �
 Le seul problème, pour l'alphabet romain est qu'il possède 26 lettres. Pour y remédier. Le "i" et le "j", valent la même suite de chiffres(24). Cette procédure ne dérange en aucun cas, car il est facile de distinguer un mot, pour lequel il faut choisir si la lettre manquante est un "i" ou un "j". De cette manière, le carré de Polybe fonctionne avec l'alphabet romain.
 ```
 
-## Chiffre des Francs-maçons
+### Chiffre des Francs-maçons
 
 ```{figure} figures/chiffre-franc-macon.png
 ---
@@ -49,7 +55,7 @@ Par rapport au carré de Polybe, les Francs-maçons n'ont pas pris des chiffres 
 
 Il semble difficile de comprendre comment leur langage secret a pu survivre aussi longtemps. Leur principe était simple, ils n'avaient le droit d'écrire leur alphabet, uniquement avec de la farine ou du sel, pour que personne ne puisse mettre la main sur la clé de chiffrement.
 
-## Cryptosystème de Scytale
+### Cryptosystème de Scytale
 
 ```{figure} figures/scytale-baton.png
 ---
@@ -66,11 +72,11 @@ Pour se faire, le message tenait sur 5 colonnes et 10 lignes
 
 La clé de chiffrement était le nombre de colonnes et de lignes. Au fil des années, ces deux paramètres ont variés et donc, il existe plus de possibilités, de nos jours.
 
-## Chiffrement par masque
+### Chiffrement par masque
 
 Cette fois-ci, la méthode est plus moderne. Le chiffrement se fait en convertissant le texte clair en binaire et ensuite, d'utiliser une clé en binaire, avec laquelle il faudra additionner les bits du texte, pour ressortir un cryptotexte, toujours en binaire, qui pourra de nouveau être converti en lettres.
 
-## Cryptanalyse d'Enigma
+### Cryptanalyse d'Enigma
 
 ```{figure} figures/the-code-book-enigma.png
 ---
