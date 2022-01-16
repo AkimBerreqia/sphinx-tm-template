@@ -6,7 +6,7 @@ C'est "l'art de casser un algorithme de chiffrement" ou autrement dit, "casser l
 
 ## César
 
-## Substitution monoalphabétique quelconque
+## Substitution monoalphabétique
 
 ## Vigenère
 
