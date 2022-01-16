@@ -20,6 +20,10 @@ De nos jours, cet algorithme peut être plus efficace, par le biais de composant
 
 Il s'agit du passage entre le texte clair et le texte chiffré, pour lequel, il faudra utiliser la clé de chiffrement qui se rapporte à l'algorithme choisi.
 
+### Cryptosystème
+
+C'est un ensemble de codes secrets.
+
 ### Décryptage
 
 Aussi appelé déchiffrement, ce changement de texte est la méthode opposée au chiffrement. Il est possible de retrouver un texte clair à partir d'un texte chiffré, avec ce processus.

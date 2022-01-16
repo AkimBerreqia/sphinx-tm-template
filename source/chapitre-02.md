@@ -39,13 +39,13 @@ align: center
 ---
 ```
 
+```{Tip}
+Le texte chiffré sous les quatre tableaux, signifie "wikipedia".
+```
+
 Les Francs-maçons ont utilisé leur propre algorithme, depuis le Moyen-Age, jusqu'à aujourd'hui et il est resté secret pendant de nombreux siècles.
 
 Par rapport au carré de Polybe, les Francs-maçons n'ont pas pris des chiffres pour leur alphabet chiffré, mais ils se sont servis de symboles, à la place. Sur l'image ci-dessus, chaque lettre se trouve dans une sorte de tableau. Le symbole appartenant à la lettre, correspond à la zone autour de la lettre.
-
-```{Tip}
-Par exemple, le texte chiffré sous les quatre tableaux, signifie "wikipedia".
-```
 
 Il semble difficile de comprendre comment leur langage secret a pu survivre aussi longtemps. Leur principe était simple, ils n'avaient le droit d'écrire leur alphabet, uniquement avec de la farine ou du sel, pour que personne ne puisse mettre la main sur la clé de chiffrement.
 
@@ -72,3 +72,11 @@ Cette fois-ci, la méthode est plus moderne. Le chiffrement se fait en convertis
 
 ## Cryptanalyse d'Enigma
 
+```{figure} figures/the-code-book-enigma.png
+---
+width: 50%
+align: center
+---
+```
+
+Lors de la deuxième Guerre Mondiale, les allemands chiffraient leurs messages avec un algorithme inconnu du point de vu des Alliés. Mais ces derniers ont repérés des répétitions dans les messages et après de nombreuses recherches, ils ont réussi à trouver la clé de chiffrement. A partir de ce moment, la cryptanalyse d'Enigma a permis aux Alliés de gagner la guerre, car ils gardaient une longueur d'avance, face à l'Axe.
