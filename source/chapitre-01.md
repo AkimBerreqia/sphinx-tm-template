@@ -10,7 +10,7 @@ Le tutoriel consiste à confronter l'élève face à plusieurs algorithmes de ch
 
 L'étudiant n'aura pas besoin de savoir beaucoup de notions de la cryptographie pour arpenter le tutoriel. Il devra seulement avoir les notions de bases des cours d'informatique sur la programmation en python.
 
-Le chiffrement César, celui de Vigenère, ainsi que des chiffrements de substitutions quelconques seront manipulés par l'étudiant, au cours de son apprentissage de la cryptographie. Il apprendra le rôle des clés de chiffrement, ainsi que les fréquences des groupes de lettres récurrentes en français, pour pouvoir déchiffrer un texte chiffré de moyenne taille (un paragraphe de quelques lignes).
+Le chiffrement César, celui de Vigenère, ainsi que des chiffrements de substitutions monoalphabétiques seront manipulés par l'étudiant, au cours de son apprentissage de la cryptographie. Il apprendra le rôle des clés de chiffrement, ainsi que les fréquences des groupes de lettres récurrentes en français, pour pouvoir déchiffrer un texte chiffré de moyenne taille (un paragraphe de quelques lignes).
 
 Le travail de l'élève sera de traverser les différentes pages théoriques et pratiques, qui seront illustrées par des exercices personnalisés.
 
@@ -51,4 +51,4 @@ Suite à cela, la partie css servira au design de la page et finalement le code 
 
 ## Notes de bas de page
 
-[1] : Unity Learn. consulté le 16.01.2022. <https://learn.unity.com/?_ga=2.135839737.951800538.1642373266-847038774.1640958251>
+[1] : UNITY LEARN, "Tutoriels Unity". Consulté le 30 décembre 2021. <https://learn.unity.com/?_ga=2.135839737.951800538.1642373266-847038774.1640958251>
