@@ -52,10 +52,10 @@ Le problème reste identique à celui de César. Le procédé est trop limité, 
 ## Chiffrement de Vigenère
 
 ```{Note}
-Cette fois-ci, le raisonnement du chiffrement César va être repris, pour y apporter plus de spécificités et renforcer la sécurité des nouveaux algorithmes.
+Avec le chiffrement de Vigenère, le raisonnement du chiffrement César va être repris, pour y apporter plus de spécificités et renforcer la sécurité des nouveaux algorithmes.
 ```
 
-Ce cryptosystème reprend l'idée des positions des lettres qu'exploitait déjà César, mais cette fois-ci, la clé de chiffrement sera composée de n'importe quel mot de l'alphabet romain, qui sera répété en chaine, jusqu'au dernier caractère du texte clair. La position de la lettre dans la clé, sera additionnée à celle de la lettre claire, pour former la lettre chiffrée.
+Ce cryptosystème reprend l'idée des positions des lettres qu'exploitait déjà César, mais cette fois-ci, la clé de chiffrement sera composée de n'importe quel mot de l'alphabet romain, qui sera répété en chaine, jusqu'au dernier caractère du texte clair, cette méthode est autrement appelée le chiffrement de substitution polyalphabétique. La position de la lettre dans la clé, sera additionnée à celle de la lettre claire, pour former la lettre chiffrée.
 
 ```{Tip}
 Pour le texte "voici la porte ou se trouve la cle", il est possible d'utiliser la clé "key" :
