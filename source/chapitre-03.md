@@ -20,7 +20,7 @@ Il s'agit de "l'art du chiffrement" ou de "la science de chiffrement". C'est une
 Le cryptosystème César est un chiffrement de substitution monoalphabétique. Cela signifie qu'il utilise deux alphabets, un pour le texte clair qui correspond au notre et un second, qui change l'ordre des lettres. La clé de chiffrement sera un décalage de la position entre la lettre en clair et celle chiffrée. Il faut s'imaginer que chaque a une position initiale, par exemple, dans le texte clair, la lettre "a" est à la position une, alors que la lettre "k" du texte chiffré, qui se réfère à la lettre "a", est également au premier emplacement de son alphabet. [1+3+4]
 
 ```{Tip}
-Si la clé est égale à 2, alors il faudra remplacer la lettre "a", par la lettre "c". Pour l'illustration, le décalage est de 4. [3]
+Si la clé est égale à 2, alors il faudra remplacer la lettre "a", par la lettre "c". [3]
 ```
 
 Il est assez courant d'utiliser la roue de César pour choisir avec aisance le décalage voulu. Il suffit de tourner la roue extérieure qui symbolise l'alphabet clair, afin de changer la clé. A contrario, la roue intérieure fait référence à l'alphabet chiffré. [3]
@@ -30,7 +30,7 @@ Il est assez courant d'utiliser la roue de César pour choisir avec aisance le d
 Le problème du chiffrement César est qu'il est limité à 25 clés différentes, ce qui fait de cet algorithme, un chiffrement insécurisé. Il existe d'autres méthodes plus performantes pour pallier ce désavantage. [1+3+4]
 
 ```{Warning}
-Pour le moment, tout le texte subit le même décalage. Mais il est possible de le faire varier en se servant de la substitution polyalphabétique. [1+2]
+Pour l'instant, n'importe quel texte subit le même décalage. Mais il est possible de le faire varier en se servant de la substitution polyalphabétique. [1+2]
 ```
 
 ## Chiffrement de Substitution monoalphabétique
@@ -38,7 +38,7 @@ Pour le moment, tout le texte subit le même décalage. Mais il est possible de 
 Comme cité précédemment, il existe plusieurs algorithmes ressemblant dans la démarche, à celui de César. Pour la substitution monoalphabétique, il suffit de garder deux alphabets statiques. La lettre claire vaudra toujours le même symbole ou la même lettre chiffrée. [2+3]
 
 ```{Tip}
-Prenons pour exemple la lettre "a", elle se référera toujours au symbole "@", ou à la lettre "w", s'il s'agit d'un chiffrement de substitution monoalphabétique.
+Prenons pour exemple la lettre "a", dans cette démonstration, elle se référera toujours au symbole "@", ou à la lettre "w", s'il s'agit d'un chiffrement de substitution monoalphabétique.
 ```
 
 ```{Warning}
