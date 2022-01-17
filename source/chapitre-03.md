@@ -1,7 +1,7 @@
 # 3. Cryptographie
 
 ```{Admonition} Important
-Il existe deux grands types de chiffrement, le chiffrement de substitution monoalphabétique ou polyalphabétique. Pour le premier on y retrouve, le chiffrement César, le carré de Polybe, ainsi que d'autres qui n'ont pas été abordés.
+Il existe deux grands types de chiffrement, le chiffrement de substitution monoalphabétique ou polyalphabétique. Pour le premier, le chiffrement César s'y retrouve, ainsi que le carré de Polybe et d'autres qui n'ont pas été abordés.
 En ce qui concerne le second, il concerne Enigma, le chiffrement de Vigenère, etc. [1+2]
 ```
 
@@ -17,7 +17,7 @@ Il s'agit de "l'art du chiffrement" ou de "la science de chiffrement". C'est une
 
 ### Définition
 
-Le cryptosystème César est un chiffrement de substitution monoalphabétique. Cela signifie qu'il utilise deux alphabets, un pour le texte clair qui correspond au notre et un second, qui change l'ordre des lettres. La clé de chiffrement sera un décalage de la position entre la lettre en clair et celle chiffrée. Il faut s'imaginer que chaque a une position initiale, par exemple, dans le texte clair, la lettre "a" est à la position une, alors que la lettre "k" du texte chiffré, qui se réfère à la lettre "a", est également au premier emplacement de son alphabet. [1+3+4]
+Le cryptosystème César est un chiffrement de substitution monoalphabétique. Cela signifie qu'il utilise deux alphabets, un pour le texte clair qui correspond au notre et un second, qui change l'ordre des lettres. La clé de chiffrement sera un décalage de la position entre la lettre en clair et celle chiffrée. Il faut s'imaginer que chaque lettre a une position initiale, par exemple, dans le texte clair, la lettre "a" est à la position 1, alors que la lettre "k" du texte chiffré, qui se réfère à la lettre "a", est également au premier emplacement de son alphabet. [1+3+4]
 
 ```{Tip}
 Si la clé est égale à 2, alors il faudra remplacer la lettre "a", par la lettre "c". [3]
@@ -51,7 +51,7 @@ Le problème reste identique à celui de César. Le procédé est trop limité, 
 Avec le chiffrement de Vigenère, le raisonnement du chiffrement César va être repris, pour y apporter plus de spécificités et renforcer la sécurité des nouveaux algorithmes. [3+4]
 ```
 
-Ce cryptosystème reprend l'idée des positions des lettres qu'exploitait déjà César, mais cette fois-ci, la clé de chiffrement sera composée de n'importe quel mot de l'alphabet romain, qui sera répété en chaine, jusqu'au dernier caractère du texte clair, cette méthode est autrement appelée le chiffrement de substitution polyalphabétique. La position de la lettre dans la clé, sera additionnée à celle de la lettre claire, pour former la lettre chiffrée. [3+4]
+Ce cryptosystème reprend l'idée des positions des lettres qu'exploitait déjà César, mais cette fois-ci, la clé de chiffrement sera composée de n'importe quel mot de l'alphabet romain, qui sera répété en chaine, jusqu'au dernier caractère du texte clair. Cette méthode est autrement appelée le chiffrement de substitution polyalphabétique. La position de la lettre dans la clé, sera additionnée à celle de la lettre claire, pour former la lettre chiffrée. [3+4]
 
 ```{Tip}
 Pour le texte : "voici la porte ou se trouve la cle", il est possible d'utiliser la clé "key" :
