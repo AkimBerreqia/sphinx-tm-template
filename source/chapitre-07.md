@@ -6,7 +6,7 @@ SINGH, Simon. *The Code Book How to Make It, Hack It, Crack It*. New York : Brod
 
 SWEIGART, Al. *Cracking Codes with Python An Introduction to Building and Breaking Ciphers*. Californie : Mountain View, Riley Hoffman, 2018, 418 p.
 
-Einfach Informatik 7-9 – Lehrwerksteile - Klett und Balmer Verlag
+HROMKOVIČ, Juraj. *Einfach Informatik 7-9 – Lehrwerksteile - Klett und Balmer Verlag*. Baar : Klett & Balmer, 82 p.
 
 ## Webographie
 
