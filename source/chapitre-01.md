@@ -22,7 +22,7 @@ L'étudiant gagnera des points, suivant le niveau de réussite de l’épreuve.
 
 ### Procédure
 
-Les technologies de développement du projet comporteront Sublime Text et pour le code, les langages de programmation seront javascript, HTML et css, servant également à développer la page de cours, au travers d'un document index.html et d'un document style.css, qui permettra au serveur local du collège de démarrer la page. Une grande partie des recherches du développement du code se fera à partir d'informations réunies sur plusieurs morceaux de codes libres de droit, mis en ligne, ou à partir d'informations provenant de livres abordants le domaine de la cryptologie, qui seront citées.
+Les technologies de développement du projet comporteront Sublime Text et pour le code, les langages de programmation seront javascript, HTML et css, servant également à développer la page de cours, au travers d'un document index.html et d'un document style.css, qui permettra au serveur local du collège de démarrer la page. Une grande partie des recherches du développement du code se fera à partir d'informations réunies sur plusieurs morceaux de codes libres de droit, mis en ligne, ou à partir d'informations provenant de livres abordant le domaine de la cryptologie, qui seront citées.
 
 La partie écrite du travail de maturité sera rédigée depuis GitPod.io avec le langage de programmation LaTeX, qui suivra la documentation Sphinx. Il y aura également un dépôt du nom de GitHub, qui servira à suivre l'évolution de l'écrit, au fur et à mesure que la rédaction du TM et que le code progressent.
 

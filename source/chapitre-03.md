@@ -6,7 +6,7 @@ En ce qui concerne le second, il concerne Enigma, le chiffrement de Vigenère, e
 ```
 
 ```{Note}
-Dans ce chapitre, seulement trois chiffrements seront abordés. Chaque algorithme apportera une reflexion nouvelle sur le sujet.
+Dans ce chapitre, seulement trois chiffrements seront abordés. Chaque algorithme apportera une réflexion nouvelle sur le sujet.
 ```
 
 ## Définition
@@ -23,11 +23,11 @@ Le cryptosystème César est un chiffrement de substitution monoalphabétique. C
 Si la clé est égale à 2, alors il faudra remplacer la lettre "a", par la lettre "c". Pour l'illustration, le décalage est de 4. [3]
 ```
 
-Il est assez courant d'utiliser la roue de César pour choisir avec aisance le décalage voulu. Il suffit de tourner la roue extérieur qui symbolise l'alphabet clair, afin de changer la clé. A contrario, la roue intérieur fait référence à l'alphabet chiffré. [3]
+Il est assez courant d'utiliser la roue de César pour choisir avec aisance le décalage voulu. Il suffit de tourner la roue extérieure qui symbolise l'alphabet clair, afin de changer la clé. A contrario, la roue intérieure fait référence à l'alphabet chiffré. [3]
 
 ### Inconvénient
 
-Le problème du chiffrement César est qu'il est limité à 25 clé différentes, ce qui fait de cet algorithme, un chiffrement insécurisé. Il existe d'autres méthodes plus performantes pour pallier ce désavantage. [1+3+4]
+Le problème du chiffrement César est qu'il est limité à 25 clés différentes, ce qui fait de cet algorithme, un chiffrement insécurisé. Il existe d'autres méthodes plus performantes pour pallier ce désavantage. [1+3+4]
 
 ```{Warning}
 Pour le moment, tout le texte subit le même décalage. Mais il est possible de le faire varier en se servant de la substitution polyalphabétique. [1+2]
@@ -35,7 +35,7 @@ Pour le moment, tout le texte subit le même décalage. Mais il est possible de 
 
 ## Chiffrement de Substitution monoalphabétique
 
-Comme cité précédemment, il existe plusieurs algorithmes ressemblant dans la démarche, à celui de César. Pour la substitution monoalphabétique, il suffit de garder deux alphabets statiques. La lettre clair vaudra toujours le même symbole ou la même lettre chiffrée. [2+3]
+Comme cité précédemment, il existe plusieurs algorithmes ressemblant dans la démarche, à celui de César. Pour la substitution monoalphabétique, il suffit de garder deux alphabets statiques. La lettre claire vaudra toujours le même symbole ou la même lettre chiffrée. [2+3]
 
 ```{Tip}
 Prenons pour exemple la lettre "a", elle se référera toujours au symbole "@", ou à la lettre "w", s'il s'agit d'un chiffrement de substitution monoalphabétique.
