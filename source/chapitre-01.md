@@ -128,3 +128,9 @@ Pour notre site de cours, il y a tout d'abord une entête, avec le nom du cours 
 ```
 
 Il est possible de trouver un template complet qui permet de commencer avec une base de site, qui contient plusieurs exemples quasar, pouvant être utilisés si nécessaire.
+
+# 4. Structure du site
+
+Pour la première page, il s'agit d'une introduction à la cryptographie. Il n'y a rien d'intéressant au niveau du code à présenter, car cette page est seulement écrite en html.
+
+Pour ce qui est de la deuxième page, il y a déjà plus de matière. Cette section présente le chiffre César, en commençant par un exercice qui confronte l'utilisateur face à un texte chiffré et il doit écrire le texte clair, avec quelques indices.
