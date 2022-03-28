@@ -28,7 +28,37 @@ Pour <i>Quasar</i>, l'outil met à disposition des composants libre de droit, qu
 
 Le projet a pour but d'apporter un aspect plus neuf au site de Donner Cédric, pour le cours sur la cryptologie, afin qu'il soit plus simple aux élèves du Collège du Sud d'apprendre ce domaine, de manière plus ludique.
 
-# 3. Développement d'outils interactifs
+# 3. Concepts de base utilisés Quasar/VueJS
+
+## Q-layout/q-header/q-toolbar/q-drawer/router-link/to="..."/q-list/q-item/q-item-section/q-page-container/router-view/q-page-scroller
+
+## Q-carousel/q-carousel-slide
+
+## Q-btn/q-btn-group/q-separator (valider section)
+
+## Q-page-sticky (navigation btn/q-toolbar/q-toolbar-title)
+
+## Q-dialog/q-card/q-card-section/q-card-actions
+
+# 4. Développement d'outils interactifs
+
+## V-html/import json file
+
+## Q-input/v-model/respondAnswer(exercice, correctAnswer, maxLength)
+
+## Quiz/myQuizQuestions
+
+## Iframe
+
+## Q-table/search/lexique/terme/signification/rows
+
+## Library
+
+# 5. Apports du travail
+
+
+
+# 6. Conclusion
 
 
 
