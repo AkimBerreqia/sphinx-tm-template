@@ -2,42 +2,29 @@
 
 ## Présentation du projet
 
-```{admonition} Information
-Le tutoriel consiste à confronter l'élève face à plusieurs algorithmes de chiffrement de données, pour qu'ils soient capables de comprendre et de pouvoir manipuler la cryptanalyse, servant à trouver le fonctionnement d'un cryptosystème.
-```
-
 ### Parcours de l'étudiant
 
-L'étudiant qui n'aura pas besoin de savoir beaucoup de notions sur la cryptographie pour arpenter le tutoriel. Il devra seulement avoir les notions de bases des cours d'informatique sur la programmation en python.
+L'étudiant n'aura pas besoin de savoir beaucoup de notions sur la cryptographie pour participer au cours. Il devra seulement avoir les notions de base des cours d'informatique sur la programmation en python.
 
-Le chiffrement César, celui de Vigenère, ainsi que des chiffrements de substitutions monoalphabétiques seront manipulés par l'étudiant, au cours de son apprentissage de la cryptographie. Il apprendra le rôle des clés de chiffrement, ainsi que les fréquences des groupes de lettres récurrentes en français, pour pouvoir déchiffrer un texte chiffré de moyenne taille (un paragraphe de quelques lignes).
+Le chiffre de César, l'attaque par force brute, ainsi que le chiffrement par substitution monoalphabétique seront abordés au fur et à mesure que l'étudiant avance dans le cours.
 
-Le travail de l'élève sera de traverser les différentes pages théoriques et pratiques, qui seront illustrées par des exercices personnalisés.
-
-Il apprendra à protéger des données, ainsi qu’à en décrypter d'autres, pour comprendre des messages codés avec le chiffrement César, celui de Vigenère et celui de substitution monoalphabétique. Il passera de pages en pages pour assimiler le thème enseigné. A chaque fin de section, l’étudiant sera testé par le biais d’un QCM. Une fois la section terminée, il pourra passer à la suite de son apprentissage.
-
-```{Admonition} BONUS
-L'étudiant gagnera des points, suivant le niveau de réussite de l’épreuve.
-```
+Le travail de l'élève sera de traverser les différentes pages théoriques et pratiques, qui seront illustrées par des exercices interactifs.
 
 ### Procédure
 
-Les technologies de développement du projet comporteront Sublime Text pour le code et pour les langages de programmation ce sera javascript, HTML et css, servant également à développer la page de cours, au travers d'un document index.html et d'un document style.css, qui permettra au serveur local du collège de démarrer la page tuto1.html. Une grande partie des recherches du développement du code se fera à partir d'informations réunies sur plusieurs morceaux de codes libres de droit, mis en ligne, ou à partir d'informations provenant de livres abordant le domaine de la cryptologie, qui seront citées.
+Les technologies de développement du projet comporteront javascript, HTML et CSS, au travers de VueJS, servant également à héberger le site. Une grande partie des recherches du développement du code se fera à partir d'informations réunies sur internet et qui seront sourcées directement dans les documents <i>.vue</i>, ou à partir d'informations provenant de livres abordant le domaine de la cryptologie.
 
-La partie écrite du travail de maturité sera rédigée depuis GitPod.io avec le langage de programmation LaTeX, qui suivra la documentation Sphinx. Il y aura également un dépôt du nom de GitHub, qui servira à suivre l'évolution de l'écrit, au fur et à mesure que la rédaction du TM et que le code progressent.
+La partie écrite du travail de maturité sera rédigée depuis GitPod.io avec le langage de programmation LaTeX, qui suivra la documentation Sphinx. Il y aura également un dépôt GitHub, qui servira à suivre l'évolution du projet.
 
 ## Apprentissage de méthodes pédagogiques pour l'enseignement de la matière
 
-```{Warning}
-Ce domaine du travail de maturité n'est pas à négliger. 
-```
 ### Recherche
 
-Il a fallu, tout d'abord, chercher s'il existe déjà des tutoriels qui existent, dans la même gamme, pour ne pas recopier la partie visuelle de ces cours.
+La première étape a été de se renseigner pour savoir s'il existe déjà des supports de cours pour enseigner la crytpologie.
 
 Il se trouve que *Unity* possède plusieurs sources d'inspirations pour ce séminaire, à ce niveau. [1]
 
-*Unity* est un moteur de jeu assez populaire qui exploite principalement les langages C# et C++, pour sa partie de programmation. [1]
+<i>Unity</i> est un moteur de jeu assez populaire qui exploite principalement les langages C# et C++, pour sa partie de programmation. [1]
 
 Ces cours sont structurés en plusieurs chapitres, qui sont eux-mêmes composés de plusieurs sous-chapitres. De cette manière, il est possible de progresser sur une fenêtre déroulante, menant jusqu'à la fin du chapitre. [1]
 

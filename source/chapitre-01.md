@@ -1,25 +1,49 @@
 # 1. Cheminement projet
 
+## Présentation du projet
+
+#### Parcours de l'étudiant
+
+L'étudiant n'aura pas besoin de savoir beaucoup de notions sur la cryptographie pour participer au cours. Il devra seulement avoir les notions de base des cours d'informatique sur la programmation en python.
+
+Le chiffre de César, l'attaque par force brute, ainsi que le chiffrement par substitution monoalphabétique seront abordés au fur et à mesure que l'étudiant avance dans le cours.
+
+Le travail de l'élève sera de traverser les différentes pages théoriques et pratiques, qui seront illustrées par des exercices interactifs.
+
+#### Procédure
+
+Les technologies de développement du projet comportent <i>le Javascript</i>, <i>l'<i>HTML</i></i>, <i>le CSS</i>, et <i><i>Quasar</i></i> au travers de <i>VueJS</i> qui sert également à héberger le projet. Une grande partie des recherches du développement du code a été faite à partir d'informations réunies sur internet et qui sont sourcées directement dans les documents <i>.vue</i>, ou à partir d'informations provenant de livres, qui abordent le domaine de la cryptologie.
+
+La partie écrite du travail de maturité est rédigée depuis GitPod.io avec le langage de programmation LaTeX, qui suit la documentation Sphinx. Il y a également un dépôt GitHub, qui sert à suivre l'évolution du projet.
+
 Pour arriver à ce projet, il a fallu passer par plusieurs étapes.
 
-Tout d'abord, il a fallu apprendre comment fonctionne les composants VueJS et quasar.
+Tout d'abord, il a fallu apprendre comment fonctionne les composants VueJS et <i>Quasar</i>.
 
-Ce sont des outils de fabrication de site qui pour le premier, abrège le code à écrire, et pour le second, rend le code plus dynamique.
+Ce sont des outils de fabrication de site qui pour le premier, simplifie la manière d'écrire le code à écrire, tout en prenant en charge plusieurs langage de programmation sur le même document (<i>HTML</i>, CSS et <i>Javascript</i>), et pour le second, <i>Quasar</i> rend le code plus dynamique.
 
-Pour quasar, l'outil met à disposition des composants libre de droit, qui peuvent être modifier pour plaire à chacun.
+Pour <i>Quasar</i>, l'outil met à disposition des composants libre de droit, qui peuvent être modifier pour plaire à chacun.
 
-# 2. Outils interactifs avec quasar
+# 2. Objectifs
+
+Le projet a pour but d'apporter un aspect plus neuf au site de Donner Cédric, pour le cours sur la cryptologie, afin qu'il soit plus simple aux élèves du Collège du Sud d'apprendre ce domaine, de manière plus ludique.
+
+# 3. Développement d'outils interactifs
+
+
+
+# 2. Outils interactifs avec <i>Quasar</i>
 
 ```{admonition} Information
-Il fallait plusieurs moyens pour que l'utilisateur puisse interagir avec une panoplie de possibilité. Il y a donc plusieurs outils quasar qui ont été exploités pour cela.
+Il fallait plusieurs moyens pour que l'utilisateur puisse interagir avec une panoplie de possibilité. Il y a donc plusieurs outils <i>Quasar</i> qui ont été exploités pour cela.
 ```
 
-Les outils quasar sont des outils utilisés en html et qui peuvent être combiner avec des outils vue.
+Les outils <i>Quasar</i> sont des outils utilisés en <i>HTML</i> et qui peuvent être combiner avec des outils <i>VueJS</i>.
 
 ## q-btn
-C'est un bouton qui est préfabriqué par quasar. Il est très utile pour avoir moins de code et pour gagner du temps. Il est très souvent combiné à d'autres outils quasar.
+C'est un bouton qui est préfabriqué par <i>Quasar</i>. Il est très utile pour avoir moins de code et pour gagner du temps. Il est très souvent combiné à d'autres outils <i>Quasar</i>.
 
-```html
+```<i>HTML</i>
 
 <q-btn
   label="Afficher la réponse"
@@ -32,7 +56,7 @@ C'est un bouton qui est préfabriqué par quasar. Il est très utile pour avoir 
 
 Un "carousel" est une sorte de carte, dans laquelle il est possible de mettre ce que l'on souhaite.
 
-```html
+```<i>HTML</i>
 
 <q-carousel
   v-model="action.slide"
@@ -70,13 +94,13 @@ Le composant "q-carousel" va créer une zone qui pourra être séparée en plusi
 
 # 3. Aspect visuel du cours interactif
 
-Quasar propose des banières et des menus personnalisables pour préfaire un site. Il ne manque plus qu'à rajouter le contenu.
+<i>Quasar</i> propose des banières et des menus personnalisables pour préfaire un site. Il ne manque plus qu'à rajouter le contenu.
 
 Pour notre site de cours, il y a tout d'abord une entête, avec le nom du cours et un bouton qui affiche une barre de menu sur la gauche de l'écran.
 
 <!--A modifier par rapport au site.-->
 
-```html
+```<i>HTML</i>
 
 <q-layout view="hHh lpR fFf">
 
@@ -86,7 +110,7 @@ Pour notre site de cours, il y a tout d'abord une entête, avec le nom du cours 
 
       <q-toolbar-title>
         <q-avatar>
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          <img src="https://cdn.<i>Quasar</i>.dev/logo-v2/svg/logo-mono-white.svg">
         </q-avatar>
         Title
       </q-toolbar-title>
@@ -117,7 +141,7 @@ Pour notre site de cours, il y a tout d'abord une entête, avec le nom du cours 
     <q-toolbar>
       <q-toolbar-title>
         <q-avatar>
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          <img src="https://cdn.<i>Quasar</i>.dev/logo-v2/svg/logo-mono-white.svg">
         </q-avatar>
         <div>Title</div>
       </q-toolbar-title>
@@ -127,10 +151,10 @@ Pour notre site de cours, il y a tout d'abord une entête, avec le nom du cours 
 </q-layout>
 ```
 
-Il est possible de trouver un template complet qui permet de commencer avec une base de site, qui contient plusieurs exemples quasar, pouvant être utilisés si nécessaire.
+Il est possible de trouver un template complet qui permet de commencer avec une base de site, qui contient plusieurs exemples <i>Quasar</i>, pouvant être utilisés si nécessaire.
 
 # 4. Structure du site
 
-Pour la première page, il s'agit d'une introduction à la cryptographie. Il n'y a rien d'intéressant au niveau du code à présenter, car cette page est seulement écrite en html.
+Pour la première page, il s'agit d'une introduction à la cryptographie. Il n'y a rien d'intéressant au niveau du code à présenter, car cette page est seulement écrite en <i>HTML</i>.
 
 Pour ce qui est de la deuxième page, il y a déjà plus de matière. Cette section présente le chiffre César, en commençant par un exercice qui confronte l'utilisateur face à un texte chiffré et il doit écrire le texte clair, avec quelques indices.
