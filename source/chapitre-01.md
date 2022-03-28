@@ -18,7 +18,7 @@ La partie écrite du travail de maturité est rédigée depuis GitPod.io avec le
 
 Pour arriver à ce projet, il a fallu passer par plusieurs étapes.
 
-Tout d'abord, il a fallu apprendre comment fonctionne les composants VueJS et <i>Quasar</i>.
+Tout d'abord, il a fallu apprendre comment fonctionne les composants <i>VueJS</i> et <i>Quasar</i>.
 
 Ce sont des outils de fabrication de site qui pour le premier, simplifie la manière d'écrire le code à écrire, tout en prenant en charge plusieurs langage de programmation sur le même document (<i>HTML</i>, CSS et <i>Javascript</i>), et pour le second, <i>Quasar</i> rend le code plus dynamique.
 
@@ -28,7 +28,25 @@ Pour <i>Quasar</i>, l'outil met à disposition des composants libre de droit, qu
 
 Le projet a pour but d'apporter un aspect plus neuf au site de Donner Cédric, pour le cours sur la cryptologie, afin qu'il soit plus simple aux élèves du Collège du Sud d'apprendre ce domaine, de manière plus ludique.
 
-# 3. Concepts de base utilisés Quasar/VueJS
+# 3. Concepts de base utilisés avec Quasar et VueJS
+
+Le site <i>VueJS</i> comporte de base des outils qui permettent d'avoir une page d'accueil et un menu déroulant sur le côté de l'écran.
+
+L'image ci-dessous représente la page d'accueil par défaut qui est faite par VueJS.
+
+<img src="~/source/figures/homePageBefore.png"></img>
+
+C'est à partir de la que le site interactif commence.
+
+Dans les fichiers de base de la page <i>VueJS</i>, il y a le fichier "defaut.vue", qui se trouve dans le dossier "layouts".
+
+<img src="~/source/figures/default.png"></img>
+
+C'est à partir de ce fichier que les éléments généraux par défauts du site sont générés, comme par exemple la taille du texte, les marges, la couleur du font de la page, etc.
+
+<img src="~/source/figures/homePageNow.png"></img>
+
+Voici, ci-dessus le rendu final de la page d'accueil, pour le site interactif.
 
 ## Q-layout/q-header/q-toolbar/q-drawer/router-link/to="..."/q-list/q-item/q-item-section/q-page-container/router-view/q-page-scroller
 
