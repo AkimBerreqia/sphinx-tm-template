@@ -140,39 +140,53 @@ C'est à partir de ce fichier que les éléments généraux par défauts du site
 
 Voici, ci-dessus le rendu final de la page d'accueil, pour le site interactif.
 
-Les premiers composants quasar qui nous intéressent, servent à former l'aspect visuel du site, comme par exemple l'entête du site, ainsi que le menu déroulant sur la gauche de l'écran. Il y a également les liaisons pour naviguer entre les différentes sections du cours.
+Les premiers composants quasar qui nous intéressent, servent à former l'aspect visuel du site, comme par exemple l'en-tête du site, ainsi que le menu déroulant sur la gauche de l'écran. Il y a également les liaisons pour naviguer entre les différentes sections du cours.
 
-## Q-layout/q-header/q-toolbar/q-drawer/router-link/to="..."/q-list/q-item/q-item-section/q-page-container/router-view/q-page-scroller
+## Composants *Quasar* pour former les paramètre par défaut du site Q-layout/q-header/q-toolbar/q-drawer/router-link/to="..."/q-list/q-item/q-item-section/q-page-container/router-view/q-page-scroller
+
+### En-tête
+
+#### *q-layout*
 
 Le document *default.vue* contient, tout d'abord le plan de la page. C'est à dire, que le composant va former la page, comme si elle est séparée en un tableau de trois parties sur trois.
 
 <img src="~/source/figures/layout.png"></img>
 
-Les lettres en majuscule signifient que l'élément de la page a une position fixe, sur l'écran. C'est à dire que si la page défile vers le bas, ces éléments apparaissent toujours. Pour le site interactif, le composant *q-layout* définie le plan comme ceci :
+Les lettres en majuscule signifient que l'élément de la page a une position fixe, sur l'écran. C'est à dire que si la page défile vers le bas, ces éléments apparaissent toujours à l'endroit où ils sont de base. Pour le site interactif, le composant *q-layout* définie le plan comme ceci :
 
 ```HTML
 <template>
-  <q-layout view="hHh
-  lpr
-  fFf">
+  <q-layout view="hHh lpr fFf">
     <!-- ... -->
   </q-layout>
 </template>
 ```
 
-Les lettres *h* et *H* configurent la forme de l'entête. Le *l* et le *L* sont pour le menu déroulant de gauche. Le *p* ne change jamais. Le *r* et le *R* donnent la position du menu déroulant de droite. Finalement, le *f* et le *F* représentent le bas de page.
+Chaque bloque de lettres correspond à une ligne du tableau. Les lettres *h* et *H* configurent la forme de l'en-tête. Le *l* et le *L* sont pour le menu déroulant de gauche. Le *p* ne change jamais. Le *r* et le *R* donnent la position du menu déroulant de droite. Finalement, le *f* et le *F* représentent le bas de page.
 
 ```{Admonition} A savoir
 Il n'est pas obligatoire d'avoir de menus déroulant pour faire un site. Dans ce cas, il ne faut pas rajouter de composants *q-drawer* à la suite de l'instruction du plan du site. De cette manière, les instructions données dans le *q-layout* pour les menus déroulant n'impactent pas la suite du code.
 ```
 
-Ensuite, le composant *q-header* permet de configurer l'entête comme ceci :
+#### *q-header*
+
+Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
 
 ```HTML
 <q-header elevated class="bg-primary text-white text-left">
   <!-- ... -->
 </q-header>
 ```
+
+Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière plan. *text-white* donne la couleur du texte et *text-left* donne l'alignement du texte de l'en-tête.
+
+#### *q-toolbar/q-toolbar-title*
+
+
+
+### Menu déroulant
+
+#### *q-drawer*
 
 ## Q-carousel/q-carousel-slide
 
@@ -268,7 +282,7 @@ Le composant "q-carousel" va créer une zone qui pourra être séparée en plusi
 
 *Quasar* propose des banières et des menus personnalisables pour fabriquer un site. A partir de ces éléments, il est possible de les modifier à sa guise.
 
-Pour notre site de cours, il y a tout d'abord une entête, avec le nom du cours et un bouton qui affiche une barre de menu sur la gauche de l'écran.
+Pour notre site de cours, il y a tout d'abord une en-tête, avec le nom du cours et un bouton qui affiche une barre de menu sur la gauche de l'écran.
 
 <!--A modifier par rapport au site.-->
 
