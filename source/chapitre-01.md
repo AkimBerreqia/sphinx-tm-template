@@ -30,6 +30,10 @@ Le projet a pour but d'apporter un aspect plus neuf au site de Donner Cédric, p
 
 # 3. Concepts de base utilisés avec Quasar et VueJS
 
+```{Warning}
+Tout le code de cette section provient de VueJS, qui a préfabriqué le code du document. Cependant, il y a quelques changements qui ont été apportés pour permettre au site interactif d'avoir l'aspect qu'il a aujourd'hui.
+```
+
 Le site *VueJS* comporte de base des outils qui permettent d'avoir une page d'accueil et un menu déroulant sur le côté de l'écran.
 
 L'image ci-dessous représente la page d'accueil par défaut qui est faite par VueJS.
@@ -41,6 +45,7 @@ C'est à partir de la que le site interactif commence.
 Dans les fichiers de base de la page *VueJS*, il y a le fichier "default.vue", qui se trouve dans le dossier "layouts".
 
 ```HTML
+<template>
   <q-layout view="hHh lpr fFf">
     <q-header elevated class="bg-primary text-white text-left">
       <q-toolbar>
@@ -65,10 +70,6 @@ Dans les fichiers de base de la page *VueJS*, il y a le fichier "default.vue", q
     </q-drawer>
 
     <q-page-container>
-      <div v-if="false" class="py-2 mx-auto text-center text-sm">[Default Layout]</div>
-      <pre v-if="false">
-      {{generatedRoutes}}
-      </pre>
       <router-view v-slot="{ Component }">
         <transition name="slide-fade" mode="out-in">
           <component :is="Component" />
@@ -90,12 +91,6 @@ Dans les fichiers de base de la page *VueJS*, il y a le fichier "default.vue", q
 
   import generatedRoutes from 'virtual:generated-pages'
   const router = useRouter()
-
-  const pages = generatedRoutes.sort((p1, p2) => {
-    if (p1.name < p2.name) {
-      
-    }
-  })
 
   const drawerLeft = ref<boolean>(false)
 </script>
@@ -142,7 +137,7 @@ Voici, ci-dessus le rendu final de la page d'accueil, pour le site interactif.
 
 Les premiers composants quasar qui nous intéressent, servent à former l'aspect visuel du site, comme par exemple l'en-tête du site, ainsi que le menu déroulant sur la gauche de l'écran. Il y a également les liaisons pour naviguer entre les différentes sections du cours.
 
-## Composants *Quasar* pour former les paramètre par défaut du site
+## Composants *Quasar* pour former les paramètres par défaut du site
 
 #### *q-layout*
 
@@ -174,16 +169,28 @@ Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
 
 ```HTML
 <q-header elevated class="bg-primary text-white text-left">
-  <q-toolbar>
-    <q-btn dense flat round icon="menu" @click="drawerLeft = !drawerLeft" />
-    <q-toolbar-title>
-      <router-link to="/">1 Cryptologie et codage de l’information</router-link>
-    </q-toolbar-title>
-  </q-toolbar>
+  <!-- ... -->
 </q-header>
 ```
 
-Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière plan. *text-white* donne la couleur du texte et *text-left* donne l'alignement du texte de l'en-tête.
+Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière plan. La couleur primary est la couleur de référence du site.
+
+Dans le fichier *quasar-variables.sass* à l'emplacement 'src/assets/style/quasar-variables.sass', il est possible de définir une infinité de couleurs en se servant à chaque fois d'un certain mot pour lui attribuer une couleur. Dans ce cas de figure, *primary* fait référence à la couleur #33abd6, générée en hexadécimal. Voici ci-dessous tous les exemples disponibles pour le site :
+
+```SASS
+$primary   : #33abd6
+$secondary : #5dd9cc
+$accent    : #aa86b0
+
+$dark      : #1D1D1D
+
+$positive  : #9bd690
+$negative  : #C10015
+$info      : #cedbda
+$warning   : #F2C037
+```
+
+Pour *text-white*, il donne la couleur du texte et pour *text-left*, il donne l'alignement du texte de l'en-tête.
 
 ```{Admonition} Important
 Sans ce composant, le site n'affichera pas d'en-tête, car *q-header* définit, en quelque sorte, que le site doit contenir un en-tête. Il y a également d'autres composants qui joue le même rôle. Par exemple, *q-page-container* définit le contenu de la page, *q-page-sticky* définit les éléments qui gardent la même position, si la page défile, *q-toolbar* définit le contenu de la barre d'outils, etc. Ces composants sont développés plus en détail, par la suite.
@@ -206,7 +213,7 @@ Ces composants servent à définir le titre principale du site, qui apparait con
 
 Pour ce qui est du titre de la barre d'outils, *q-toolbar-title*, il est nommé comme étant : "1 Cryptologie et codage de l’information".
 
-Le lien du routeur, *router-link* permet, lorsque la constante *drawerLeft* est vrai, de changer de page, sans devoir recharger le site, grâce au paramètre :
+Le lien du routeur, *router-link* permet, lorsque l'utilisateur appuie sur le titre, de changer de page, sans devoir recharger le site, grâce au paramètre :
 ```HTML
 to="..."
 ```
@@ -221,36 +228,105 @@ Ce composant contient tous les éléments qui définissent le menu déroulant.
 
 ```HTML
 <q-drawer show-if-above v-model="drawerLeft" side="left" overlay class="bg-grey-5 text-white" bordered>
-      <!-- drawer content -->
-      <q-list bordered separator class="min-w-25 pa-4">
-        <template v-for="(item, index) in generatedRoutes">
-          <q-item clickable :key="index" v-if="item.name != 'index'" class="flex-col">
-            <q-item-section class="cursor-pointer" @click="router.push({ path: item.path })">
-              {{ item.name }}
-            </q-item-section>
-          </q-item>
-        </template>
-      </q-list>
-    </q-drawer>
+  <!-- ... -->
+</q-drawer>
 ```
+La directive *v-model* donne comme référence au tiroir la constante *drawerLeft*. Si cette constante change, le tiroir est influencé.
+
+C'est ici que le bouton de l'en-tête est utilisé. La valeur de la constante *drawerLeft* est assignée comme étant fausse, par défaut. A chaque fois que le bouton est pressé, sa valeur varie entre vrai et faux. Si sa valeur est vrai, alors le menu déroulant apparait à l'écran.
+
+```JavaScript
+import {ref} from 'vue'
+const drawerLeft = ref<boolean>(false)
+```
+*Overlay* signifie que lorsque le menu apparait, il n'influence pas la position du texte présent sur la page.
+
+L'instruction ci-dessous permet d'avoir le menu du côté gauche de l'écran.
+
+```HTML
+side="left"
+```
+
+*Bordered* sert à mettre des bordures pour les éléments du menu.
 
 #### *q-list*
 
+Ce composant fabrique une liste dans laquelle il est possible d'ajouter plusieurs éléments. Pour le site interactif, il s'agit des chapitres.
 
+```HTML
+<q-list bordered separator class="min-w-25 pa-4">
+  <!-- ... -->
+</q-list>
+```
+
+Entre chaque élément, il y a une séparation, faite à partir de *separator*.
+
+Pour *class*, il est indiqué que chaque élément ne peut pas avoir de largeur plus petite que 25. C'est une manière de garder une mise en page correcte pour le site, même si l'onglet dans lequel se trouve la page est réduit, ou agrandi.
 
 #### *q-item/q-item-section*
 
+Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous va faire pour chaque *item*, qui correspond à chaque page, un système qui permet de pouvoir accéder à la page souhaitée lorsque la section d'objets souhaitée est appuyée avec le curseur.
 
+```HTML
+<template v-for="(item, index) in generatedRoutes">
+  <q-item clickable :key="index" v-if="item.name != 'index'" class="flex-col">
+    <q-item-section class="cursor-pointer" @click="router.push({ path: item.path })">
+      {{ item.name }}
+    </q-item-section>
+  </q-item>
+</template>
+```
+
+Ce modèle/*template* va puiser dans chaque élément de *generateRoutes*, qui lui-même se sert de chaque document figurant en premier lieu dans le dossier *pages*, se situant dans le dossier *src*.
+
+```JavaScript
+import { useRouter } from 'vue-router'
+
+import generatedRoutes from 'virtual:generated-pages'
+const router = useRouter()
+```
+
+Chaque section d'objets contient un nom différent, qui fait référence à la page, qui lui est attribuée.
+
+Lorsque la souris passe sur un des objets du menu déroulant, le curseur change, grâce à *cursor-pointer*, se situant dans la classe de la section d'objets. Cela sert à indiquer à l'utilisateur qu'il peut cliquer à cet endroit.
+
+L'élément ci-dessous :
+
+```HTML
+router.push({ path: item.path })
+```
+
+permet de changer l'url de la page, pour naviguer à travers les pages du site, lorsque l'utilisateur appuie sur la section.
+
+```{Tip}
+Pour le générateur d'itinéraires, il se sert également des documents 'index.vue', '1.1 Introduction.vue', '1.2 Le chiffre de César.vue', etc, qui contiennent la matière du cours de cryptologie, avec les outils interactifs fabriqués, au cours du travail de maturité.
+```
 
 ### Contenu de la page
 
 #### *q-page-container*
 
+```HTML
+<q-page-container>
+  <router-view v-slot="{ Component }">
+    <transition name="slide-fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 
+  <!-- ... -->
+</q-page-container>
+```
 
 #### *q-page-scroller*
 
-
+```HTML
+<q-page-scroller position="bottom-right" :offset="[0, 0]" :scroll-offset="0">
+  <div class="col cursor-pointer q-pa-sm text-white">
+    <q-btn round icon="arrow_forward" class="rotate-270" color="positive"></q-btn>
+  </div>
+</q-page-scroller>
+```
 
 ## Q-carousel/q-carousel-slide
 
