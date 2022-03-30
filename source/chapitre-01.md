@@ -142,7 +142,7 @@ Voici, ci-dessus le rendu final de la page d'accueil, pour le site interactif.
 
 Les premiers composants quasar qui nous intéressent, servent à former l'aspect visuel du site, comme par exemple l'en-tête du site, ainsi que le menu déroulant sur la gauche de l'écran. Il y a également les liaisons pour naviguer entre les différentes sections du cours.
 
-## Composants *Quasar* pour former les paramètre par défaut du site Q-layout/q-header/q-toolbar/q-drawer/router-link/to="..."/q-list/q-item/q-item-section/q-page-container/router-view/q-page-scroller
+## Composants *Quasar* pour former les paramètre par défaut du site
 
 ### En-tête
 
@@ -180,13 +180,57 @@ Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
 
 Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière plan. *text-white* donne la couleur du texte et *text-left* donne l'alignement du texte de l'en-tête.
 
+```{Admonition} Important
+Sans ce composant, le site n'affichera pas d'en-tête, car *q-header* définit, en quelque sorte, que le site doit contenir un en-tête. Il y a également d'autres composants qui joue le même rôle. Par exemple, *q-page-container* définit le contenu de la page, *q-page-sticky* définit les éléments qui gardent la même position, si la page défile, *q-toolbar* définit le contenu de la barre d'outils, etc. Ces composants sont développés plus en détail, par la suite.
+```
+
 #### *q-toolbar/q-toolbar-title*
 
+Ces composants servent à définir le titre principale du site, qui apparait constamment dans l'en-tête :
 
+```HTML
+<q-toolbar>
+  <q-btn dense flat round icon="menu" @click="drawerLeft = !drawerLeft" />
+  <q-toolbar-title>
+    <router-link to="/">1 Cryptologie et codage de l’information</router-link>
+  </q-toolbar-title>
+</q-toolbar>
+```
+
+*q-toolbar* contient toutes les informations qui apparaissent dans l'en-tête. Il y a tout d'abord un bouton, *q-btn*, qui permet de faire apparaitre le menu déroulant. Ce bouton a comme propriété d'avoir l'icone *menu*, qu'il est rond, qu'il doit inverser la valeur de *drawerLeft* s'il est pressé, etc. Les autres propriétés sont moyens importantes.
+
+Pour ce qui est du titre de la barre d'outils, *q-toolbar-title*, il est nommé comme étant : "1 Cryptologie et codage de l’information".
+
+Le lien du routeur, *router-link* permet, lorsque la constante *drawerLeft* est vrai, de changer de page, sans devoir recharger le site, grâce au paramètre :
+```HTML
+to="..."
+```
+
+Dans ce cas, la destination est "/". Il est configuré que "/" est la page d'index du site, autrement dit, la page d'accueil."
 
 ### Menu déroulant
 
 #### *q-drawer*
+
+
+
+#### *q-list*
+
+
+
+#### *q-item/q-item-section*
+
+
+
+### Contenu de la page
+
+#### *q-page-container*
+
+
+
+#### *q-page-scroller*
+
+
 
 ## Q-carousel/q-carousel-slide
 
