@@ -144,8 +144,6 @@ Les premiers composants quasar qui nous intéressent, servent à former l'aspect
 
 ## Composants *Quasar* pour former les paramètre par défaut du site
 
-### En-tête
-
 #### *q-layout*
 
 Le document *default.vue* contient, tout d'abord le plan de la page. C'est à dire, que le composant va former la page, comme si elle est séparée en un tableau de trois parties sur trois.
@@ -168,13 +166,20 @@ Chaque bloque de lettres correspond à une ligne du tableau. Les lettres *h* et 
 Il n'est pas obligatoire d'avoir de menus déroulant pour faire un site. Dans ce cas, il ne faut pas rajouter de composants *q-drawer* à la suite de l'instruction du plan du site. De cette manière, les instructions données dans le *q-layout* pour les menus déroulant n'impactent pas la suite du code.
 ```
 
+### En-tête
+
 #### *q-header*
 
 Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
 
 ```HTML
 <q-header elevated class="bg-primary text-white text-left">
-  <!-- ... -->
+  <q-toolbar>
+    <q-btn dense flat round icon="menu" @click="drawerLeft = !drawerLeft" />
+    <q-toolbar-title>
+      <router-link to="/">1 Cryptologie et codage de l’information</router-link>
+    </q-toolbar-title>
+  </q-toolbar>
 </q-header>
 ```
 
@@ -212,7 +217,22 @@ Dans ce cas, la destination est "/". Il est configuré que "/" est la page d'ind
 
 #### *q-drawer*
 
+Ce composant contient tous les éléments qui définissent le menu déroulant.
 
+```HTML
+<q-drawer show-if-above v-model="drawerLeft" side="left" overlay class="bg-grey-5 text-white" bordered>
+      <!-- drawer content -->
+      <q-list bordered separator class="min-w-25 pa-4">
+        <template v-for="(item, index) in generatedRoutes">
+          <q-item clickable :key="index" v-if="item.name != 'index'" class="flex-col">
+            <q-item-section class="cursor-pointer" @click="router.push({ path: item.path })">
+              {{ item.name }}
+            </q-item-section>
+          </q-item>
+        </template>
+      </q-list>
+    </q-drawer>
+```
 
 #### *q-list*
 
