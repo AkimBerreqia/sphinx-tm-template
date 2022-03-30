@@ -306,6 +306,8 @@ Pour le générateur d'itinéraires, il se sert également des documents 'index.
 
 #### *q-page-container*
 
+Ce composant *Quasar* permet de donner le contenu par défaut que toutes les pages du site possèdent.
+
 ```HTML
 <q-page-container>
   <router-view v-slot="{ Component }">
@@ -318,7 +320,36 @@ Pour le générateur d'itinéraires, il se sert également des documents 'index.
 </q-page-container>
 ```
 
+Tout d'abord, chaque page a pour le menu déroulant une animation qui est faite, lorsque le bouton 'menu', de l'en-tête, est pressé.
+
+Il y a une animation pour faire apparaitre et disparaitre le menu, grâce à l'intitulé *transition*.
+
+*Transition* fait appel au code CSS suivant :
+
+```CSS
+.slide-fade-enter {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.2s ease;
+}
+
+.slide-fade-leave-to {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+```
+
+Dans un premier temps, *.slide-fade-enter* donne les informations du menu, lorsque ce dernier doit apparaitre, avec une position d'arrivée, ainsi que l'opacité de départ. Pour *.slide-fade-leave-to*, le même processus a lieu, mais pour disparaitre.
+
+Dans un second temps, *.slide-fade-enter-active* et *.slide-fade-leave-active* donnent le temps que la transition d'apparition et celle de disparition mettent pour exécuter l'action.
+
 #### *q-page-scroller*
+
+Chaque page a un défileur de page, sous forme de bouton pour pouvoir défiler vers le haut, grâce au composant *q-page-scroller* montré ci-dessous :
 
 ```HTML
 <q-page-scroller position="bottom-right" :offset="[0, 0]" :scroll-offset="0">
@@ -327,6 +358,8 @@ Pour le générateur d'itinéraires, il se sert également des documents 'index.
   </div>
 </q-page-scroller>
 ```
+
+La *position* du défileur de page est en bas à droite de l'écran. La forme de ce bouton est ronde, avec l'appelation *round* L'icone du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur vert clair, qui lui est attribuée par le mot "positive".
 
 ## Q-carousel/q-carousel-slide
 
