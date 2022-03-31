@@ -1,34 +1,69 @@
-# 1. Cheminement projet
+# 1. Cheminement du projet
 
 ## Présentation du projet
 
 #### Parcours de l'étudiant
 
-L'étudiant n'aura pas besoin de savoir beaucoup de notions sur la cryptographie pour participer au cours. Il devra seulement avoir les notions de base des cours d'informatique sur la programmation en python.
+L'étudiant n'a pas besoin de savoir beaucoup de notions sur la cryptologie pour participer au cours. Il doit seulement avoir les notions de base des cours d'informatique sur la programmation en python.
 
-Le chiffre de César, l'attaque par force brute, ainsi que le chiffrement par substitution monoalphabétique seront abordés au fur et à mesure que l'étudiant avance dans le cours.
+Le chiffre de César, l'attaque par force brute, ainsi que le chiffrement par substitution monoalphabétique sont abordés au fur et à mesure que l'étudiant avance dans le cours.
 
-Le travail de l'élève sera de traverser les différentes pages théoriques et pratiques, qui seront illustrées par des exercices interactifs.
+Le travail de l'élève est de traverser les différentes pages théoriques et pratiques, qui sont illustrées par des exercices interactifs.
 
 #### Procédure
 
-Les technologies de développement du projet comportent *le Javascript*, *l'HTML*, *le CSS*, et *Quasar* au travers de *VueJS* qui sert également à héberger le projet. Une grande partie des recherches du développement du code a été faite à partir d'informations réunies sur internet et qui sont sourcées directement dans les documents *.vue*, ou à partir d'informations provenant de livres, qui abordent le domaine de la cryptologie.
+Les technologies de développement du projet comportent *le Javascript*, *l'HTML*, *le CSS*, et *Quasar* au travers de *VueJS*, qui sert également à héberger le projet. Une grande partie des recherches du développement du code a été faite à partir d'informations réunies sur internet et qui sont sourcées directement dans les documents *.vue*, ou à partir d'informations provenant de livres, qui abordent le domaine de la cryptologie.
 
-La partie écrite du travail de maturité est rédigée depuis GitPod.io avec le langage de programmation LaTeX, qui suit la documentation Sphinx. Il y a également un dépôt GitHub, qui sert à suivre l'évolution du projet.
+La partie écrite du travail de maturité est rédigée dans des fichiers *markdown*, depuis GitPod.io avec le langage de programmation LaTeX, qui suit la documentation Sphinx. Il y a également un dépôt GitHub, qui sert à suivre l'évolution du projet.
 
 Pour arriver à ce projet, il a fallu passer par plusieurs étapes.
 
-Tout d'abord, il a fallu apprendre comment fonctionne les composants *VueJS* et *Quasar*.
+Tout d'abord, il a fallu apprendre comment fonctionnent les directives *Vue*, ainsi que les composants *Quasar*.
 
-Ce sont des outils de fabrication de site qui pour le premier, simplifie la manière d'écrire le code à écrire, tout en prenant en charge plusieurs langage de programmation sur le même document (*HTML*, CSS et *Javascript*), et pour le second, *Quasar* rend le code plus dynamique.
+##### Première version du site (prototype)
 
-Pour *Quasar*, l'outil met à disposition des composants libre de droit, qui peuvent être modifier pour plaire à chacun.
+Le site est passé par plusieurs étapes. Depuis la réédition de la version intérmédiaire, il a fallu se familiariser avec la technologie *Vue*.
+
+Monsieur Donner Cédric m'a demandé de suivre un cours en ligne pour apprendre à me servir de *Vue.js* (lien du cours : https://vuejs.org/tutorial/#step-1).
+
+A partir de ce point, le projet a réellement commencé à prendre forme.
+
+Tout le texte est écrit à l'intérieur des fichiers, ce qui prend beaucoup de place.
+
+Chaque sous-chapitre est contenu dans un carrousel/*q-carousel* (ce composant *Quasar* est développé plus en détail dans la suite du travail de maturité). C'est la grande différence qu'il y a entre le prototype et la version finale.
+
+##### Deuxième version du site (version finale)
+
+
 
 # 2. Objectifs
 
-Le projet a pour but d'apporter un aspect plus neuf au site de Donner Cédric, pour le cours sur la cryptologie, afin qu'il soit plus simple aux élèves du Collège du Sud d'apprendre ce domaine, de manière plus ludique.
+Le projet a pour but d'apporter un aspect plus neuf au site de Monsieur Donner Cédric, pour le cours sur la cryptologie, afin qu'il soit plus simple aux élèves du Collège du Sud d'apprendre ce domaine, de manière plus ludique. Bien évidemment, il s'agit surtout d'une base de site, alors il est également possible de reprendre le code présent pour ajouter, à tout moment, des chapitres supplémentaires.
 
 # 3. Concepts de base utilisés avec Quasar et VueJS
+
+Ce sont des outils de fabrication de site qui pour le premier, simplifie la manière d'écrire le code. Par exemple, la directive *v-model* sert à donner une identité à l'élément auquel elle appartient.
+
+```HTML
+<input v-model="réponse" placeholder="Veuillez écrire la réponse ici">
+<p>Votre réponse est {{réponse}}.</p>
+```
+
+Dans ce cas de figure, *v-model* correspond à ce que l'utilisateur écrit dans la zone de texte. L'élément "p" va reprendre le *v-model* pour l'intégrer à l'emplacement *{{réponse}}*. De ce fait, si l'utilisateur écrit "merveilleuse", le texte affichera : "Votre réponse est merveilleuse".
+
+Pour le second, *Quasar* rend le code plus dynamique, en préfabriquant des composants qui permettent d'avoir, par exemple, un bouton, avec une certaine taille, un certain contour, etc.
+
+```HTML
+<q-btn label="Clique">
+```
+
+Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour défini Le label est affiché à l'intérieur du bouton.
+
+Avec *q-btn*, il n'est pas nécessaire de définir une classe ou un style dans l'élément, car le bouton a déjà ces informations définies par défaut. Il reste le label à indiquer, ou alors la couleur, mais ce n'est pas obligatoire, pour que le bouton apparaisse à l'écran.
+
+```{Admonition} A savoir
+*Quasar* met à disposition des composants libre de droit, qui peuvent être modifier pour plaire à chacun (lien du site : https://quasar.dev/).
+```
 
 ```{Warning}
 Tout le code de cette section provient de VueJS, qui a préfabriqué le code du document. Cependant, il y a quelques changements qui ont été apportés pour permettre au site interactif d'avoir l'aspect qu'il a aujourd'hui.
@@ -43,6 +78,10 @@ L'image ci-dessous représente la page d'accueil par défaut qui est faite par V
 C'est à partir de la que le site interactif commence.
 
 Dans les fichiers de base de la page *VueJS*, il y a le fichier "default.vue", qui se trouve dans le dossier "layouts".
+
+```{Admonition} A savoir
+Le code qui suit a déjà été modifié, pour convenir aux besoins du site interactif, mais la base du code provient de *Vue*.
+```
 
 ```HTML
 <template>
@@ -397,7 +436,15 @@ Chaque page a un défileur de page, sous forme de bouton pour pouvoir défiler v
 
 La *position* du défileur de page est en bas à droite de l'écran. La forme de ce bouton est ronde, avec l'appelation *round* L'icone du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur vert clair, qui lui est attribuée par le mot "positive".
 
-## Q-carousel/q-carousel-slide
+## Composants *Quasar* utilisés au sein des pages
+
+```{Tip}
+Les composants présentés dans cette section auraient pu être implémentés dans les documents contenant l'ensemble du cours, depuis un autre document ".vue", car ils sont réutilisés plusieurs fois de la même manière, mais avec quelques paramètres qui changent. Ce système pourra être rajouté en tant que bonus d'ici la présentation orale du travail de maturité.
+```
+
+#### Q-carousel/q-carousel-slide
+
+Ces composants sont utilisés dans le document qui forme la page d'accueil, mais aussi pour le prototype de chaque page du cours.
 
 ## Q-btn/q-btn-group/q-separator (valider section)
 
