@@ -141,7 +141,7 @@ Les premiers composants quasar qui nous intéressent, servent à former l'aspect
 
 #### *q-layout*
 
-Le document *default.vue* contient, tout d'abord le plan de la page. C'est à dire, que le composant va former la page, comme si elle est séparée en un tableau de trois parties sur trois.
+Le document *default.vue* contient, tout d'abord le plan de la page, autrement dit, le "layout". C'est à dire, que le composant va former la page, comme si elle est séparée en un tableau de trois parties sur trois.
 
 <img src="~/source/figures/layout.png"></img>
 
@@ -346,6 +346,42 @@ Il y a une animation pour faire apparaitre et disparaitre le menu, grâce à l'i
 Dans un premier temps, *.slide-fade-enter* donne les informations du menu, lorsque ce dernier doit apparaitre, avec une position d'arrivée, ainsi que l'opacité de départ. Pour *.slide-fade-leave-to*, le même processus a lieu, mais pour disparaitre.
 
 Dans un second temps, *.slide-fade-enter-active* et *.slide-fade-leave-active* donnent le temps que la transition d'apparition et celle de disparition mettent pour exécuter l'action.
+
+La couleur d'arrière plan du site est la suivante :
+
+```CSS
+html { 
+  background-color: #e6e6e6;
+}
+```
+
+Elle est présente, pour donner un côté sobre au site et également pour fatiguer le moins possible l'oeil lorsque l'utilisateur passe beaucoup de temps sur chaque page.
+
+Le style du contenu de la page est influencé par les paramètres suivants :
+
+```CSS
+.q-page-container {
+  margin: auto;
+  margin-top: 50px;
+  text-align: left;
+  align: center;
+  color: #33abd6;
+  background-color: #dedcdc;
+  max-width:40em;
+}
+```
+
+Ce composant possède une marge automatique. Il a seulement une marge de cinquante pixels en haut, pour chaque page. Le contenu est centré au milieu de la page, mais le texte aligné à gauche, avec une couleur d'arrière plan qui se rapproche du blanc, *#dedcdc*, et avec un texte bleu, *#33abd6*. Le conteneur de page a une largeur maximale de quarante "em", pour rendre le texte plus lisible et pour ne pas avoir une surcharge de mots par ligne.
+
+"Em" est une unité de mesure qui existe en *CSS* et qui est aussi appelée, unité relative. Bien évidemment, ce n'est pas la seule unité qui est utilisée. Il faut distinguer les unités relatives et les unités absolues. Elles jouent chacunes un rôle différent dans le style d'un site.
+
+```{Warning}
+Il existe également des unités relatives au viewport, mais la commande viewport est devenue obsolète, avec le temps. De ce fait, pour le reste du travail de maturité, les unités relatives au texte et au viewport sont identifiées comme étant des unités relatives.
+```
+
+Les différentes unités relatives sont "em", "rem", "ex", "ch", "lh", "vw", "vh", "vmin" et "vmax". L'unité "em" reste celle qui est le plus souvent utilisée.
+
+Pour les unités absolues, il y a : "cm", "mm", "Q" (quart de millimètre), "in" (inche), "pc" (pica), "pt" (point) et "px". Cette fois-ci, l'unité "pixel" est la plus récurrente de cette gamme d'unités.
 
 #### *q-page-scroller*
 
