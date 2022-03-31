@@ -195,7 +195,7 @@ Les lettres en majuscule signifient que l'élément de la page a une position fi
 ```HTML
 <template>
   <q-layout view="hHh lpr fFf">
-    <!-- ... -->
+    <!-- layout content -->
   </q-layout>
 </template>
 ```
@@ -214,7 +214,7 @@ Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
 
 ```HTML
 <q-header elevated class="bg-primary text-white text-left">
-  <!-- ... -->
+  <!-- header content -->
 </q-header>
 ```
 
@@ -273,7 +273,7 @@ Ce composant contient tous les éléments qui définissent le menu déroulant.
 
 ```HTML
 <q-drawer show-if-above v-model="drawerLeft" side="left" overlay class="bg-grey-5 text-white" bordered>
-  <!-- ... -->
+  <!-- drawer content -->
 </q-drawer>
 ```
 La directive *v-model* donne comme référence au tiroir la constante *drawerLeft*. Si cette constante change, le tiroir est influencé.
@@ -300,7 +300,7 @@ Ce composant fabrique une liste dans laquelle il est possible d'ajouter plusieur
 
 ```HTML
 <q-list bordered separator class="min-w-25 pa-4">
-  <!-- ... -->
+  <!-- list content -->
 </q-list>
 ```
 
@@ -361,7 +361,7 @@ Ce composant *Quasar* permet de donner le contenu par défaut que toutes les pag
     </transition>
   </router-view>
 
-  <!-- ... -->
+  <!-- q-page-scroller content -->
 </q-page-container>
 ```
 
@@ -440,7 +440,7 @@ Chaque page a un défileur de page, sous forme de bouton pour pouvoir défiler v
 </q-page-scroller>
 ```
 
-La *position* du défileur de page est en bas à droite de l'écran. La forme de ce bouton est ronde, avec l'appelation *round* L'icone du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur vert clair, qui lui est attribuée par le mot "positive".
+La *position* du défileur de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appelation *round* L'icone du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur vert clair, qui lui est attribuée par le mot "positive".
 
 ## Composants *Quasar* utilisés pour former la page d'accueil/*index.vue*
 
@@ -454,14 +454,14 @@ Le code de la page se présente comme ceci :
 
       <div class="q-gutter-md">
         <q-carousel
-          v-model="action.slide"
+          v-model="action.slide1"
           animated
           padding
           arrows
           height="250px"
           class="shadow-1 rounded-borders"
         >
-          <q-carousel-slide name="cryptographie1" class="column no-wrap">
+          <q-carousel-slide name="presentation" class="column no-wrap">
               <h2>1.0.1 Présentation</h2>
 
               <p>Bienvenue au cours interctif de cryptographie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
@@ -471,14 +471,14 @@ Le code de la page se présente comme ceci :
         </q-carousel>
 
         <q-carousel
-          v-model="action.slide"
+          v-model="action.slide2"
           animated
           padding
           arrows
           height="250px"
           class="shadow-1 rounded-borders"
         >
-          <q-carousel-slide name="cryptographie1" class="column no-wrap">
+          <q-carousel-slide name="sommaire" class="column no-wrap">
               <h2>1.0.2 Sommaire</h2>
 
               <ul style="color:darkblue;">
@@ -508,16 +508,11 @@ Le code de la page se présente comme ceci :
 </template>
 
 <script setup lang="ts">
-import { ref,reactive } from 'vue'
+import { ref, reactive } from 'vue'
 
 let action = reactive({
-    slide: ref('cryptographie1')
-})
-
-let text = reactive({
-  q1: ref(''),
-  q3: ref(''),
-  q4: ref('')
+    slide1: ref('presentation'),
+    slide2: ref('sommaire')
 })
 </script>
 
@@ -536,7 +531,74 @@ Le composant « q-carousel » va créer une zone qui est séparée en plusieurs 
 
 L'image ci-dessus contient deux encadrés blanc, qui représente chacun un carrousel.
 
+```HTML
+<q-carousel
+  v-model="action.slide1"
+  animated
+  padding
+  height="250px"
+  class="shadow-1 rounded-borders"
+>
+  <q-carousel-slide name="presentation" class="column no-wrap">
+      <!-- carousel-slide content -->
+  </q-carousel-slide>
+</q-carousel>
+
+<q-carousel
+  v-model="action.slide2"
+  animated
+  padding
+  height="250px"
+  class="shadow-1 rounded-borders"
+>
+  <q-carousel-slide name="sommaire" class="column no-wrap">
+      <!-- carousel-slide content -->
+  </q-carousel-slide>
+</q-carousel>
+```
+
+Dans le code ci-dessus, les deux carrousels ont une hauteur de deux-cent-cinquante pixels. Cette taille peut bien évidemment être changée pour que le contenu ne déborde pas du carrousel.
+
+Chaque carrousel possède un *v-model* différent, ainsi qu'une option *animated*. De cette manière, dès que la page est chargée, le contenu du carrousel apparait à l'écran. Sans ces éléments, le carrousel apparaitrait vide.
+
+```JavaScript
+import { ref, reactive } from 'vue'
+
+let action = reactive({
+  slide1: ref('presentation'),
+  slide2: ref('sommaire')
+})
+```
+
 Pour cette page, il n'y a qu'une seule diapositive par carrousel. Cependant, il est possible de faire plusieurs diapositives par carrousel.
+
+#### Q-page-sticky
+
+Ce composant apparait sur chaque fichier qui appartient au cours de cryptologie. Tout comme pour le *q-page-scroller*, le *q-page-sticky*, garde la même position à l'écran, même si l'utilisateur fait défiler la page.
+
+Pour la page d'index, ce composant joue deux rôles.
+
+```HTML
+<q-page-sticky position="bottom-left" :offset="[5, 5]" class="bg-#cccccccc">
+  <q-btn icon="keyboard_arrow_right" to="/1.1 Introduction">1.1 Introduction</q-btn>
+</q-page-sticky>
+```
+
+La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière plan des boutons est d'une teinte presque transparente. L'icone utilisé est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
+
+```{admonition} Important
+Pour chaque page, les destinations sont différentes, mais la base du code reste la même.
+```
+
+```HTML
+<q-page-sticky position="top" expand class="bg-positive text-white text-center">
+  <q-toolbar>
+    <q-toolbar-title>1.0 Index</q-toolbar-title>
+  </q-toolbar>
+</q-page-sticky>
+```
+
+La deuxième fois, son rôle est d'afficher le sous-titre "1.0 Index", en dessous du titre principal du site.
 
 ## Composants *Quasar* utilisés pour former les pages du site
 
