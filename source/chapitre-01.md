@@ -24,7 +24,7 @@ Tout d'abord, il a fallu apprendre comment fonctionnent les directives *Vue*, ai
 
 Le site est passé par plusieurs étapes. Depuis la réédition de la version intérmédiaire, il a fallu se familiariser avec la technologie *Vue*.
 
-Monsieur Donner Cédric m'a demandé de suivre un cours en ligne pour apprendre à me servir de *Vue.js* (lien du cours : https://vuejs.org/tutorial/#step-1).
+Monsieur Donner Cédric m'a demandé de suivre un cours en ligne pour apprendre à me servir de *Vue.js* (lien du cours : [https://vuejs.org/tutorial/#step-1](https://vuejs.org/tutorial/#step-1)).
 
 A partir de ce point, le projet a réellement commencé à prendre forme.
 
@@ -54,15 +54,18 @@ Dans ce cas de figure, *v-model* correspond à ce que l'utilisateur écrit dans 
 Pour le second, *Quasar* rend le code plus dynamique, en préfabriquant des composants qui permettent d'avoir, par exemple, un bouton, avec une certaine taille, un certain contour, etc.
 
 ```HTML
-<q-btn label="Clique">
+<q-btn label="Clique" />
 ```
 
-Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour défini Le label est affiché à l'intérieur du bouton.
+```{figure} ../source/figures/btn.png
+```
+
+Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour défini Le label est affiché à l'intérieur du bouton, uniquement avec des lettres en majuscule.
 
 Avec *q-btn*, il n'est pas nécessaire de définir une classe ou un style dans l'élément, car le bouton a déjà ces informations définies par défaut. Il reste le label à indiquer, ou alors la couleur, mais ce n'est pas obligatoire, pour que le bouton apparaisse à l'écran.
 
 ```{Admonition} A savoir
-*Quasar* met à disposition des composants libre de droit, qui peuvent être modifier pour plaire à chacun (lien du site : https://quasar.dev/).
+*Quasar* met à disposition des composants libre de droit, qui peuvent être modifier pour plaire à chacun (lien du site : [https://quasar.dev/](https://quasar.dev/)).
 ```
 
 ```{Warning}
@@ -441,17 +444,103 @@ La *position* du défileur de page est en bas à droite de l'écran. La forme de
 
 ## Composants *Quasar* utilisés pour former la page d'accueil/*index.vue*
 
+Le code de la page se présente comme ceci :
 
+```HTML
+<template>
+  <q-page>    
+    <div class="column flex-center pa-4">
+      <h2></h2>
+
+      <div class="q-gutter-md">
+        <q-carousel
+          v-model="action.slide"
+          animated
+          padding
+          arrows
+          height="250px"
+          class="shadow-1 rounded-borders"
+        >
+          <q-carousel-slide name="cryptographie1" class="column no-wrap">
+              <h2>1.0.1 Présentation</h2>
+
+              <p>Bienvenue au cours interctif de cryptographie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
+      
+              <q-btn elevated rounded><router-link to="/1.1 Introduction">Commencer le cours</router-link></q-btn>
+          </q-carousel-slide>
+        </q-carousel>
+
+        <q-carousel
+          v-model="action.slide"
+          animated
+          padding
+          arrows
+          height="250px"
+          class="shadow-1 rounded-borders"
+        >
+          <q-carousel-slide name="cryptographie1" class="column no-wrap">
+              <h2>1.0.2 Sommaire</h2>
+
+              <ul style="color:darkblue;">
+                <li><router-link to="/1.1 Introduction">1.1 Introduction</router-link></li>
+                <li><router-link to="/1.2 Le chiffre de César">1.2 Le chiffre de César</router-link></li>
+                <li><router-link to="/1.3 Attaque par force brute">1.3 Attaque par force brute</router-link></li>
+                <li><router-link to="/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</router-link></li>
+                <li><router-link to="/1.5 Attaque par fréquence">1.5 Attaque par fréquence</router-link></li>
+                <li><router-link to="/1.6 Petit lexique de la cryptologie">1.6 Petit lexique de la cryptologie</router-link></li>
+              </ul>
+          </q-carousel-slide>
+        </q-carousel>
+      </div>
+    </div>
+
+
+    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="bg-#cccccccc">
+      <q-btn icon="keyboard_arrow_right" to="/1.1 Introduction">1.1 Introduction</q-btn>
+    </q-page-sticky>
+    
+    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
+      <q-toolbar>
+        <q-toolbar-title>1.0 Index</q-toolbar-title>
+      </q-toolbar>
+    </q-page-sticky>
+  </q-page>
+</template>
+
+<script setup lang="ts">
+import { ref,reactive } from 'vue'
+
+let action = reactive({
+    slide: ref('cryptographie1')
+})
+
+let text = reactive({
+  q1: ref(''),
+  q3: ref(''),
+  q4: ref('')
+})
+</script>
+
+<style lang="scss" scoped></style>
+
+```
+
+#### Q-carousel/q-carousel-slide
+
+Ce sont les premiers composants qui apparaissent dans le code pour la page d'index, mais ils sont aussi présents dans les prototypes des pages du cours (1.1 Introduction, 1.2 Le chiffre de César, etc).
+
+Le composant « q-carousel » va créer une zone qui est séparée en plusieurs pages (q-carousel-slide), se situant à l’intérieur du carousel. De ce fait, il est possible de naviguer entre chaque *q-carousel-slide*.
+
+```{figure} ../source/figures/indexCarousel.png
+```
+
+L'image ci-dessus contient deux encadrés blanc, qui représente chacun un carrousel.
+
+Pour cette page, il n'y a qu'une seule diapositive par carrousel. Cependant, il est possible de faire plusieurs diapositives par carrousel.
 
 ## Composants *Quasar* utilisés pour former les pages du site
 
 
-
-#### Q-carousel/q-carousel-slide
-
-Ces composants sont utilisés dans le document *index.vue*, qui forme la page d'accueil, mais aussi pour le prototype de chaque page du cours (1.1 Introduction, 1.2 Le chiffre de César, etc).
-
-Le composant « q-carousel » va créer une zone qui est séparée en plusieurs pages (q-carousel-slide), se situant à l’intérieur du carousel. De ce fait, il est possible de naviguer entre chaque slide.
 
 ## Q-btn/q-btn-group/q-separator (valider section)
 
@@ -502,106 +591,6 @@ C'est un bouton qui est préfabriqué par *Quasar*. Il est très utile pour avoi
   @click="..."
 />
 ```
-
-## q-carousel
-
-Un "carousel" est une sorte de carte, dans laquelle il est possible de mettre ce que l'on souhaite.
-
-```HTML
-
-<q-carousel
-  v-model="action.slide"
-  transition-prev="scale"
-  transition-next="scale"
-  swipeable
-  animated
-  control-color="white"
-  navigation
-  padding
-  arrows
-  height="400px"
-  class="bg-info text-white
-  shadow-1 rounded-borders
-  column no-wrap flex-center
-  text-center"
->
-  <q-carousel-slide
-  name="cryptographie1">
-      <!-- ... -->
-  </q-carousel-slide>
-
-  <q-carousel-slide
-  name="cryptographie2">
-
-      <!-- ... -->
-
-  </q-carousel-slide>
-</q-carousel>
-```
-
-Le composant "q-carousel" va créer une zone qui pourra être séparée en plusieurs pages (q-carousel-slide) à l'intérieur du carousel et il est possible de naviguer enter chaque slide.
-
-## q-dialog
-
-# 3. Aspect visuel du cours interactif
-
-*Quasar* propose des banières et des menus personnalisables pour fabriquer un site. A partir de ces éléments, il est possible de les modifier à sa guise.
-
-Pour notre site de cours, il y a tout d'abord une en-tête, avec le nom du cours et un bouton qui affiche une barre de menu sur la gauche de l'écran.
-
-<!--A modifier par rapport au site.-->
-
-```HTML
-<q-layout view="hHh lpR fFf">
-
-  <q-header elevated class="bg-primary text-white" height-hint="98">
-    <q-toolbar>
-      <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
-      <q-toolbar-title>
-        <q-avatar>
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-        </q-avatar>
-        Title
-      </q-toolbar-title>
-
-      <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
-    </q-toolbar>
-
-    <q-tabs align="left">
-      <q-route-tab to="/page1" label="Page One" />
-      <q-route-tab to="/page2" label="Page Two" />
-      <q-route-tab to="/page3" label="Page Three" />
-    </q-tabs>
-  </q-header>
-
-  <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-    <!-- drawer content -->
-  </q-drawer>
-
-  <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-    <!-- drawer content -->
-  </q-drawer>
-
-  <q-page-container>
-    <router-view />
-  </q-page-container>
-
-  <q-footer elevated class="bg-grey-8 text-white">
-    <q-toolbar>
-      <q-toolbar-title>
-        <q-avatar>
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-        </q-avatar>
-        <div>Title</div>
-      </q-toolbar-title>
-    </q-toolbar>
-  </q-footer>
-
-</q-layout>
-```
-
-Il est possible de trouver un template complet qui permet de commencer avec une base de site, qui contient plusieurs exemples *Quasar*, pouvant être utilisés si nécessaire.
 
 # 4. Structure du site
 
