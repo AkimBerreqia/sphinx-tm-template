@@ -73,9 +73,10 @@ Le site *VueJS* comporte de base des outils qui permettent d'avoir une page d'ac
 
 L'image ci-dessous représente la page d'accueil par défaut qui est faite par VueJS.
 
-<img src="~/source/figures/homePageBefore.png"></img>
+```{figure} ../source/figures/homePageBefore.png
+```
 
-C'est à partir de la que le site interactif commence.
+C'est à partir de là que le site interactif commence.
 
 Dans les fichiers de base de la page *VueJS*, il y a le fichier "default.vue", qui se trouve dans le dossier "layouts".
 
@@ -170,19 +171,21 @@ Le code qui suit a déjà été modifié, pour convenir aux besoins du site inte
 
 C'est à partir de ce fichier que les éléments généraux par défauts du site sont générés, comme par exemple la taille du texte, les marges, la couleur du font de la page, etc.
 
-<img src="~/source/figures/homePageNow.png"></img>
+```{figure} ../source/figures/homePageNow.png
+```
 
 Voici, ci-dessus le rendu final de la page d'accueil, pour le site interactif.
 
 Les premiers composants quasar qui nous intéressent, servent à former l'aspect visuel du site, comme par exemple l'en-tête du site, ainsi que le menu déroulant sur la gauche de l'écran. Il y a également les liaisons pour naviguer entre les différentes sections du cours.
 
-## Composants *Quasar* pour former les paramètres par défaut du site
+## Composants *Quasar* utilisés pour former les paramètres par défaut du site
 
 #### *q-layout*
 
 Le document *default.vue* contient, tout d'abord le plan de la page, autrement dit, le "layout". C'est à dire, que le composant va former la page, comme si elle est séparée en un tableau de trois parties sur trois.
 
-<img src="~/source/figures/layout.png"></img>
+```{figure} ../source/figures/layout.png
+```
 
 Les lettres en majuscule signifient que l'élément de la page a une position fixe, sur l'écran. C'est à dire que si la page défile vers le bas, ces éléments apparaissent toujours à l'endroit où ils sont de base. Pour le site interactif, le composant *q-layout* définie le plan comme ceci :
 
@@ -436,15 +439,19 @@ Chaque page a un défileur de page, sous forme de bouton pour pouvoir défiler v
 
 La *position* du défileur de page est en bas à droite de l'écran. La forme de ce bouton est ronde, avec l'appelation *round* L'icone du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur vert clair, qui lui est attribuée par le mot "positive".
 
-## Composants *Quasar* utilisés au sein des pages
+## Composants *Quasar* utilisés pour former la page d'accueil/*index.vue*
 
-```{Tip}
-Les composants présentés dans cette section auraient pu être implémentés dans les documents contenant l'ensemble du cours, depuis un autre document ".vue", car ils sont réutilisés plusieurs fois de la même manière, mais avec quelques paramètres qui changent. Ce système pourra être rajouté en tant que bonus d'ici la présentation orale du travail de maturité.
-```
+
+
+## Composants *Quasar* utilisés pour former les pages du site
+
+
 
 #### Q-carousel/q-carousel-slide
 
-Ces composants sont utilisés dans le document qui forme la page d'accueil, mais aussi pour le prototype de chaque page du cours.
+Ces composants sont utilisés dans le document *index.vue*, qui forme la page d'accueil, mais aussi pour le prototype de chaque page du cours (1.1 Introduction, 1.2 Le chiffre de César, etc).
+
+Le composant « q-carousel » va créer une zone qui est séparée en plusieurs pages (q-carousel-slide), se situant à l’intérieur du carousel. De ce fait, il est possible de naviguer entre chaque slide.
 
 ## Q-btn/q-btn-group/q-separator (valider section)
 
@@ -468,7 +475,9 @@ Ces composants sont utilisés dans le document qui forme la page d'accueil, mais
 
 # 5. Apports du travail
 
-
+```{Tip}
+Certains composants présentés auraient pu être implémentés dans les documents contenant l'ensemble du cours, depuis un autre document ".vue", car ils sont réutilisés plusieurs fois de la même manière, mais avec quelques paramètres qui changent. Ce système pourra être rajouté en tant que bonus d'ici la présentation orale du travail de maturité.
+```
 
 # 6. Conclusion
 
@@ -543,7 +552,6 @@ Pour notre site de cours, il y a tout d'abord une en-tête, avec le nom du cours
 <!--A modifier par rapport au site.-->
 
 ```HTML
-
 <q-layout view="hHh lpR fFf">
 
   <q-header elevated class="bg-primary text-white" height-hint="98">
