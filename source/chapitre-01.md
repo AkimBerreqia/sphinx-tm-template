@@ -4,9 +4,17 @@
 
 ### Motivations personnelles
 
+L'idée de base était de créer un jeu vidéo, avec Romain De Groote. Chacun devait apprendre un domaine lié à l'informatique. Romain s'occupait d'enseigner la compression de donnée, alors que je m'occupais d'enseigner la cryptologie. Malheureusement, il a fallu à plusieurs reprises modifier le travail, suite à des problèmes d'organisation.
 
+Il a d'abord fallu laisser tomber le concept de jeu vidéo, pour se concentrer exclusivement sur la matière à enseigner, car le projet stagnait de plus en plus. Mais finalement, à cause du retard accumulé pendant la première partie de l'année et à cause des insuffisances scolaires de chacun, il a été préférable de séparer le groupe en deux nouveaux travaux de maturité différents, pour ne pas pénaliser l'autre. Pour chacun, le contenu à communiquer est resté le même, mais l'approche pour le faire apprendre a changé. De cette manière, le site de cours interactif sur la cryptologie est arrivé.
+
+A ce moment, la situation était assez décourageante. L'option d'arrêter le travail de maturité était présente. Cependant, la décision prise a été de ne pas baisser les bras et de recommencer un projet, qui suit toujours l'idée de base, enseigner la cryptologie, mais il fallait faire un projet faisable dans le laps de temps qu'il me restait.
+
+Suite à cela, la période qui s'est écoulé à partir du mois de février jusqu'à ce jour, m'a été bénéfique en ce qui concerne les connaissances acquisent dans le domaine de la création de site, ainsi que dans le domaine des langages de programmation appris.
 
 ### Structure du site/description du projet
+
+
 
 #### Objectifs initiaux
 
@@ -24,7 +32,17 @@ Le site est composé de six pages : "1.1 Introduction", "1.2 Le chiffre de Césa
 
 #### Principales difficultés rencontrées
 
+Au cours de ce travail, plusieurs difficultés se sont mises en place. Pour :
 
+- respondAnswer afficher résultat (mettre une couleur rouge si faux et verte si juste)
+- système de quiz (faire apparaitre un seul quiz, puis passer au suivant + affichage bouton)
+
+- faire fonction *library*
+- *1.6 Petit lexique ...* (problème pour cartes, taille des cartes, mise en page, gérer les listes avec code js)
+
+- importer fichier json
+- v-html (perdu trop de temps inutilement)
+- router-link (path)
 
 #### Parcours de l'étudiant
 
@@ -66,7 +84,7 @@ Pour la version finale du projet, Monsieur Donner m'a demandé de stoquer le tex
 Il reste encore à stoquer le reste du texte du projet dans le document "introContent.json". Mais cette procédure sera effectuée en tant que bonus et le nom du document changera sûrement.
 ```
 
-# ReadMe
+## ReadMe
 
 (Pour Mac et PC)
 
