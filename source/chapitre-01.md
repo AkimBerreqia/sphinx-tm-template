@@ -14,8 +14,6 @@ Suite à cela, la période qui s'est écoulé à partir du mois de février jusq
 
 ### Structure du site/description du projet
 
-
-
 #### Objectifs initiaux
 
 Le projet a pour but d'apporter un aspect plus neuf au site de Monsieur Donner Cédric, pour le cours sur la cryptologie, afin qu'il soit plus simple aux élèves du Collège du Sud d'apprendre ce domaine, de manière plus ludique. Bien évidemment, il s'agit surtout d'une base de site, alors il est également possible de reprendre le code présent pour ajouter, à tout moment, des chapitres supplémentaires.
@@ -28,7 +26,17 @@ La partie écrite du travail de maturité est rédigée dans des fichiers *markd
 
 #### Sommaire du site
 
-Le site est composé de six pages : "1.1 Introduction", "1.2 Le chiffre de César", "1.3 Attaque par force brute", "1.4 Systèmes de substitution monoalphabétique", "1.5 Attaque par fréquence" et "1.6 Petit lexique de la cryptologie".
+Le site est composé de six pages :
+- 1.1 Introduction
+- 1.2 Le chiffre de César
+- 1.3 Attaque par force brute
+- 1.4 Systèmes de substitution monoalphabétique
+- 1.5 Attaque par fréquence
+- 1.6 Petit lexique de la cryptologie
+
+```{Warning}
+La page sur l'attaque par fréquence n'est pas encore finie. Elle sera prête pour l'oral, en tant que bonus.
+```
 
 #### Principales difficultés rencontrées
 
@@ -103,5 +111,3 @@ C'est un bouton qui est préfabriqué par *Quasar*. Il est très utile pour avoi
   @click="..."
 />
 ```
-
-[^layoutSource]: [https://github.com/fyeeme/vite-quasar/commits/main](https://github.com/fyeeme/vite-quasar/commits/main)

@@ -578,3 +578,6 @@ La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1
 
 ## Q-dialog/q-card/q-card-section/q-card-actions
 
+
+
+[^layoutSource]: [https://github.com/fyeeme/vite-quasar/commits/main](https://github.com/fyeeme/vite-quasar/commits/main)
