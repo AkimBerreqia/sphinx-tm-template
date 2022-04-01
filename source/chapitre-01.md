@@ -26,15 +26,25 @@ Le site est passé par plusieurs étapes. Depuis la réédition de la version in
 
 Monsieur Donner Cédric m'a demandé de suivre un cours en ligne pour apprendre à me servir de *Vue.js* (lien du cours : [https://vuejs.org/tutorial/#step-1](https://vuejs.org/tutorial/#step-1)).
 
-A partir de ce point, le projet a réellement commencé à prendre forme.
+A partir de ce point, le prototype a commencé à prendre forme.
 
-Tout le texte est écrit à l'intérieur des fichiers, ce qui prend beaucoup de place.
+```{figure} ../source/figures/introProto.png
+```
 
-Chaque sous-chapitre est contenu dans un carrousel/*q-carousel* (ce composant *Quasar* est développé plus en détail dans la suite du travail de maturité). C'est la grande différence qu'il y a entre le prototype et la version finale.
+Pour le contenu du cours, tout le texte est écrit à l'intérieur des fichiers, dans lesquels le code de la page est développé. Cela rend le nombre de lignes de code assez grand, par document.
+
+Chaque sous-chapitre (par exemple : "1.3.2 Activité 4") est contenu dans un carrousel/*q-carousel* (ce composant *Quasar* est développé plus en détail dans la suite du travail de maturité). C'est la grande différence qu'il y a entre le prototype et la version finale.
 
 ##### Deuxième version du site (version finale)
 
+```{figure} ../source/figures/introVF.png
+```
 
+Pour la version finale du projet, Monsieur Donner m'a demandé de stoquer le texte dans un fichier *JSON*, pour la page "1.1" du prototype et de la version finale, pour comparer la différence entre les deux versions. Le nom de ce document est actuellement "introContent.json".
+
+```{Tip}
+Il reste encore à stoquer le reste du texte du projet dans le document "introContent.json". Mais cette procédure sera effectuée en tant que bonus et le nom du document changera sûrement.
+```
 
 # 2. Objectifs
 
@@ -587,7 +597,7 @@ Pour la page d'index, ce composant joue deux rôles.
 La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière plan des boutons est d'une teinte presque transparente. L'icone utilisé est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
 
 ```{admonition} Important
-Pour chaque page, les destinations sont différentes, mais la base du code reste la même.
+Pour chaque page, il y a des bouton qui ont des destinations différentes (un bouton qui renvoie à la page d'accueil, un autre pour accéder à la page précédente et un dernier pour passer à la page suivante), mais la base du code reste la même.
 ```
 
 ```HTML
@@ -598,7 +608,7 @@ Pour chaque page, les destinations sont différentes, mais la base du code reste
 </q-page-sticky>
 ```
 
-La deuxième fois, son rôle est d'afficher le sous-titre "1.0 Index", en dessous du titre principal du site.
+La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1.0 Index" est le titre de la page, qui se situe en dessous du titre de l'en-tête du site.
 
 ## Composants *Quasar* utilisés pour former les pages du site
 
@@ -609,6 +619,8 @@ La deuxième fois, son rôle est d'afficher le sous-titre "1.0 Index", en dessou
 ## Q-page-sticky (navigation btn/q-toolbar/q-toolbar-title)
 
 ## Q-dialog/q-card/q-card-section/q-card-actions
+
+
 
 # 4. Développement d'outils interactifs
 
