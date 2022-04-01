@@ -568,27 +568,4 @@ Pour chaque page, il y a des bouton qui ont des destinations différentes (un bo
 
 La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1.0 Index" est le titre de la page, qui se situe en dessous du titre de l'en-tête du site.
 
-## Composants *Quasar* utilisés pour former les pages du site
-
-#### Q-btn/q-btn-group/q-separator (valider section)
-
-Le composant *q-btn* sert à faire plusieurs chose.
-
-Tout d'abord il est utilisé pour valider une section du cours.
-
-```{figure} ../source/figures/validatorBtnInSection.png
----
-width: 50%
----
-```
-
-```{figure} ../source/figures/twoValidatorBtn.png
-```
-
-#### Q-page-sticky (navigation btn/q-toolbar/q-toolbar-title)
-
-#### Q-dialog/q-card/q-card-section/q-card-actions
-
-
-
 [^layoutSource]: [https://github.com/fyeeme/vite-quasar/commits/main](https://github.com/fyeeme/vite-quasar/commits/main)
