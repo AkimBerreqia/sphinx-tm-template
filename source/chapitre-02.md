@@ -570,13 +570,24 @@ La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1
 
 ## Composants *Quasar* utilisés pour former les pages du site
 
+#### Q-btn/q-btn-group/q-separator (valider section)
 
+Le composant *q-btn* sert à faire plusieurs chose.
 
-## Q-btn/q-btn-group/q-separator (valider section)
+Tout d'abord il est utilisé pour valider une section du cours.
 
-## Q-page-sticky (navigation btn/q-toolbar/q-toolbar-title)
+```{figure} ../source/figures/validatorBtnInSection.png
+---
+width: 50%
+---
+```
 
-## Q-dialog/q-card/q-card-section/q-card-actions
+```{figure} ../source/figures/twoValidatorBtn.png
+```
+
+#### Q-page-sticky (navigation btn/q-toolbar/q-toolbar-title)
+
+#### Q-dialog/q-card/q-card-section/q-card-actions
 
 
 
