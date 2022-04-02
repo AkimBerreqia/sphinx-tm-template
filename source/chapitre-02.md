@@ -14,6 +14,7 @@ Il fallait plusieurs moyens pour que l'utilisateur puisse interagir avec une pan
 <input v-model="réponse" placeholder="Veuillez écrire la réponse ici">
 <p>Votre réponse est {{réponse}}.</p>
 ```
+[^modelSource]
 
 Dans ce cas de figure, *v-model* correspond à ce que l'utilisateur écrit dans la zone de texte. L'élément "p" va reprendre le *v-model* pour l'intégrer à l'emplacement *{{réponse}}*. De ce fait, si l'utilisateur écrit "merveilleuse", le texte affichera : "Votre réponse est merveilleuse".
 
@@ -22,6 +23,7 @@ Pour le second, *Quasar* rend le code plus dynamique, en préfabriquant des comp
 ```HTML
 <q-btn label="Clique" />
 ```
+[^btnSource]
 
 ```{figure} ../source/figures/btn.png
 ```
@@ -138,7 +140,7 @@ Le code qui suit a déjà été modifié, pour convenir aux besoins du site inte
   }
 </style>
 ```
-[^layoutSource]
+[^defaultSource]
 
 C'est à partir de ce fichier que les éléments généraux par défauts du site sont générés, comme par exemple la taille du texte, les marges, la couleur du font de la page, etc.
 
@@ -167,6 +169,7 @@ Les lettres en majuscule signifient que l'élément de la page a une position fi
   </q-layout>
 </template>
 ```
+[^defaultSource]
 
 Chaque bloque de lettres correspond à une ligne du tableau. Les lettres *h* et *H* configurent la forme de l'en-tête. Le *l* et le *L* sont pour le menu déroulant de gauche. Le *p* ne change jamais. Le *r* et le *R* donnent la position du menu déroulant de droite. Finalement, le *f* et le *F* représentent le bas de page.
 
@@ -185,6 +188,7 @@ Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
   <!-- header content -->
 </q-header>
 ```
+[^defaultSource]
 
 Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière plan. La couleur primary est la couleur de référence du site.
 
@@ -202,6 +206,7 @@ $negative  : #C10015
 $info      : #cedbda
 $warning   : #F2C037
 ```
+[^quasarSaasSource]
 
 Pour *text-white*, il donne la couleur du texte et pour *text-left*, il donne l'alignement du texte de l'en-tête.
 
@@ -221,12 +226,14 @@ Ces composants servent à définir le titre principale du site, qui apparait con
   </q-toolbar-title>
 </q-toolbar>
 ```
+[^defaultSource]
 
 *q-toolbar* contient toutes les informations qui apparaissent dans l'en-tête. Il y a tout d'abord un bouton, *q-btn*, qui permet de faire apparaitre le menu déroulant. Ce bouton a comme propriété d'avoir l'icone *menu*, qu'il est rond, qu'il doit inverser la valeur de *drawerLeft* s'il est pressé, etc. Les autres propriétés sont moyens importantes.
 
 Pour ce qui est du titre de la barre d'outils, *q-toolbar-title*, il est nommé comme étant : "1 Cryptologie et codage de l’information".
 
 Le lien du routeur, *router-link* permet, lorsque l'utilisateur appuie sur le titre, de changer de page, sans devoir recharger le site, grâce au paramètre :
+
 ```HTML
 to="..."
 ```
@@ -244,6 +251,8 @@ Ce composant contient tous les éléments qui définissent le menu déroulant.
   <!-- drawer content -->
 </q-drawer>
 ```
+[^defaultSource]
+
 La directive *v-model* donne comme référence au tiroir la constante *drawerLeft*. Si cette constante change, le tiroir est influencé.
 
 C'est ici que le bouton de l'en-tête est utilisé. La valeur de la constante *drawerLeft* est assignée comme étant fausse, par défaut. A chaque fois que le bouton est pressé, sa valeur varie entre vrai et faux. Si sa valeur est vrai, alors le menu déroulant apparait à l'écran.
@@ -252,6 +261,8 @@ C'est ici que le bouton de l'en-tête est utilisé. La valeur de la constante *d
 import {ref} from 'vue'
 const drawerLeft = ref<boolean>(false)
 ```
+[^defaultSource]
+
 *Overlay* signifie que lorsque le menu apparait, il n'influence pas la position du texte présent sur la page.
 
 L'instruction ci-dessous permet d'avoir le menu du côté gauche de l'écran.
@@ -259,6 +270,7 @@ L'instruction ci-dessous permet d'avoir le menu du côté gauche de l'écran.
 ```HTML
 side="left"
 ```
+[^defaultSource]
 
 *Bordered* sert à mettre des bordures pour les éléments du menu.
 
@@ -271,6 +283,7 @@ Ce composant fabrique une liste dans laquelle il est possible d'ajouter plusieur
   <!-- list content -->
 </q-list>
 ```
+[^defaultSource]
 
 Entre chaque élément, il y a une séparation, faite à partir de *separator*.
 
@@ -289,6 +302,7 @@ Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous va fai
   </q-item>
 </template>
 ```
+[^defaultSource]
 
 Ce modèle/*template* va puiser dans chaque élément de *generateRoutes*, qui lui-même se sert de chaque document figurant en premier lieu dans le dossier *pages*, se situant dans le dossier *src*.
 
@@ -298,6 +312,7 @@ import { useRouter } from 'vue-router'
 import generatedRoutes from 'virtual:generated-pages'
 const router = useRouter()
 ```
+[^defaultSource]
 
 Chaque section d'objets contient un nom différent, qui fait référence à la page, qui lui est attribuée.
 
@@ -308,6 +323,7 @@ L'élément ci-dessous :
 ```HTML
 router.push({ path: item.path })
 ```
+[^defaultSource]
 
 permet de changer l'url de la page, pour naviguer à travers les pages du site, lorsque l'utilisateur appuie sur la section.
 
@@ -332,6 +348,7 @@ Ce composant *Quasar* permet de donner le contenu par défaut que toutes les pag
   <!-- q-page-scroller content -->
 </q-page-container>
 ```
+[^defaultSource]
 
 Tout d'abord, chaque page a pour le menu déroulant une animation qui est faite, lorsque le bouton 'menu', de l'en-tête, est pressé.
 
@@ -355,6 +372,7 @@ Il y a une animation pour faire apparaitre et disparaitre le menu, grâce à l'i
   opacity: 0;
 }
 ```
+[^defaultSource]
 
 Dans un premier temps, *.slide-fade-enter* donne les informations du menu, lorsque ce dernier doit apparaitre, avec une position d'arrivée, ainsi que l'opacité de départ. Pour *.slide-fade-leave-to*, le même processus a lieu, mais pour disparaitre.
 
@@ -367,6 +385,7 @@ html {
   background-color: #e6e6e6;
 }
 ```
+[^defaultSource]
 
 Elle est présente, pour donner un côté sobre au site et également pour fatiguer le moins possible l'oeil lorsque l'utilisateur passe beaucoup de temps sur chaque page.
 
@@ -383,6 +402,7 @@ Le style du contenu de la page est influencé par les paramètres suivants :
   max-width:40em;
 }
 ```
+[^defaultSource]
 
 Ce composant possède une marge automatique. Il a seulement une marge de cinquante pixels en haut, pour chaque page. Le contenu est centré au milieu de la page, mais le texte aligné à gauche, avec une couleur d'arrière plan qui se rapproche du blanc, *#dedcdc*, et avec un texte bleu, *#33abd6*. Le conteneur de page a une largeur maximale de quarante "em", pour rendre le texte plus lisible et pour ne pas avoir une surcharge de mots par ligne.
 
@@ -407,6 +427,7 @@ Chaque page a un défileur de page, sous forme de bouton pour pouvoir défiler v
   </div>
 </q-page-scroller>
 ```
+[^defaultSource]
 
 La *position* du défileur de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appelation *round* L'icone du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur vert clair, qui lui est attribuée par le mot "positive".
 
@@ -487,6 +508,7 @@ let action = reactive({
 <style lang="scss" scoped></style>
 
 ```
+[^quasarSource]
 
 #### Q-carousel/q-carousel-slide
 
@@ -524,6 +546,7 @@ L'image ci-dessus contient deux encadrés blanc, qui représente chacun un carro
   </q-carousel-slide>
 </q-carousel>
 ```
+[^quasarSource]
 
 Dans le code ci-dessus, les deux carrousels ont une hauteur de deux-cent-cinquante pixels. Cette taille peut bien évidemment être changée pour que le contenu ne déborde pas du carrousel.
 
@@ -537,6 +560,7 @@ let action = reactive({
   slide2: ref('sommaire')
 })
 ```
+[^quasarSource]
 
 Pour cette page, il n'y a qu'une seule diapositive par carrousel. Cependant, il est possible de faire plusieurs diapositives par carrousel.
 
@@ -551,6 +575,7 @@ Pour la page d'index, ce composant joue deux rôles.
   <q-btn icon="keyboard_arrow_right" to="/1.1 Introduction">1.1 Introduction</q-btn>
 </q-page-sticky>
 ```
+[^quasarSource]
 
 La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière plan des boutons est d'une teinte presque transparente. L'icone utilisé est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
 
@@ -565,7 +590,14 @@ Pour chaque page, il y a des bouton qui ont des destinations différentes (un bo
   </q-toolbar>
 </q-page-sticky>
 ```
+[^quasarSource]
 
 La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1.0 Index" est le titre de la page, qui se situe en dessous du titre de l'en-tête du site.
 
-[^layoutSource]: [https://github.com/fyeeme/vite-quasar/commits/main](https://github.com/fyeeme/vite-quasar/commits/main)
+[^defaultSource]: [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^quasarSaasSource]: []()
+
+[^quasarSource]:  [https://quasar.dev/](https://quasar.dev/)
+
+[^pageStickySource]: []()
