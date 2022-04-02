@@ -271,7 +271,82 @@ Le bouton orange est destiné aux réponses et celui qui est violet sert à donn
 
 ### q-input et fonction "respondAnswer"
 
-Pour cette dernière partie de section, 
+Pour cette dernière partie de section, le composant *q-input* met en place une zone de texte qui renvoie à l'utilisateur si sa réponse est juste ou fausse, grâce à la fonction "respondAnswer".
+
+Ce *q-input* provient d'un des exemples présent dans la documentation *Quasar*.
+
+```{figure} ../source/figures/inputExemple.png
+```
+
+```HTML
+<template>
+  <q-input v-model="ph" label="Label" placeholder="Placeholder" hint="With placeholder" :dense="dense" />
+</template>
+
+<script>
+import { ref } from 'vue'
+
+export default {
+  setup () {
+    return {
+      text: ref(''),
+      ph: ref(''),
+      dense: ref(false)
+    }
+  }
+}
+<script>
+```
+[^inputSource]
+
+L'exemple utilisé se nomme "Placholder", car il contient un emplacement intéressant pour renvoyer à l'élève sont résultat.
+
+Le code ressemble maintenant à cela :
+
+```HTML
+<template>
+  <!-- ... -->
+
+  <q-input bottom-slots v-model="myQuestions.rodolphe" label="Réponse :" counter maxlength="56" :dense="dense" style='text-transform:uppercase'>
+    <template v-slot:hint>
+      <p>{{respondAnswer(myQuestions.rodolphe, myQuestions.rodolpheCorrectAnswer, 56)}}</p>
+    </template>
+  </q-input>
+
+  <!-- ... -->
+</template>
+
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+
+// ...
+
+const dense = ref(false)
+
+const myQuestions = reactive({
+  rodolphe: '',
+  rodolpheCorrectAnswer: 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE'
+})
+
+function respondAnswer(exercice, correctAnswer, maxLength){
+
+  if (exercice.length === maxLength) {
+    if (exercice.toUpperCase() === correctAnswer) {
+      return "Bonne réponse"
+    }
+    else if (exercice.toUpperCase() !== correctAnswer) {
+      return "Mauvaise réponse"
+    }
+  }
+
+  else if (exercice.length !== maxLength) {
+    return "..."
+  }
+}
+</script>
+```
+
+La fonction prend ce que l'utilisateur écrit, pour contrôler le nombre de caractère qu'il y a. Pour la fonction, il s'agit de "exercice". Si le nombre de caractères n'est pas égal au maximum requis, la fonction renvoie "..." dans l'espace réservé au résultat. Si la longueur maximale est atteinte, alors la fonction renvoie soit "Bonne réponse, si "correctAnswer" est pareil que "exercice". Mais si "correctAnswer" et "exercice" sont différents, alors la fonction renvoie "Mauvaise réponse". Pour l'exercice avec Rodolphe, "exercice" fait référence à "myQuestions.rodolphe", "correctAnswer" correspond à "myQuestions.rodolpheCorrectAnswer" et finalement "maxLength" fait cinquante-six caractères.
 
 ## Importer du texte avec *JSON*
 
@@ -339,4 +414,4 @@ A contrario, la première possibilité permet de ne pas interpréter le contenu 
 
 
 
-[^inputSource]: Standard, "Placeholder[https://quasar.dev/vue-components/input#introduction](https://quasar.dev/vue-components/input#introduction)
+[^inputSource]: Standard, "Placeholder [https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)
