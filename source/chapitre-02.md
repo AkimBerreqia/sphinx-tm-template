@@ -37,13 +37,13 @@ Avec *q-btn*, il n'est pas nécessaire de définir une classe ou un style dans l
 ```
 
 ```{Warning}
-Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Donner m'a mis à disposition. Ce dépôt a été créer par Allen Lau. (lien vers le dépôt *GitHub* : [https://github.com/fyeeme/vite-quasar](https://github.com/fyeeme/vite-quasar))
+Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Donner m'a mis à disposition. Ce dépôt a été créer par Allen Lau. (lien vers le dépôt *GitHub* d'Allen Lau : [https://github.com/fyeeme/vite-quasar](https://github.com/fyeeme/vite-quasar))
 Cependant, il y a quelques changements qui ont été apportés pour permettre au site interactif d'avoir l'aspect qu'il a aujourd'hui.
 ```
 
 Le site *VueJS* comporte de base des outils qui permettent d'avoir une page d'accueil et un menu déroulant sur le côté de l'écran.
 
-L'image ci-dessous représente la page d'accueil par défaut qui est faite par *VueJS*.
+L'image ci-dessous représente la page d'accueil par défaut qui est faite par Allen Lau.
 
 ```{figure} ../source/figures/homePageBefore.png
 ```
@@ -214,7 +214,7 @@ Pour *text-white*, il donne la couleur du texte et pour *text-left*, il donne l'
 Sans ce composant, le site n'affichera pas d'en-tête, car *q-header* définit, en quelque sorte, que le site doit contenir un en-tête. Il y a également d'autres composants qui joue le même rôle. Par exemple, *q-page-container* définit le contenu de la page, *q-page-sticky* définit les éléments qui gardent la même position, si la page défile, *q-toolbar* définit le contenu de la barre d'outils, etc. Ces composants sont développés plus en détail, par la suite.
 ```
 
-#### *q-toolbar/q-toolbar-title*
+#### *q-toolbar et q-toolbar-title*
 
 Ces composants servent à définir le titre principale du site, qui apparait constamment dans l'en-tête :
 
@@ -289,7 +289,7 @@ Entre chaque élément, il y a une séparation, faite à partir de *separator*.
 
 Pour *class*, il est indiqué que chaque élément ne peut pas avoir de largeur plus petite que 25. C'est une manière de garder une mise en page correcte pour le site, même si l'onglet dans lequel se trouve la page est réduit, ou agrandi.
 
-#### *q-item/q-item-section*
+#### *q-item et q-item-section*
 
 Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous va faire pour chaque *item*, qui correspond à chaque page, un système qui permet de pouvoir accéder à la page souhaitée lorsque la section d'objets souhaitée est appuyée avec le curseur.
 
@@ -510,11 +510,11 @@ let action = reactive({
 ```
 [^quasarSource]
 
-#### Q-carousel/q-carousel-slide
+#### q-carousel et q-carousel-slide
 
 Ce sont les premiers composants qui apparaissent dans le code pour la page d'index, mais ils sont aussi présents dans les prototypes des pages du cours (1.1 Introduction, 1.2 Le chiffre de César, etc).
 
-Le composant « q-carousel » va créer une zone qui est séparée en plusieurs pages (q-carousel-slide), se situant à l’intérieur du carousel. De ce fait, il est possible de naviguer entre chaque *q-carousel-slide*.
+Le composant *q-carousel* va créer une zone qui est séparée en plusieurs pages/*q-carousel-slide*, se situant à l’intérieur du carousel. De ce fait, il est possible de naviguer entre chaque *q-carousel-slide*.
 
 ```{figure} ../source/figures/indexCarousel.png
 ```
@@ -564,7 +564,7 @@ let action = reactive({
 
 Pour cette page, il n'y a qu'une seule diapositive par carrousel. Cependant, il est possible de faire plusieurs diapositives par carrousel.
 
-#### Q-page-sticky
+#### q-page-sticky
 
 Ce composant apparait sur chaque fichier qui appartient au cours de cryptologie. Tout comme pour le *q-page-scroller*, le *q-page-sticky*, garde la même position à l'écran, même si l'utilisateur fait défiler la page.
 

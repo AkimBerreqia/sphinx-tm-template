@@ -2,7 +2,7 @@
 
 ## Système de validation de section
 
-### Q-btn/q-separator
+### v-if, q-btn et q-separator
 
 Le composant *q-btn* a plusieurs usages, pour le site interactif. Certains cas ont déjà été mentionnés, comme pour le bouton qui fait défiler vers le haut de la page, ou alors celui pour changer de page. Jusqu'à maintenant, *q-btn* a servit à mettre en mouvement la page. Pour les fonctions qui suivent, les deux prochains rôles du *q-btn* sont plutôt orientés sur un aspect de progression et de formation.
 
@@ -38,13 +38,13 @@ En se servant de la directive *v-if*, il est possible de choisir quand est-ce qu
 
 Dès que l'utilisateur clique sur le bouton visible, la valeur de *section* est inversée, pour cacher le bouton visible et inversément pour le bouton invisible.
 
-Pour conclure de façon visuelle, il y a une barre de séparation, qui est mise à la suite du dernier bouton de validation.
+Pour conclure chaque section, il y a une barre de séparation, qui est mise à la suite du dernier bouton de validation.
 
 ```HTML
 <q-separator inset />
 ```
 
-En ce qui concerne le dernier aspect basé sur la formation, il est combiné à d'autres outils pour composer des exercices, dans lesquels, l'utilisateur doit écrire du texte. Cet utilité est développé dans la prochaine section.
+En ce qui concerne le dernier aspect basé sur la formation, il est combiné à d'autres outils pour composer des exercices, dans lesquels, l'utilisateur doit écrire du texte. Cet utilité est développée dans la prochaine section.
 
 ## Système d'exercices "respondAnswer"
 
@@ -159,8 +159,9 @@ function respondAnswer(exercice, correctAnswer, maxLength){
 }
 </script>
 ```
+[^inputSource]
 
-Cette outil fonctionne de la manière suivante, l'utilisateur peut rentrer un nombre limité de caractères à l'intérieur de la zone de texte. Dans ce cas ci-dessus, il peut rentrer au maximum cinquante-six caractères. Pour l'exercice, la réponse est écrite directement en majuscule, grâce à la fonction *.toUpperCase()*. La réponse de l'étudiant ne doit pas contenir d'espace, sinon il n'aura pas suffisamment de place pour écrire toute la réponse. Si l'élève a des difficultés, il peut se servir du bouton "INDICES" pour s'aider. Une fois que la réponse est complète, l'utilisateur peut voir si sa réponse est correcte.
+Cet outil fonctionne de la manière suivante, l'utilisateur peut rentrer un nombre limité de caractères à l'intérieur de la zone de texte. Dans ce cas ci-dessus, il peut rentrer au maximum cinquante-six caractères. Pour ce type d'exercice, la réponse est écrite directement en majuscule, grâce à la fonction *.toUpperCase()*. La réponse de l'étudiant ne doit pas contenir d'espace, sinon il n'aura pas suffisamment de place pour écrire toute la réponse. Si l'élève a des difficultés, il peut se servir du bouton "INDICES" pour s'aider. Une fois que la réponse est complète, l'utilisateur peut voir si son résultat est correct.
 
 ```{figure} ../source/figures/goodAnswer.png
 ```
@@ -168,23 +169,30 @@ Cette outil fonctionne de la manière suivante, l'utilisateur peut rentrer un no
 ```{figure} ../source/figures/wrongAnswer.png
 ```
 
-### Q-dialog/q-card/q-card-section/q-card-actions
+### q-btn-group, q-dialog, q-card, q-card-section et q-card-actions
 
+Pour la partie formation, il y a deux choix possibles de boutons. Soit il s'agit d'un seul bouton, soit il s'agit d'un groupe de plusieurs boutons. Pour cette deuxième situation, le composant *q-btn-group* permet de regrouper plusieurs boutons dans un seul cadre.
 
+```{figure} ../source/figures/btnGroupExemple.png
+```
 
-### Q-btn-group
+```HTML
+<q-btn-group rounded elevated>
+  <q-btn color="green" label="btn n° 1"></q-btn>
+  <q-btn color="blue" label="btn n° 2"></q-btn>
+</q-btn-group>
+```
 
-L'usage de ce dernier type de bouton est illustré avec le composant *q-dialog*, qui permet de faire apparaitre une fenêtre/un "pop-up" à l'écran.
+Dans l'image ci-dessous, les boutons "INDICES" et "AFFICHER LA RÉPONSE" font apparaitre un "pop-up" différent, suivant lequel des deux est enclenché.
 
 ```{figure} ../source/figures/btnGroup.png
 ```
 
-Dans l'image ci-dessus, les boutons "INDICES" et "AFFICHER LA RÉPONSE" font apparaitre un "pop-up" différent, suivant lequel des deux est enclenché.
+Pour le cours, ce genre de boutons est combiné avec le composant *q-dialog*, qui fait apparaitre une fenêtre/un "pop-up" à l'écran. Cette fenêtre est une *q-card*.
 
 ```{figure} ../source/figures/indices.png
 ---
 width: 50%
-
 ---
 ```
 
@@ -194,8 +202,76 @@ width: 50%
 ---
 ```
 
-Chacun des deux *dialogs* a une couleur différente qui leur a été attribuée de manière arbitraire, pour différencier l'utilité de chaque bouton.
+Chaque carte est composée d'un titre et d'explications. Ces parties sont des sections/*q-card-section*.
+
+```HTML
+<!-- ... -->
+
+<!-- q-btn content -->
+
+<q-dialog v-model="dialogVisible.indice1" @hide="onHide">
+<q-card>
+  <q-card-section class="row items-center q-pb-none">
+  <strong class="text-h6" style="color:accent;">Q-Rodolphe: Indices</strong>
+  <q-space />
+  </q-card-section>
+
+  <q-card-section style="color:accent;">
+  <ul style="color:accent;">
+    <li>Toutes les lettres se suivent sans espace.</li><br>
+    <li>Il te sera plus simple de décrypter cette phrase en te servant d'une feuille et d'un crayon.</li><br>
+    <li>Le début du texte en clair est : "<strong>JETINVITE</strong>".</li>
+  </ul>
+  </q-card-section>
+  
+  <!-- q-card-actions content -->
+
+</q-card>
+</q-dialog>
+
+<!-- q-btn content -->
+
+<q-dialog v-model="dialogVisible.respond2" @hide="onHide">
+<q-card>
+  <q-card-section class="row items-center q-pb-none">
+  <strong class="text-h6" style="color:orange;">Q-Rodolphe: Réponse</strong>
+  <q-space />
+  </q-card-section>
+
+  <q-card-section style="color:orange;">
+  <strong>JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE</strong>
+  </q-card-section>
+
+  <!-- q-card-actions content -->
+
+</q-card>
+</q-dialog>
+
+<!-- ... -->
+```
+
+Lorsque l'un des deux boutons est pressé, la fonction "onHide" se lance et le dialogue se met en marche.
+
+```JavaScript
+let dialogVisible = reactive({
+  respond2: ref(false),
+  indice1: ref(false)
+})
+
+function onHide(order) {
+  dialogVisible.order.value = false
+}
+```
+
+Il reste encore les *q-card-actions* à aborder. Ce sont les boutons avec le label "OK", à l'intérieur des cartes. Ils servent à faire disparaitre la fenêtre ouverte, en rendant fausse la valeur de la variable qui est attribuée au dialogue concerné.
+
+Chacune des deux cartes a une couleur différente qui leur a été attribuée de manière arbitraire, pour différencier l'utilité de chaque bouton.
+
 Le bouton orange est destiné aux réponses et celui qui est violet sert à donner des indices. Ce sont les seules variétés de boutons qui existent dans le cours, pour afficher une fenêtre.
+
+### q-input et fonction "respondAnswer"
+
+Pour cette dernière partie de section, 
 
 ## Importer du texte avec *JSON*
 
@@ -203,21 +279,21 @@ Après avoir développé la version finale du projet, Monsieur Donner m'a demand
 
 ```JSON
 {
-    "introduction": {
-        "presentation": "La cryptologie est la science des codes secrets et utlise des techniques propres à l’informatique et aux mathématiques. Dans ce cours, nous n’aborderons pas les aspects mathématiques des techniques de cryptographie modernes. La cryptologie englobe d’une part la <b>cryptographie</b> qui consiste à développer des codes secrets permettant de chiffrer des messages pour qu’ils soient incompréhensibles pour les personnes à qui ils ne sont pas destinés et la <b>cryptanalyse</b> qui consiste à <i>casser les codes secrets</i> utilisés par d’autres personnes pour tenter d’accéder aux informations chiffrées.",
+  "introduction": {
+    "presentation": "La cryptologie est la science des codes secrets et utlise des techniques propres à l’informatique et aux mathématiques. Dans ce cours, nous n’aborderons pas les aspects mathématiques des techniques de cryptographie modernes. La cryptologie englobe d’une part la <b>cryptographie</b> qui consiste à développer des codes secrets permettant de chiffrer des messages pour qu’ils soient incompréhensibles pour les personnes à qui ils ne sont pas destinés et la <b>cryptanalyse</b> qui consiste à <i>casser les codes secrets</i> utilisés par d’autres personnes pour tenter d’accéder aux informations chiffrées.",
 
-        "cryptographie1": "Les codes secrets sont utilisés depuis l’invention de l’écriture pour communiquer des informations de manière secrète et sécurisée, notamment lors des grandes campagnes militaires. Le code de César est un exemple assez simple utilisé dans l’Antiquité que nous allons aborder au cours.",
+    "cryptographie1": "Les codes secrets sont utilisés depuis l’invention de l’écriture pour communiquer des informations de manière secrète et sécurisée, notamment lors des grandes campagnes militaires. Le code de César est un exemple assez simple utilisé dans l’Antiquité que nous allons aborder au cours.",
 
-        "cryptographie2": "Plus le nombre d’informations représentées sous forme digitale a augmenté, plus les codes secrets ont gagné en importance. Depuis l’avènement des technologies de télécommunication telles que la radio ou le télégraphe, les codes secrets jouent un rôle majeur pour le commerce et sur le champ de bataille. Le commerce électronique (e-commerce) ou les réseaux sociaux ne seraient absolument pas possibles sans les avancées modernes de la cryptographie, notamment le code RSA. À chaque fois que vous vous rendez sur un réseau social ou que vous effectuez un achat en ligne, vous utilisez des techniques modernes de cryptographie pour chiffrer les communications avec le serveur, permettant d’éviter que des tiers se procurent les informations communiquées ou ne détournent le paiement effectué.",
+    "cryptographie2": "Plus le nombre d’informations représentées sous forme digitale a augmenté, plus les codes secrets ont gagné en importance. Depuis l’avènement des technologies de télécommunication telles que la radio ou le télégraphe, les codes secrets jouent un rôle majeur pour le commerce et sur le champ de bataille. Le commerce électronique (e-commerce) ou les réseaux sociaux ne seraient absolument pas possibles sans les avancées modernes de la cryptographie, notamment le code RSA. À chaque fois que vous vous rendez sur un réseau social ou que vous effectuez un achat en ligne, vous utilisez des techniques modernes de cryptographie pour chiffrer les communications avec le serveur, permettant d’éviter que des tiers se procurent les informations communiquées ou ne détournent le paiement effectué.",
 
-        "cryptanalyse1": "Depuis l’avènement de la cryptographie, qui vise à communiquer ou stocker des informations sensibles de manière chiffrée pour les rendre inintelligibles, les personnes désireuses d’accéder à ces informations chiffrées ont du chercher des stratégies pour casser ces codes secrets. Comme nous le verrons, les codes secrets élaborés durant l’Antiquité sont tous relativement faciles à casser, du moins avec la puissance de calcul des ordinateurs actuels.",
+    "cryptanalyse1": "Depuis l’avènement de la cryptographie, qui vise à communiquer ou stocker des informations sensibles de manière chiffrée pour les rendre inintelligibles, les personnes désireuses d’accéder à ces informations chiffrées ont du chercher des stratégies pour casser ces codes secrets. Comme nous le verrons, les codes secrets élaborés durant l’Antiquité sont tous relativement faciles à casser, du moins avec la puissance de calcul des ordinateurs actuels.",
 
-        "cryptanalyse2": "Lors de la deuxième guerre mondiale, une des raisons principales de la victoire des alliés sur la Wehrmacht est que les Anglais ont réussi à casser le code Enigma utilisé par les Allemands dans toutes leurs communications militaires.",
+    "cryptanalyse2": "Lors de la deuxième guerre mondiale, une des raisons principales de la victoire des alliés sur la Wehrmacht est que les Anglais ont réussi à casser le code Enigma utilisé par les Allemands dans toutes leurs communications militaires.",
 
-        "cryptanalyse3": "Les techniques de cryptographie modernes permettent de créer des codes secrets beaucoup plus difficiles à casser. C’est la raison pour laquelle toutes les grandes puissances commerciales et militaires actuelles dépensent des sommes colossales pour engager les meilleurs mathématiciens, physiciens et informaticiens du monde et financer les services secrets responsables de percer les codes secrets utilisés par les adversaires pour en tirer un avantage commercial ou militaire.",
+    "cryptanalyse3": "Les techniques de cryptographie modernes permettent de créer des codes secrets beaucoup plus difficiles à casser. C’est la raison pour laquelle toutes les grandes puissances commerciales et militaires actuelles dépensent des sommes colossales pour engager les meilleurs mathématiciens, physiciens et informaticiens du monde et financer les services secrets responsables de percer les codes secrets utilisés par les adversaires pour en tirer un avantage commercial ou militaire.",
 
-        "cryptanalyse4": "Dans ce cours, vous allez découvrir quelques-uns des codes secrets les plus célèbres inventés dans l’Antiquité. Vous pourrez ainsi renforcer les compétences de programmation avec les chaînes de caractères."
-    }
+    "cryptanalyse4": "Dans ce cours, vous allez découvrir quelques-uns des codes secrets les plus célèbres inventés dans l’Antiquité. Vous pourrez ainsi renforcer les compétences de programmation avec les chaînes de caractères."
+  }
 }
 ```
 
@@ -225,7 +301,7 @@ Après avoir développé la version finale du projet, Monsieur Donner m'a demand
 Il reste encore à stoquer le reste du texte du projet dans le document "introContent.json". Mais cette procédure sera effectuée en tant que bonus et le nom du document changera sûrement.
 ```
 
-### V-html
+### v-html
 
 A partir de ce point, il faut importer le document *JSON* dans les fichiers "1.1". Pour cela, la démarche suivante est faite :
 
@@ -253,17 +329,14 @@ Cependant, le problème est que dans le contenu *JSON*, il y a des balises *HTML
 
 A contrario, la première possibilité permet de ne pas interpréter le contenu *JSON* comme du texte. Cela mène à garder la propriété des balises citées précédemment et donc d'avoir du texte en gras et en italique, aux endroits souhaités.
 
-### Q-input/v-model/respondAnswer(exercice, correctAnswer, maxLength)
+## Système de quizs "myQuizQuestions"
 
 
 
-### Quiz/myQuizQuestions
+## Système de recherche par mots clés "library"
+
+### q-table/search/lexique/terme/signification/rows
 
 
 
-### Q-table/search/lexique/terme/signification/rows
-
-
-
-### Library
-
+[^inputSource]: Standard, "Placeholder[https://quasar.dev/vue-components/input#introduction](https://quasar.dev/vue-components/input#introduction)

@@ -38,19 +38,12 @@ Le site est composé de six pages :
 La page sur l'attaque par fréquence n'est pas encore finie. Elle sera prête pour l'oral, en tant que bonus.
 ```
 
-#### Principales difficultés rencontrées
+#### Difficultés envisagées
 
-Au cours de ce travail, plusieurs difficultés se sont mises en place. Pour :
-
-- respondAnswer afficher résultat (mettre une couleur rouge si faux et verte si juste)
-- système de quiz (faire apparaitre un seul quiz, puis passer au suivant + affichage bouton)
-
-- faire fonction *library*
-- *1.6 Petit lexique ...* (problème pour cartes, taille des cartes, mise en page, gérer les listes avec code js)
-
-- importer fichier json
-- v-html (perdu trop de temps inutilement)
-- router-link (path)
+- Contenu du cours
+- Problèmes de développement de certains outils
+- Manque de connaissances pour confronter rapidement certains problèmes de code (opération ne se passe pas comme prévu, une idée qui est compliquée à réaliser, par exemple manque d'informations sur un sujet)
+- Difficultés à trouver les réponses aux problèmes (problèmes de documentation)
 
 #### Parcours de l'étudiant
 
