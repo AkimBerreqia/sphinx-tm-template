@@ -19,8 +19,6 @@ Titre du travail de maturité
     chapitre-07.md
     chapitre-08.md
     chapitre-09.md
-    chapitre-10.md
-    chapitre-11.md
     todo.rst
 
 ..  toctree::
