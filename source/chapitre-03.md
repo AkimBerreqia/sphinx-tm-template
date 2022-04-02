@@ -42,7 +42,30 @@ En ce qui concerne le dernier aspect basé sur la formation, il est combiné à 
 
 #### Q-dialog/q-card/q-card-section/q-card-actions
 
+L'usage de ce dernier type de bouton est illustré dans cette section, avec le composant *q-dialog*, qui permet de faire apparaitre une fenêtre/un "pop-up" à l'écran.
 
+```{figure} ../source/figures/respondAnswerExo.png
+---
+width: 50%
+---
+```
+
+Dans l'image ci-dessus, les boutons "INDICES" et "AFFICHER LA RÉPONSE" vont faire apparaitre un "pop-up" différent, suivant lequel des deux est enclenché.
+
+```{figure} ../source/figures/indices.png
+---
+width: 50%
+
+---
+```
+
+```{figure} ../source/figures/reponse.png
+---
+width: 50%
+---
+```
+
+Chacun des deux *dialog*, ils ont une couleur différente qui leur a été attribuée de manière arbitraire
 
 ## Directives *VueJS* utilisées pour former les pages du site
 
