@@ -6,7 +6,7 @@
 
 L'idée de base était de créer un jeu vidéo, avec Romain De Groote. Chacun devait apprendre un domaine lié à l'informatique. Romain s'occupait d'enseigner la compression de donnée, alors que je m'occupais d'enseigner la cryptologie. Malheureusement, il a fallu à plusieurs reprises modifier le travail, suite à des problèmes d'organisation.
 
-Il a d'abord fallu laisser tomber le concept de jeu vidéo, pour se concentrer exclusivement sur la matière à enseigner, car le projet stagnait de plus en plus. Mais finalement, à cause du retard accumulé pendant la première partie de l'année et à cause des insuffisances scolaires de chacun, il a été préférable de séparer le groupe en deux nouveaux travaux de maturité différents, pour ne pas pénaliser l'autre. Pour chacun, le contenu à communiquer est resté le même, mais l'approche pour le faire apprendre a changé. De cette manière, le site de cours interactif sur la cryptologie est arrivé.
+Il a d'abord fallu laisser tomber le concept de jeu vidéo, pour se concentrer exclusivement sur la matière à enseigner, car le projet stagnait de plus en plus. Mais finalement, à cause du retard accumulé pendant la première partie de l'année scolaire et à cause des insuffisances scolaires de chacun, il a été préférable de séparer le groupe en deux nouveaux travaux de maturité différents, pour ne pas pénaliser l'autre. Pour chacun, le contenu à communiquer est resté le même, mais l'approche pour le faire apprendre a changé. De cette manière, le site de cours interactif sur la cryptologie est arrivé.
 
 A ce moment, la situation était assez décourageante. L'option d'arrêter le travail de maturité était présente. Cependant, la décision prise a été de ne pas baisser les bras et de recommencer un projet, qui suit toujours l'idée de base, enseigner la cryptologie, mais il fallait faire un projet faisable dans le laps de temps qu'il me restait.
 
@@ -66,7 +66,7 @@ Pour arriver à ce projet, il a fallu passer par plusieurs étapes.
 
 Tout d'abord, il a fallu apprendre comment fonctionnent les directives *Vue*, ainsi que les composants *Quasar*.
 
-##### Première version du site (prototype)
+##### Présentation du site (prototype et version finale)
 
 Le site est passé par plusieurs étapes. Depuis la réédition de la version intérmédiaire, il a fallu se familiariser avec la technologie *Vue*.
 
@@ -81,33 +81,11 @@ Pour le contenu du cours, tout le texte est écrit à l'intérieur des fichiers,
 
 Chaque sous-chapitre (par exemple : "1.3.2 Activité 4") est contenu dans un carrousel/*q-carousel* (ce composant *Quasar* est développé plus en détail dans la suite du travail de maturité). C'est la grande différence qu'il y a entre le prototype et la version finale.
 
-##### Deuxième version du site (version finale)
+Quant à la version finale, elle reprend les mêmes éléments que le prototype, mais en diminuant considérablement le nombre de carrousels. Les seuls carrousels qui restent, sont dans l'index du cours.
 
 ```{figure} ../source/figures/introVF.png
-```
-
-Pour la version finale du projet, Monsieur Donner m'a demandé de stoquer le texte dans un fichier *JSON*, pour la page "1.1" du prototype et de la version finale, pour comparer la différence entre les deux versions. Le nom de ce document est actuellement "introContent.json".
-
-```{Tip}
-Il reste encore à stoquer le reste du texte du projet dans le document "introContent.json". Mais cette procédure sera effectuée en tant que bonus et le nom du document changera sûrement.
 ```
 
 ## ReadMe
 
 (Pour Mac et PC)
-
-# 2. Outils interactifs avec *Quasar*
-
-Les outils *Quasar* sont des outils utilisés en *HTML* et qui peuvent être combiner avec des outils *VueJS*.
-
-## q-btn
-C'est un bouton qui est préfabriqué par *Quasar*. Il est très utile pour avoir moins de code et pour gagner du temps. Il est très souvent combiné à d'autres outils *Quasar*.
-
-```HTML
-
-<q-btn
-  label="Afficher la réponse"
-  color="..."
-  @click="..."
-/>
-```

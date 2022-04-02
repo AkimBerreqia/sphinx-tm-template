@@ -1,8 +1,8 @@
 # 3. Développement d'outils interactifs
 
-## Composants *Quasar* utilisés pour former les pages du site
+## Système de validation de section
 
-#### Q-btn/q-separator (valider la section)
+### Q-btn/q-separator
 
 Le composant *q-btn* a plusieurs usages, pour le site interactif. Certains cas ont déjà été mentionnés, comme pour le bouton qui fait défiler vers le haut de la page, ou alors celui pour changer de page. Jusqu'à maintenant, *q-btn* a servit à mettre en mouvement la page. Pour les fonctions qui suivent, les deux prochains rôles du *q-btn* sont plutôt orientés sur un aspect de progression et de formation.
 
@@ -46,9 +46,9 @@ Pour conclure de façon visuelle, il y a une barre de séparation, qui est mise 
 
 En ce qui concerne le dernier aspect basé sur la formation, il est combiné à d'autres outils pour composer des exercices, dans lesquels, l'utilisateur doit écrire du texte. Cet utilité est développé dans la prochaine section.
 
-### Système d'exercices "respondAnswer"
+## Système d'exercices "respondAnswer"
 
-Voici un des exercices, qui figure au chapitre "1.2 Le chiffre de César" du site :
+Voici un des exercices du site, qui figure au chapitre "1.2 Le chiffre de César" :
 
 ```{figure} ../source/figures/respondAnswerExo.png
 ---
@@ -168,16 +168,18 @@ Cette outil fonctionne de la manière suivante, l'utilisateur peut rentrer un no
 ```{figure} ../source/figures/wrongAnswer.png
 ```
 
-#### Q-dialog/q-card/q-card-section/q-card-actions
+### Q-dialog/q-card/q-card-section/q-card-actions
 
-#### Q-btn-group
+
+
+### Q-btn-group
 
 L'usage de ce dernier type de bouton est illustré avec le composant *q-dialog*, qui permet de faire apparaitre une fenêtre/un "pop-up" à l'écran.
 
 ```{figure} ../source/figures/btnGroup.png
 ```
 
-Dans l'image ci-dessus, les boutons "INDICES" et "AFFICHER LA RÉPONSE" vont faire apparaitre un "pop-up" différent, suivant lequel des deux est enclenché.
+Dans l'image ci-dessus, les boutons "INDICES" et "AFFICHER LA RÉPONSE" font apparaitre un "pop-up" différent, suivant lequel des deux est enclenché.
 
 ```{figure} ../source/figures/indices.png
 ---
@@ -193,25 +195,69 @@ width: 50%
 ```
 
 Chacun des deux *dialogs* a une couleur différente qui leur a été attribuée de manière arbitraire, pour différencier l'utilité de chaque bouton.
-Les boutons oranges sont destinés au réponse et ceux qui sont violets servent à donner des indices.
+Le bouton orange est destiné aux réponses et celui qui est violet sert à donner des indices. Ce sont les seules variétés de boutons qui existent dans le cours, pour afficher une fenêtre.
 
+## Importer du texte avec *JSON*
 
+Après avoir développé la version finale du projet, Monsieur Donner m'a demandé de stoquer le texte dans un fichier *JSON*, pour la page "1.1" du prototype et de la version finale. Ceci permet de diminuer énormément le contenu de chaque document. Le nom du fichier qui stoque le texte du chapitre "1.1" se nomme actuellement "introContent.json".
 
-## Directives *VueJS* utilisées pour former les pages du site
+```JSON
+{
+    "introduction": {
+        "presentation": "La cryptologie est la science des codes secrets et utlise des techniques propres à l’informatique et aux mathématiques. Dans ce cours, nous n’aborderons pas les aspects mathématiques des techniques de cryptographie modernes. La cryptologie englobe d’une part la <b>cryptographie</b> qui consiste à développer des codes secrets permettant de chiffrer des messages pour qu’ils soient incompréhensibles pour les personnes à qui ils ne sont pas destinés et la <b>cryptanalyse</b> qui consiste à <i>casser les codes secrets</i> utilisés par d’autres personnes pour tenter d’accéder aux informations chiffrées.",
 
-### V-html/import json file
+        "cryptographie1": "Les codes secrets sont utilisés depuis l’invention de l’écriture pour communiquer des informations de manière secrète et sécurisée, notamment lors des grandes campagnes militaires. Le code de César est un exemple assez simple utilisé dans l’Antiquité que nous allons aborder au cours.",
 
+        "cryptographie2": "Plus le nombre d’informations représentées sous forme digitale a augmenté, plus les codes secrets ont gagné en importance. Depuis l’avènement des technologies de télécommunication telles que la radio ou le télégraphe, les codes secrets jouent un rôle majeur pour le commerce et sur le champ de bataille. Le commerce électronique (e-commerce) ou les réseaux sociaux ne seraient absolument pas possibles sans les avancées modernes de la cryptographie, notamment le code RSA. À chaque fois que vous vous rendez sur un réseau social ou que vous effectuez un achat en ligne, vous utilisez des techniques modernes de cryptographie pour chiffrer les communications avec le serveur, permettant d’éviter que des tiers se procurent les informations communiquées ou ne détournent le paiement effectué.",
 
+        "cryptanalyse1": "Depuis l’avènement de la cryptographie, qui vise à communiquer ou stocker des informations sensibles de manière chiffrée pour les rendre inintelligibles, les personnes désireuses d’accéder à ces informations chiffrées ont du chercher des stratégies pour casser ces codes secrets. Comme nous le verrons, les codes secrets élaborés durant l’Antiquité sont tous relativement faciles à casser, du moins avec la puissance de calcul des ordinateurs actuels.",
+
+        "cryptanalyse2": "Lors de la deuxième guerre mondiale, une des raisons principales de la victoire des alliés sur la Wehrmacht est que les Anglais ont réussi à casser le code Enigma utilisé par les Allemands dans toutes leurs communications militaires.",
+
+        "cryptanalyse3": "Les techniques de cryptographie modernes permettent de créer des codes secrets beaucoup plus difficiles à casser. C’est la raison pour laquelle toutes les grandes puissances commerciales et militaires actuelles dépensent des sommes colossales pour engager les meilleurs mathématiciens, physiciens et informaticiens du monde et financer les services secrets responsables de percer les codes secrets utilisés par les adversaires pour en tirer un avantage commercial ou militaire.",
+
+        "cryptanalyse4": "Dans ce cours, vous allez découvrir quelques-uns des codes secrets les plus célèbres inventés dans l’Antiquité. Vous pourrez ainsi renforcer les compétences de programmation avec les chaînes de caractères."
+    }
+}
+```
+
+```{Tip}
+Il reste encore à stoquer le reste du texte du projet dans le document "introContent.json". Mais cette procédure sera effectuée en tant que bonus et le nom du document changera sûrement.
+```
+
+### V-html
+
+A partir de ce point, il faut importer le document *JSON* dans les fichiers "1.1". Pour cela, la démarche suivante est faite :
+
+```JavaScript
+import content from 'src/json/introContent.json'
+
+const contentData = ref(content.introduction)
+```
+
+De cette manière, la directive *v-html* est utilisée.
+
+```HTML
+<p v-html="contentData.presentation"></p>
+```
+
+Cette directive remplie le même rôle que la fonction *innerHTML*.
+
+Il aurait été plus facile de simplement écrire comme ci-dessous.
+
+```HTML
+<p>{{contentData.presentation}}</p>
+```
+
+Cependant, le problème est que dans le contenu *JSON*, il y a des balises *HTML*, comme par exemple : "\[...] la \<b>cryptanalyse\</b> qui consiste à \<i>casser les codes secrets\</i> utilisés par \[...]". Dans ce cas de figure, les balises *\<b>* et *\<i>* posent problèmes, car si la deuxième possibilité est exécutée, les balises seraient inclues dans le texte et une fois sur le site, les balises apparaitraient à l'écran.
+
+A contrario, la première possibilité permet de ne pas interpréter le contenu *JSON* comme du texte. Cela mène à garder la propriété des balises citées précédemment et donc d'avoir du texte en gras et en italique, aux endroits souhaités.
 
 ### Q-input/v-model/respondAnswer(exercice, correctAnswer, maxLength)
 
 
 
 ### Quiz/myQuizQuestions
-
-
-
-### Iframe
 
 
 
