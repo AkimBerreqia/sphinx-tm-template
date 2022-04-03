@@ -594,10 +594,8 @@ Pour chaque page, il y a des bouton qui ont des destinations différentes (un bo
 
 La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1.0 Index" est le titre de la page, qui se situe en dessous du titre de l'en-tête du site.
 
-[^defaultSource]: [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
 
-[^quasarSaasSource]: []()
+[^quasarSaasSource]: style quasar variables [https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8](https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8)
 
-[^quasarSource]:  [https://quasar.dev/](https://quasar.dev/)
-
-[^pageStickySource]: []()
+[^quasarSource]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
