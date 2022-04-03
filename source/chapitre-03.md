@@ -4,7 +4,7 @@
 
 ### v-if, q-btn et q-separator
 
-Le composant *q-btn* a plusieurs usages, pour le site interactif. Certains cas ont déjà été mentionnés, comme pour le bouton qui fait défiler vers le haut de la page, ou alors celui pour changer de page. Jusqu'à maintenant, *q-btn* a servit à mettre en mouvement la page. Pour les fonctions qui suivent, les deux prochains rôles du *q-btn* sont plutôt orientés sur un aspect de progression et de formation.
+Le composant *q-btn* a plusieurs usages pour le site interactif. Certains cas ont déjà été mentionnés, comme pour le bouton qui fait défiler vers le haut de la page, ou alors celui pour changer de page. Jusqu'à maintenant, *q-btn* a servi à mettre en mouvement la page. Pour les fonctions qui suivent, les deux prochains rôles du *q-btn* sont plutôt orientés sur un aspect de progression et de formation.
 
 Pour ce qui est de l'aspect de progression, un système de validation de section est mis en place avec un nouveau bouton, "VALIDER LA SECTION".
 
@@ -361,7 +361,7 @@ function respondAnswer(exercice, correctAnswer, maxLength){
 ```
 [^quasarSource5]
 
-La fonction prend ce que l'utilisateur écrit, pour contrôler le nombre de caractères qu'il y a. Pour la fonction, il s'agit d'"exercice". Si le nombre de caractères n'est pas égal au maximum requis, la fonction renvoie "..." dans l'espace réservé au résultat. Si la longueur maximale est atteinte, alors la fonction renvoie soit "Bonne réponse", si "correctAnswer" est pareil que "exercice". Mais si "correctAnswer" et "exercice" sont différents, alors la fonction renvoie "Mauvaise réponse". Pour l'exercice avec Rodolphe, "exercice" fait référence à "myQuestions.rodolphe", "correctAnswer" correspond à "myQuestions.rodolpheCorrectAnswer" et finalement "maxLength" fait cinquante-six caractères.
+La fonction prend ce que l'utilisateur écrit, pour contrôler le nombre de caractères qu'il y a. Pour la fonction, il s'agit "d'exercice". Si le nombre de caractères n'est pas égal au maximum requis, la fonction renvoie "..." dans l'espace réservé au résultat. Si la longueur maximale est atteinte, alors la fonction renvoie soit "Bonne réponse", si "correctAnswer" est pareil que "exercice". Mais si "correctAnswer" et "exercice" sont différents, alors la fonction renvoie "Mauvaise réponse". Pour l'exercice avec Rodolphe, "exercice" fait référence à "myQuestions.rodolphe", "correctAnswer" correspond à "myQuestions.rodolpheCorrectAnswer" et finalement "maxLength" fait cinquante-six caractères.
 
 ## Importer du texte avec *JSON*
 
@@ -696,7 +696,7 @@ function changeClick() {
 }
 ```
 
-## Système de recherche par mots clés "library"
+## Système de recherche par mots-clés "library"
 
 ```{Tip}
 Cet outil sera intégré dans le document "default.vue", quand tout le contenu du cours sera en format *JSON*. L'outil pourra puiser à l'intérieur de ce dernier, pour fonctionner avec chaque page du cours.
@@ -1024,7 +1024,7 @@ De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'i
 ```
 [^lexiqueSource3]
 
-Chaque section/*q-card-section* contient soit un titre, soit une explication. Dans la zone de texte, lorsque l'utilisateur écrit un mot clé, les résultats contiennent soit le mot clé dans le titre, soit dans l'explication.
+Chaque section/*q-card-section* contient soit un titre, soit une explication. Dans la zone de texte, lorsque l'utilisateur écrit un mot-clé, les résultats contiennent soit le mot-clé dans le titre, soit dans l'explication.
 
 ```{figure} ../source/figures/lexiqueResult.png
 figure n°24
@@ -1038,13 +1038,13 @@ figure n°25
 
 ### Bibliothèque ("library")
 
-Pour la bibliothèque, la recherche doit être faite avec des mots clés qui ne contiennent que des caractères en minuscules.
+Pour la bibliothèque, la recherche doit être faite avec des mots-clés qui ne contiennent que des caractères en minuscules.
 
 ```{figure} ../source/figures/libraryResult.png
 figure n°26
 ```
 
-Avec le mot clé "chiffre", voici le résultat :
+Avec le mot-clé "chiffre", voici le résultat :
 
 ```{figure} ../source/figures/libraryResultExemple.png
 figure n°27
@@ -1052,7 +1052,7 @@ figure n°27
 
 Lorsque le bouton "RECHERCHER" est enclenché, il fait apparaitre le résultat.
 
-La fonction "highLight()" vérifie que le mot clé/"SearchWord" figure dans l'un des élément de la constante "Titles". Si c'est vrai, la fonction renvoie tous les éléments qui contiennent le mot clé, sinon, la fonction renvoie "aucun résultat".
+La fonction "highLight()" vérifie que le mot-clé "SearchWord" figure dans l'un des élément de la constante "Titles". Si c'est vrai, la fonction renvoie tous les éléments qui contiennent le mot-clé, sinon, la fonction renvoie "aucun résultat".
 
 ```JavaScript
 let SearchWord = reactive({
@@ -1100,7 +1100,7 @@ function highLight(title, searchWord){
 ```
 [^librarySource2]
 
-Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie un autre élément que "aucun résultat", alors il est écrit "Résultat pour ", puis le mot clé, puis les éléments correspondant.
+Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie un autre élément "qu'aucun résultat", alors il est écrit 'Résultat pour ', puis le mot-clé, puis les éléments correspondant.
 
 [^quasarSource]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
 

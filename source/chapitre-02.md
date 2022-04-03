@@ -25,7 +25,7 @@ Pour le second, *Quasar* rend le code plus dynamique, en pré-fabricant des comp
 figure n°3
 ```
 
-Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour défini Le label est affiché à l'intérieur du bouton, uniquement avec des lettres en majuscule.
+Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour défini. Le label est affiché à l'intérieur du bouton, uniquement avec des lettres en majuscule.
 
 Avec *q-btn*, il n'est pas nécessaire de définir une classe ou un style dans l'élément, car le bouton a déjà ces informations définies par défaut. Il reste le label à indiquer, ou alors la couleur, mais ce n'est pas obligatoire, pour que le bouton apparaisse à l'écran.
 
@@ -34,7 +34,7 @@ Avec *q-btn*, il n'est pas nécessaire de définir une classe ou un style dans l
 ```
 
 ```{Warning}
-Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Cédric Donner mis à disposition, pour coder le projet. Ce dépôt a été créé par Allen Lau. (lien vers le dépôt *GitHub* d'Allen Lau : [https://github.com/fyeeme/vite-quasar](https://github.com/fyeeme/vite-quasar))
+Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Cédric Donner a mis à disposition, pour coder le projet. Ce dépôt a été créé par Allen Lau. (lien vers le dépôt *GitHub* d'Allen Lau : [https://github.com/fyeeme/vite-quasar](https://github.com/fyeeme/vite-quasar))
 Cependant, il y a quelques changements qui ont été apportés pour permettre au site interactif d'avoir l'aspect qu'il a aujourd'hui.
 ```
 
@@ -190,7 +190,7 @@ Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
 ```
 [^defaultSource3]
 
-Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière plan. La couleur primary est la couleur de référence du site.
+Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière-plan. La couleur primary est la couleur de référence du site.
 
 Dans le fichier *quasar-variables.sass* à l'emplacement 'src/assets/style/quasar-variables.sass', il est possible de définir une infinité de couleurs en se servant à chaque fois d'un certain mot pour lui attribuer une couleur. Dans ce cas de figure, *primary* fait référence à la couleur #33abd6, générée en hexadécimal. Voici ci-dessous tous les exemples disponibles pour le site :
 
@@ -378,7 +378,7 @@ Dans un premier temps, *.slide-fade-enter* donne les informations du menu, lorsq
 
 Dans un second temps, *.slide-fade-enter-active* et *.slide-fade-leave-active* donnent le temps que la transition d'apparition et celle de disparition mettent pour exécuter l'action.
 
-La couleur d'arrière plan du site est la suivante :
+La couleur d'arrière-plan du site est la suivante :
 
 ```CSS
 html { 
@@ -404,7 +404,7 @@ Le style du contenu de la page est influencé par les paramètres suivants :
 ```
 [^defaultSource15]
 
-Ce composant possède une marge automatique. Il a seulement une marge de cinquante pixels en haut, pour chaque page. Le contenu est centré au milieu de la page, mais le texte aligné à gauche, avec une couleur d'arrière plan qui se rapproche du blanc, *#dedcdc*, et avec un texte bleu, *#33abd6*. Le conteneur de page a une largeur maximale de quarante "em", pour rendre le texte plus lisible et pour ne pas avoir une surcharge de mots par ligne.
+Ce composant possède une marge automatique. Il a seulement une marge de cinquante pixels en haut, pour chaque page. Le contenu est centré au milieu de la page, mais le texte aligné à gauche, avec une couleur d'arrière-plan qui se rapproche du blanc, *#dedcdc*, et avec un texte bleu, *#33abd6*. Le conteneur de page a une largeur maximale de quarante "em", pour rendre le texte plus lisible et pour ne pas avoir une surcharge de mots par ligne.
 
 "Em" est une unité de mesure qui existe en *CSS* et qui est aussi appelée, unité relative. Bien évidemment, ce n'est pas la seule unité qui est utilisée. Il faut distinguer les unités relatives et les unités absolues. Elles jouent chacunes un rôle différent dans le style d'un site.
 
@@ -429,7 +429,7 @@ Chaque page a un *scroller* de page, sous forme de bouton pour pouvoir défiler 
 ```
 [^defaultSource16]
 
-La *position* du défileur de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appellation *round* L'icône du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur "vert clair", qui lui est attribuée par le mot "positive".
+La *position* du *scroller* de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appellation *round* L'icône du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur "vert clair", qui lui est attribuée par le mot "positive".
 
 ## Composants *Quasar* utilisés pour former la page d'accueil/*index.vue*
 
@@ -520,7 +520,7 @@ Le composant *q-carousel* va créer une zone qui est séparée en plusieurs page
 figure n°7
 ```
 
-L'image ci-dessus contient deux encadrés blancs, qui représente chacun un carrousel.
+L'image ci-dessus contient deux encadrés blancs, qui représentent chacun un carrousel.
 
 ```HTML
 <q-carousel
@@ -578,7 +578,7 @@ Pour la page d'index, ce composant joue deux rôles.
 ```
 [^quasarSource4]
 
-La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière plan des boutons est d'une teinte presque transparente. L'icône utilisé est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
+La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière-plan des boutons est d'une teinte presque transparente. L'icône utilisée est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
 
 ```{admonition} Important
 Pour chaque page, il y a des bouton qui ont des destinations différentes (un bouton qui renvoie à la page d'accueil, un autre pour accéder à la page précédente et un dernier pour passer à la page suivante), mais la base du code reste la même.

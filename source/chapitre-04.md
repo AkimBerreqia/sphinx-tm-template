@@ -24,9 +24,9 @@ Il y avait une contrainte pour afficher le résultat. Il fallait que les éléme
 
 Pour le lexique, il a été compliqué d'insérer les bonnes définitions, avec les bon titres, car l'ajout de ces éléments dans la constante *rows*, ne se faisait pas dans un ordre précis. Il a donc fallu changer cela, pour que chaque titre et définition, qui vont ensemble, soit regroupés dans une même liste, à l'intérieur de *rows*.
 
-Pour les problèmes plus esthétiques, la taille des cartes variées selon la longueur du texte.
+Pour les problèmes plutôt esthétiques, la taille des cartes varient selon la longueur du texte.
 
-La bibliothèque a quant à elle posé problème dans l'affichage du résultat. Il fallait que les éléments qui comportent le(s) mot(s) clé(s) s'affichent en liste à puces. Mais étant donné qu'il faille intégrer les éléments dans une variable, la syntaxe *HTML* posait soucis. Le but était de pouvoir intégrer dans une balise la variable *research*. Donc, pour pallier à ce problème, il a été décidé de mettre deux barres obliques, pour montrer la séparation entre chaque élément.
+La bibliothèque a quant à elle posé problème dans l'affichage du résultat. Il fallait que les éléments qui comportent le(s) mot(s)-clé(s) s'affichent en liste à puces. Mais étant donné qu'il faille intégrer les éléments dans une variable, la syntaxe *HTML* posait soucis. Le but était de pouvoir intégrer dans une balise la variable *research*. Donc, pour pallier à ce problème, il a été décidé de mettre deux barres obliques, pour montrer la séparation entre chaque élément.
 
 En ce qui concerne l'importation du fichier "introContent.json" dans la première page du cours, il a été compliqué d'importer le contenu *JSON* pour l'utiliser en *JavaScript*. Monsieur Cédric Donner a résolu le problème grâce la commande suivante, "import content from 'src/json/introContent.json'". Il suffisait d'importer le contenu du document *JSON*, comme étant un attribut du script *JavaScript*.
 

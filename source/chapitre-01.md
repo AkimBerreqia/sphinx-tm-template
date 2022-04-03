@@ -4,11 +4,11 @@
 
 ### Motivations personnelles
 
-L'idée de base était de créer un jeu vidéo, avec Romain De Groote. Chacun devait apprendre un domaine lié à l'informatique. Romain s'occupait d'enseigner la compression de donnée, alors que je m'occupais d'enseigner la cryptologie. Malheureusement, il a fallu à plusieurs reprises modifier le travail, suite à des problèmes d'organisation.
+L'idée de base était de créer un jeu vidéo, avec Romain De Groote. Chacun devait apprendre un domaine lié à l'informatique. Romain s'occupait d'enseigner la compression de données, alors que je m'occupais d'enseigner la cryptologie. Malheureusement, il a fallu à plusieurs reprises modifier le travail, suite à des problèmes d'organisation.
 
 Il a d'abord fallu laisser tomber le concept de jeu vidéo, pour se concentrer exclusivement sur la matière à enseigner, car le projet stagnait de plus en plus. Mais finalement, à cause du retard accumulé pendant la première partie de l'année scolaire et à cause des insuffisances scolaires de chacun, il a été préférable de séparer le groupe en deux nouveaux travaux de maturité différents, pour ne pas pénaliser l'autre. Pour chacun, le contenu à communiquer est resté le même, mais l'approche pour le faire apprendre a changé. De cette manière, le site de cours interactif sur la cryptologie a démarré.
 
-A ce moment, la situation était assez décourageante. L'option d'arrêter le travail de maturité était présente. Cependant, la décision prise a été de ne pas baisser les bras et de recommencer un projet, qui suit toujours l'idée de base, enseigner la cryptologie, mais il fallait faire un projet dans le laps de temps restreint.
+A ce moment, la situation était assez décourageante. L'option d'arrêter le travail de maturité était présente. Cependant, la décision prise a été de ne pas baisser les bras et de recommencer un projet, qui suit toujours l'idée de base, enseigner la cryptologie, mais il fallait faire un projet dans un laps de temps restreint.
 
 Suite à cela, la période qui s'est écoulée, à partir du mois de février jusqu'à ce jour, m'a été bénéfique en ce qui concerne les connaissances acquises dans le domaine de la création de site, ainsi que dans le domaine des langages de programmation appris.
 
