@@ -14,7 +14,7 @@ Il fallait plusieurs moyens pour que l'utilisateur puisse interagir avec une pan
 
 Dans ce cas de figure, *v-model* correspond à ce que l'utilisateur écrit dans la zone de texte. L'élément "p" va reprendre le *v-model* pour l'intégrer à l'emplacement *{{réponse}}*. De ce fait, si l'utilisateur écrit "merveilleuse", le texte affichera : "Votre réponse est merveilleuse".
 
-Pour le second, *Quasar* rend le code plus dynamique, en préfabriquant des composants qui permettent d'avoir, par exemple, un bouton, avec une certaine taille, un certain contour, etc.
+Pour le second, *Quasar* rend le code plus dynamique, en pré-fabricant des composants qui permettent d'avoir, par exemple, un bouton, avec une certaine taille, un certain contour, etc.
 
 ```HTML
 <q-btn label="Clique" />
@@ -29,11 +29,11 @@ Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour défini Le 
 Avec *q-btn*, il n'est pas nécessaire de définir une classe ou un style dans l'élément, car le bouton a déjà ces informations définies par défaut. Il reste le label à indiquer, ou alors la couleur, mais ce n'est pas obligatoire, pour que le bouton apparaisse à l'écran.
 
 ```{Admonition} A savoir
-*Quasar* met à disposition des composants libre de droit, qui peuvent être modifier pour plaire à chacun (lien du site : [https://quasar.dev/](https://quasar.dev/)).
+*Quasar* met à disposition des composants libres de droit, qui peuvent être modifiés pour plaire à chacun (lien du site : [https://quasar.dev/](https://quasar.dev/)).
 ```
 
 ```{Warning}
-Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Donner mis à disposition, pour coder le projet. Ce dépôt a été créer par Allen Lau. (lien vers le dépôt *GitHub* d'Allen Lau : [https://github.com/fyeeme/vite-quasar](https://github.com/fyeeme/vite-quasar))
+Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Cédric Donner mis à disposition, pour coder le projet. Ce dépôt a été créé par Allen Lau. (lien vers le dépôt *GitHub* d'Allen Lau : [https://github.com/fyeeme/vite-quasar](https://github.com/fyeeme/vite-quasar))
 Cependant, il y a quelques changements qui ont été apportés pour permettre au site interactif d'avoir l'aspect qu'il a aujourd'hui.
 ```
 
@@ -138,7 +138,7 @@ Le code qui suit a déjà été modifié, pour convenir aux besoins du site inte
 ```
 [^defaultSource]
 
-C'est à partir de ce fichier que les éléments généraux par défauts du site sont générés, comme par exemple la taille du texte, les marges, la couleur du font de la page, etc.
+C'est à partir de ce fichier que les éléments généraux par défaut du site sont générés, comme par exemple la taille du texte, les marges, la couleur du font de la page, etc.
 
 ```{figure} ../source/figures/homePageNow.png
 ```
@@ -156,7 +156,7 @@ Le document *default.vue* contient, tout d'abord le plan de la page, autrement d
 ```{figure} ../source/figures/layout.png
 ```
 
-Les lettres en majuscule signifient que l'élément de la page a une position fixe, sur l'écran. C'est à dire que si la page défile vers le bas, ces éléments apparaissent toujours à l'endroit où ils sont de base. Pour le site interactif, le composant *q-layout* définie le plan comme ceci :
+Les lettres en majuscule signifient que l'élément de la page a une position fixe, sur l'écran. C'est à dire que si la page défile vers le bas, ces éléments apparaissent toujours à l'endroit où ils sont de base. Pour le site interactif, le composant *q-layout* défini le plan comme ceci :
 
 ```HTML
 <template>
@@ -167,7 +167,7 @@ Les lettres en majuscule signifient que l'élément de la page a une position fi
 ```
 [^defaultSource2]
 
-Chaque bloque de lettres correspond à une ligne du tableau. Les lettres *h* et *H* configurent la forme de l'en-tête. Le *l* et le *L* sont pour le menu déroulant de gauche. Le *p* ne change jamais. Le *r* et le *R* donnent la position du menu déroulant de droite. Finalement, le *f* et le *F* représentent le bas de page.
+Chaque bloc de lettres correspond à une ligne du tableau. Les lettres *h* et *H* configurent la forme de l'en-tête. Le *l* et le *L* sont pour le menu déroulant de gauche. Le *p* ne change jamais. Le *r* et le *R* donnent la position du menu déroulant de droite. Finalement, le *f* et le *F* représentent le bas de page.
 
 ```{Admonition} A savoir
 Il n'est pas obligatoire d'avoir de menus déroulant pour faire un site. Dans ce cas, il ne faut pas rajouter de composants *q-drawer* à la suite de l'instruction du plan du site. De cette manière, les instructions données dans le *q-layout* pour les menus déroulant n'impactent pas la suite du code.
@@ -207,12 +207,12 @@ $warning   : #F2C037
 Pour *text-white*, il donne la couleur du texte et pour *text-left*, il donne l'alignement du texte de l'en-tête.
 
 ```{Admonition} Important
-Sans ce composant, le site n'affichera pas d'en-tête, car *q-header* définit, en quelque sorte, que le site doit contenir un en-tête. Il y a également d'autres composants qui joue le même rôle. Par exemple, *q-page-container* définit le contenu de la page, *q-page-sticky* définit les éléments qui gardent la même position, si la page défile, *q-toolbar* définit le contenu de la barre d'outils, etc. Ces composants sont développés plus en détail, par la suite.
+Sans ce composant, le site n'affichera pas d'en-tête, car *q-header* définit, en quelque sorte, que le site doit contenir un en-tête. Il y a également d'autres composants qui jouent le même rôle. Par exemple, *q-page-container* définit le contenu de la page, *q-page-sticky* définit les éléments qui gardent la même position, si la page défile, *q-toolbar* définit le contenu de la barre d'outils, etc. Ces composants sont développés plus en détail, par la suite.
 ```
 
 #### *q-toolbar et q-toolbar-title*
 
-Ces composants servent à définir le titre principale du site, qui apparait constamment dans l'en-tête :
+Ces composants servent à définir le titre principal du site, qui apparait constamment dans l'en-tête :
 
 ```HTML
 <q-toolbar>
@@ -224,7 +224,7 @@ Ces composants servent à définir le titre principale du site, qui apparait con
 ```
 [^defaultSource4]
 
-*q-toolbar* contient toutes les informations qui apparaissent dans l'en-tête. Il y a tout d'abord un bouton, *q-btn*, qui permet de faire apparaitre le menu déroulant. Ce bouton a comme propriété d'avoir l'icone *menu*, qu'il est rond, qu'il doit inverser la valeur de *drawerLeft* s'il est pressé, etc. Les autres propriétés sont moyens importantes.
+*q-toolbar* contient toutes les informations qui apparaissent dans l'en-tête. Il y a tout d'abord un bouton, *q-btn*, qui permet de faire apparaitre le menu déroulant. Ce bouton a comme propriété d'avoir l'icône *menu*, qu'il est rond, qu'il doit inverser la valeur de *drawerLeft* s'il est pressé, etc. Les autres propriétés sont moins importantes.
 
 Pour ce qui est du titre de la barre d'outils, *q-toolbar-title*, il est nommé comme étant : "1 Cryptologie et codage de l’information".
 
@@ -251,7 +251,7 @@ Ce composant contient tous les éléments qui définissent le menu déroulant.
 
 La directive *v-model* donne comme référence au tiroir la constante *drawerLeft*. Si cette constante change, le tiroir est influencé.
 
-C'est ici que le bouton de l'en-tête est utilisé. La valeur de la constante *drawerLeft* est assignée comme étant fausse, par défaut. A chaque fois que le bouton est pressé, sa valeur varie entre vrai et faux. Si sa valeur est vrai, alors le menu déroulant apparait à l'écran.
+C'est ici que le bouton de l'en-tête est utilisé. La valeur de la constante *drawerLeft* est assignée comme étant fausse, par défaut. A chaque fois que le bouton est pressé, sa valeur varie entre vrai et faux. Si sa valeur est vraie, alors le menu déroulant apparait à l'écran.
 
 ```JavaScript
 import {ref} from 'vue'
@@ -414,7 +414,7 @@ Pour les unités absolues, il y a : "cm", "mm", "Q" (quart de millimètre), "in"
 
 #### *q-page-scroller*
 
-Chaque page a un défileur de page, sous forme de bouton pour pouvoir défiler vers le haut, grâce au composant *q-page-scroller* montré ci-dessous :
+Chaque page a un *scroller* de page, sous forme de bouton pour pouvoir défiler vers le haut, grâce au composant *q-page-scroller* montré ci-dessous :
 
 ```HTML
 <q-page-scroller position="bottom-right" :offset="[0, 0]" :scroll-offset="0">
@@ -425,7 +425,7 @@ Chaque page a un défileur de page, sous forme de bouton pour pouvoir défiler v
 ```
 [^defaultSource16]
 
-La *position* du défileur de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appelation *round* L'icone du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur vert clair, qui lui est attribuée par le mot "positive".
+La *position* du défileur de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appellation *round* L'icône du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur "vert clair", qui lui est attribuée par le mot "positive".
 
 ## Composants *Quasar* utilisés pour former la page d'accueil/*index.vue*
 
@@ -449,7 +449,7 @@ Le code de la page se présente comme ceci :
           <q-carousel-slide name="presentation" class="column no-wrap">
               <h2>1.0.1 Présentation</h2>
 
-              <p>Bienvenue au cours interctif de cryptographie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
+              <p>Bienvenue au cours interactif de cryptographie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
       
               <q-btn elevated rounded><router-link to="/1.1 Introduction">Commencer le cours</router-link></q-btn>
           </q-carousel-slide>
@@ -515,7 +515,7 @@ Le composant *q-carousel* va créer une zone qui est séparée en plusieurs page
 ```{figure} ../source/figures/indexCarousel.png
 ```
 
-L'image ci-dessus contient deux encadrés blanc, qui représente chacun un carrousel.
+L'image ci-dessus contient deux encadrés blancs, qui représente chacun un carrousel.
 
 ```HTML
 <q-carousel
@@ -573,7 +573,7 @@ Pour la page d'index, ce composant joue deux rôles.
 ```
 [^quasarSource4]
 
-La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière plan des boutons est d'une teinte presque transparente. L'icone utilisé est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
+La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière plan des boutons est d'une teinte presque transparente. L'icône utilisé est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
 
 ```{admonition} Important
 Pour chaque page, il y a des bouton qui ont des destinations différentes (un bouton qui renvoie à la page d'accueil, un autre pour accéder à la page précédente et un dernier pour passer à la page suivante), mais la base du code reste la même.

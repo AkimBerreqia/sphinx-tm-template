@@ -1,4 +1,4 @@
-# 1. Cheminement du projet/Introduction
+# 1. Cheminement du projet / Introduction
 
 ## Présentation du projet
 
@@ -6,17 +6,17 @@
 
 L'idée de base était de créer un jeu vidéo, avec Romain De Groote. Chacun devait apprendre un domaine lié à l'informatique. Romain s'occupait d'enseigner la compression de donnée, alors que je m'occupais d'enseigner la cryptologie. Malheureusement, il a fallu à plusieurs reprises modifier le travail, suite à des problèmes d'organisation.
 
-Il a d'abord fallu laisser tomber le concept de jeu vidéo, pour se concentrer exclusivement sur la matière à enseigner, car le projet stagnait de plus en plus. Mais finalement, à cause du retard accumulé pendant la première partie de l'année scolaire et à cause des insuffisances scolaires de chacun, il a été préférable de séparer le groupe en deux nouveaux travaux de maturité différents, pour ne pas pénaliser l'autre. Pour chacun, le contenu à communiquer est resté le même, mais l'approche pour le faire apprendre a changé. De cette manière, le site de cours interactif sur la cryptologie est arrivé.
+Il a d'abord fallu laisser tomber le concept de jeu vidéo, pour se concentrer exclusivement sur la matière à enseigner, car le projet stagnait de plus en plus. Mais finalement, à cause du retard accumulé pendant la première partie de l'année scolaire et à cause des insuffisances scolaires de chacun, il a été préférable de séparer le groupe en deux nouveaux travaux de maturité différents, pour ne pas pénaliser l'autre. Pour chacun, le contenu à communiquer est resté le même, mais l'approche pour le faire apprendre a changé. De cette manière, le site de cours interactif sur la cryptologie a démarré.
 
 A ce moment, la situation était assez décourageante. L'option d'arrêter le travail de maturité était présente. Cependant, la décision prise a été de ne pas baisser les bras et de recommencer un projet, qui suit toujours l'idée de base, enseigner la cryptologie, mais il fallait faire un projet dans le laps de temps restreint.
 
-Suite à cela, la période qui s'est écoulé à partir du mois de février jusqu'à ce jour, m'a été bénéfique en ce qui concerne les connaissances acquisent dans le domaine de la création de site, ainsi que dans le domaine des langages de programmation appris.
+Suite à cela, la période qui s'est écoulée, à partir du mois de février jusqu'à ce jour, m'a été bénéfique en ce qui concerne les connaissances acquises dans le domaine de la création de site, ainsi que dans le domaine des langages de programmation appris.
 
-### Structure du site/description du projet
+### Structure du site et description du projet
 
 #### Objectifs initiaux
 
-Le projet a pour but d'apporter un aspect plus neuf au site de Monsieur Donner Cédric, pour le cours sur la cryptologie, afin qu'il soit plus simple aux élèves du Collège du Sud d'apprendre ce domaine, de manière plus ludique. Bien évidemment, il s'agit surtout d'une base de site, alors il est également possible de reprendre le code présent pour ajouter, à tout moment, des chapitres supplémentaires.
+Le projet a pour but d'apporter un aspect plus neuf au site de Monsieur Cédric Donner, pour le cours sur la cryptologie, afin qu'il soit plus simple d'apprendre ce domaine aux élèves du Collège du Sud et de manière plus ludique. Bien évidemment, il s'agit surtout d'une base de site, alors il est également possible de reprendre le code présent pour ajouter, à tout moment, des chapitres supplémentaires.
 
 #### Technologies utilisées
 
@@ -48,11 +48,11 @@ Il y aurait possiblement une prise de retard, pour pouvoir trouver certaines sol
 
 #### Parcours de l'étudiant
 
-L'étudiant n'a pas besoin de savoir beaucoup de notions sur la cryptologie pour participer au cours. Il doit seulement avoir les notions de base des cours d'informatique sur la programmation en python.
+L'étudiant n'a pas besoin d'avoir beaucoup de notions sur la cryptologie pour participer à ce cours. Il doit seulement avoir les notions de base des cours d'informatique sur la programmation en python.
 
 Le chiffre de César, l'attaque par force brute, ainsi que le chiffrement par substitution monoalphabétique sont abordés au fur et à mesure que l'étudiant avance dans le cours.
 
-Le travail de l'élève est de traverser les différentes pages théoriques et pratiques, qui sont illustrées par des exercices interactifs.
+Le travail de l'élève est de parcourir les différentes pages théoriques et pratiques, qui sont illustrées par des exercices interactifs.
 
 #### Procédure
 
@@ -62,9 +62,9 @@ Tout d'abord, il a fallu apprendre comment fonctionnent les directives *Vue*, ai
 
 ##### Présentation du site (prototype et version finale)
 
-Le site est passé par plusieurs étapes. Depuis la réédition de la version intérmédiaire, il a fallu se familiariser avec la technologie *Vue*.
+Le site est passé par plusieurs étapes. Depuis la réédition de la version intermédiaire, il a fallu se familiariser avec la technologie *Vue*.
 
-Monsieur Donner Cédric m'a demandé de suivre un cours en ligne pour apprendre à me servir de *Vue.js* (lien du cours : [https://vuejs.org/tutorial/#step-1](https://vuejs.org/tutorial/#step-1)).
+Monsieur Cédric Donner m'a demandé de suivre un cours en ligne pour apprendre à me servir de *Vue.js* (lien du cours : [https://vuejs.org/tutorial/#step-1](https://vuejs.org/tutorial/#step-1)).
 
 A partir de ce point, le prototype a commencé à prendre forme.
 

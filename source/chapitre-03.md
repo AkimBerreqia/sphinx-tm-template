@@ -37,7 +37,7 @@ let section = ref(false)
 
 En se servant de la directive *v-if*, il est possible de choisir quand est-ce que l'un des deux boutons doit apparaitre à l'écran.
 
-Dès que l'utilisateur clique sur le bouton visible, la valeur de *section* est inversée, pour cacher le bouton visible et inversément pour le bouton invisible.
+Dès que l'utilisateur clique sur le bouton visible, la valeur de *section* est inversée, pour cacher le bouton visible et inversement pour le bouton invisible.
 
 Pour conclure chaque section, il y a une barre de séparation, qui est mise à la suite du dernier bouton de validation.
 
@@ -46,7 +46,7 @@ Pour conclure chaque section, il y a une barre de séparation, qui est mise à l
 ```
 [^quasarSource2]
 
-En ce qui concerne le dernier aspect basé sur la formation, il est combiné à d'autres outils pour composer des exercices, dans lesquels, l'utilisateur doit écrire du texte. Cet utilité est développée dans la prochaine section.
+En ce qui concerne le dernier aspect basé sur la formation, il est combiné à d'autres outils pour composer des exercices, dans lesquels, l'utilisateur doit écrire du texte. Cette utilité est développée dans la prochaine section.
 
 ## Système d'exercices "respondAnswer"
 
@@ -351,11 +351,11 @@ function respondAnswer(exercice, correctAnswer, maxLength){
 ```
 [^quasarSource5]
 
-La fonction prend ce que l'utilisateur écrit, pour contrôler le nombre de caractère qu'il y a. Pour la fonction, il s'agit de "exercice". Si le nombre de caractères n'est pas égal au maximum requis, la fonction renvoie "..." dans l'espace réservé au résultat. Si la longueur maximale est atteinte, alors la fonction renvoie soit "Bonne réponse, si "correctAnswer" est pareil que "exercice". Mais si "correctAnswer" et "exercice" sont différents, alors la fonction renvoie "Mauvaise réponse". Pour l'exercice avec Rodolphe, "exercice" fait référence à "myQuestions.rodolphe", "correctAnswer" correspond à "myQuestions.rodolpheCorrectAnswer" et finalement "maxLength" fait cinquante-six caractères.
+La fonction prend ce que l'utilisateur écrit, pour contrôler le nombre de caractères qu'il y a. Pour la fonction, il s'agit d'"exercice". Si le nombre de caractères n'est pas égal au maximum requis, la fonction renvoie "..." dans l'espace réservé au résultat. Si la longueur maximale est atteinte, alors la fonction renvoie soit "Bonne réponse", si "correctAnswer" est pareil que "exercice". Mais si "correctAnswer" et "exercice" sont différents, alors la fonction renvoie "Mauvaise réponse". Pour l'exercice avec Rodolphe, "exercice" fait référence à "myQuestions.rodolphe", "correctAnswer" correspond à "myQuestions.rodolpheCorrectAnswer" et finalement "maxLength" fait cinquante-six caractères.
 
 ## Importer du texte avec *JSON*
 
-Après avoir développé la version finale du projet, Monsieur Donner m'a demandé de stoquer le texte dans un fichier *JSON*, pour la page "1.1" du prototype et de la version finale. Ceci permet de diminuer énormément le contenu de chaque document. Le nom du fichier qui stoque le texte du chapitre "1.1" se nomme actuellement "introContent.json".
+Après avoir développé la version finale du projet, Monsieur Cédric Donner m'a demandé de stocker le texte dans un fichier *JSON*, pour la page "1.1" du prototype et de la version finale. Ceci permet de diminuer énormément le contenu de chaque document. Le nom du fichier qui stocke le texte du chapitre "1.1" se nomme actuellement "introContent.json".
 
 ```JSON
 {
@@ -406,7 +406,7 @@ Cependant, le problème est que dans le contenu *JSON*, il y a des balises *HTML
 
 A contrario, la première possibilité permet de ne pas interpréter le contenu *JSON* comme du texte. Cela mène à garder la propriété des balises citées précédemment et donc d'avoir du texte en gras et en italique, aux endroits souhaités.
 
-## Système de quizs "myQuizQuestions"
+## Système de quiz "myQuizQuestions"
 
 ```{Admonition} A savoir
 Le code qui compose le quiz est très fortement inspiré d'un code déjà existant, qui se trouve dans un tutoriel, pour apprendre à faire un quiz en *JavaScript*. (lien vers le site : [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/))
@@ -504,7 +504,7 @@ function previous() {
 ```
 [^quizSource]
 
-Les quizs font partie du deuxième système créé pour que l'élève puisse apprendre en s'exerçant. Ce système possède une structure assez simple.
+Les quiz font partie du deuxième système créé pour que l'élève puisse apprendre en s'exerçant. Ce système possède une structure assez simple.
 
 ```{figure} ../source/figures/quiz.png
 ```
@@ -597,7 +597,7 @@ const answers = reactive([])
 ```
 [^quasarSource6]
 
-Pour donner le résultat à l'utilisateur, la constante "answers" stoque la réponse enregistrée par l'élève. Cette réponse est vérifiée pour choisir quel résultat il faut afficher à l'écran.
+Pour donner le résultat à l'utilisateur, la constante "answers" stocke la réponse enregistrée par l'élève. Cette réponse est vérifiée pour choisir quel résultat il faut afficher à l'écran.
 
 ```HTML
 <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
@@ -768,7 +768,7 @@ const signification = [
   'Art d’inventer et d’appliquer des méthodes de chiffrement (codes secrets) sûrs et pratiques d’utilisation. Il s’agit aussi de vérifier et prouver la sécurité des codes secrets utilisés / proposés.',
   'Art de casser des codes secrets, à savoir déchiffrer des messages chiffrés sans connaître la clé de déchiffrement et / ou la méthode de chiffrement utilisée.',
   'Science des codes secrets qui regroupe la cryptographie ou la cryptanalyse. La cryptologie consiste donc autant à inventer des codes secrets qu’à essayer de casser les codes secrets d’autres personnes.',
-  'Un chiffre est un code secret particulier, par exemple le Chiffre de César, le chiffre de Polybe ou le chiffre de Vigenère',
+  'Un chiffre est un code secret particulier, par exemple le chiffre de César, le chiffre de Polybe ou le chiffre de Vigenère',
   'Le texte en clair est le message à chiffrer, lisible par tout le monde.',
   'Le texte chiffré est illisible',
   'Transformer un texte en clair en son équivalent chiffré.',
@@ -932,7 +932,7 @@ Pour comparer les deux visuels entre le lexique et la bibliothèque, voici un re
 
 ### Lexique
 
-Pour le premier, les constantes "terme" et "signification" contiennent les titres et définitions du lexique.
+Pour le premier, les constantes "terme" et "signification" contiennent les titres et les définitions du lexique.
 
 ```JavaScript
 const terme = [
@@ -949,7 +949,7 @@ const terme = [
 ]
 
 const signification = [
-  'Art d’inventer et d’appliquer des méthodes de chiffrement (codes secrets) sûrs et pratiques d’utilisation. Il s’agit aussi de vérifier et prouver la sécurité des codes secrets utilisés / proposés.',
+  'Art d’inventer et d’appliquer des méthodes de chiffrement (codes secrets) sûrs et pratiques d’utilisation. Il s’agit aussi de vérifier et de prouver la sécurité des codes secrets utilisés / proposés.',
   'Art de casser des codes secrets, à savoir déchiffrer des messages chiffrés sans connaître la clé de déchiffrement et / ou la méthode de chiffrement utilisée.',
   'Science des codes secrets qui regroupe la cryptographie ou la cryptanalyse. La cryptologie consiste donc autant à inventer des codes secrets qu’à essayer de casser les codes secrets d’autres personnes.',
   'Un chiffre est un code secret particulier, par exemple le Chiffre de César, le chiffre de Polybe ou le chiffre de Vigenère',
@@ -973,7 +973,7 @@ terme.forEach(titleName => {
 ```
 [^lexiqueSource2]
 
-De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'intérieur d'un tableau différent. Ces tableaux sont fabriquées par le composant *q-table*.
+De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'intérieur d'un tableau différent. Ces tableaux sont fabriqués par le composant *q-table*.
 
 ```HTML
 <q-table
@@ -1013,14 +1013,14 @@ Chaque section/*q-card-section* contient soit un titre, soit une explication. Da
 ```{figure} ../source/figures/lexiqueResult.png
 ```
 
-Dans ce cas ci-dessus, il s'agit de "chiffre". Si "chiffre" est mis en évidence dans les résultat, voici à quoi cela ressemble :
+Dans ce cas ci-dessus, il s'agit de "chiffre". Si "chiffre" est mis en évidence dans les résultats, voici à quoi cela ressemble :
 
 ```{figure} ../source/figures/lexiqueHighlight.png
 ```
 
 ### Bibliothèque ("library")
 
-Pour la bibliothèque, la recherche doit être faite avec des mots clés qui ne contiennent que des caractères minuscules.
+Pour la bibliothèque, la recherche doit être faite avec des mots clés qui ne contiennent que des caractères en minuscules.
 
 ```{figure} ../source/figures/libraryResult.png
 ```
@@ -1080,7 +1080,7 @@ function highLight(title, searchWord){
 ```
 [^librarySource2]
 
-Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie quelque un élément, alors il est écrit "Résultat pour ", puis le mot clé, puis les éléments correspondant.
+Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie un autre élément que "aucun résultat", alors il est écrit "Résultat pour ", puis le mot clé, puis les éléments correspondant.
 
 [^quasarSource]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
 
