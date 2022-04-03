@@ -46,8 +46,10 @@ Le manque de connaissances a énormément ralentit l'avancement du projet, car l
 
 Il reste encore quelques détails à développer pour finir entièrement le projet.
 
+La page sur l'attaque par fréquence n'est pas encore finie. Elle sera prête pour l'oral.
 
-(Bonus)
-- library liste + dans cours
-- finir attaque par fréquence
-- finir texte en json
+Certains composants présentés auraient pu être utilisés comme des balises, car ils sont réutilisés plusieurs fois de la même manière au cours du projet, mais avec quelques paramètres qui changent. Un document avec de nouvelles balises pourra être rajouté, pour contenir par exemple une balise qui fabrique un pop-up, avec tous les paramètres présents dans le code qui seront dans le nouveau document.
+
+Il faudra touver un moyen de lister les résultats obtenus avec l'outil *library*, ainsi que de l'intégrer dans le cours.
+
+Il reste encore à stoquer le reste du texte du projet dans le document "introContent.json". Une fois fait, il faudra renommer le document, pour que le nom soit plus général, par exemple "cryptoContent.json".

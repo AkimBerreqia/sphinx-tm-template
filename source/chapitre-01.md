@@ -22,7 +22,7 @@ Le projet a pour but d'apporter un aspect plus neuf au site de Monsieur Donner C
 
 Les technologies de développement du projet comportent *le Javascript*, *l'HTML*, *le CSS*, et *Quasar* au travers de *VueJS*, qui sert également à héberger le projet. Une grande partie des recherches du développement du code a été faite à partir d'informations réunies sur internet et qui sont sourcées directement dans les documents *.vue*, ou à partir d'informations provenant de livres, qui abordent le domaine de la cryptologie.
 
-La partie écrite du travail de maturité est rédigée dans des fichiers *markdown*, depuis GitPod.io avec le langage de programmation LaTeX, qui suit la documentation Sphinx. Il y a également un dépôt *GitHub*, qui sert à suivre l'évolution du projet.
+La partie écrite du travail de maturité est rédigée dans des fichiers *markdown*, depuis *GitPod.io* avec le langage de programmation *LaTeX*, qui suit la documentation *Sphinx*. Il y a également un dépôt *GitHub*, qui sert à suivre l'évolution du projet.
 
 #### Sommaire du site
 
@@ -33,10 +33,6 @@ Le site est composé de six pages :
 - 1.4 Systèmes de substitution monoalphabétique
 - 1.5 Attaque par fréquence
 - 1.6 Petit lexique de la cryptologie
-
-```{Warning}
-La page sur l'attaque par fréquence n'est pas encore finie. Elle sera prête pour l'oral, en tant que bonus.
-```
 
 #### Difficultés envisagées
 
@@ -84,6 +80,15 @@ Quant à la version finale, elle reprend les mêmes éléments que le prototype,
 ```{figure} ../source/figures/introVF.png
 ```
 
-## ReadMe
+## Comment accéder au projet ?
 
-(Pour Mac et PC)
+Pour accéder au projet, il suffit d'aller sur le dépôt *GitHub* qui suit : [https://github.com/AkimBerreqia/vite-quasar](https://github.com/AkimBerreqia/vite-quasar). A partir de cela, il suffit de rejoindre le dépôt *GitPod* qui correspond au projet.
+
+Ensuite, pour générer le site, il faut entrer les commandes suivantes.
+
+```
+yarn install
+yarn dev
+```
+
+La première sert à installer l'extension "yarn" et la seconde sert à lancer le site sur le serveur local de l'ordinateur que l'utilisateur utilise.

@@ -1,9 +1,5 @@
 # 2. Concepts de base utilisés avec *Quasar* et *VueJS*
 
-```{Tip}
-Certains composants présentés auraient pu être utilisés comme des balises (par exemple : la balise *\<p>*), car ils sont réutilisés plusieurs fois de la même manière au cours du projet, mais avec quelques paramètres qui changent. Un document avec de nouvelles balises pourra être rajouté en tant que bonus d'ici la présentation orale du travail de maturité.
-```
-
 ```{admonition} Information
 Il fallait plusieurs moyens pour que l'utilisateur puisse interagir avec une panoplie de possibilités. Il y a donc plusieurs outils *Quasar* et *VueJS* qui ont été exploités pour cela.
 ```
@@ -37,7 +33,7 @@ Avec *q-btn*, il n'est pas nécessaire de définir une classe ou un style dans l
 ```
 
 ```{Warning}
-Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Donner m'a mis à disposition. Ce dépôt a été créer par Allen Lau. (lien vers le dépôt *GitHub* d'Allen Lau : [https://github.com/fyeeme/vite-quasar](https://github.com/fyeeme/vite-quasar))
+Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Donner mis à disposition, pour coder le projet. Ce dépôt a été créer par Allen Lau. (lien vers le dépôt *GitHub* d'Allen Lau : [https://github.com/fyeeme/vite-quasar](https://github.com/fyeeme/vite-quasar))
 Cependant, il y a quelques changements qui ont été apportés pour permettre au site interactif d'avoir l'aspect qu'il a aujourd'hui.
 ```
 

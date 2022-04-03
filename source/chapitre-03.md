@@ -377,10 +377,6 @@ Après avoir développé la version finale du projet, Monsieur Donner m'a demand
 }
 ```
 
-```{Tip}
-Il reste encore à stoquer le reste du texte du projet dans le document "introContent.json". Mais cette procédure sera effectuée en tant que bonus et le nom du document changera sûrement.
-```
-
 ### v-html
 
 A partir de ce point, il faut importer le document *JSON* dans les fichiers "1.1". Pour cela, la démarche suivante est faite :
