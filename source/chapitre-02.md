@@ -14,7 +14,7 @@ Il fallait plusieurs moyens pour que l'utilisateur puisse interagir avec une pan
 <input v-model="réponse" placeholder="Veuillez écrire la réponse ici">
 <p>Votre réponse est {{réponse}}.</p>
 ```
-[^modelSource]
+[^vueSource]
 
 Dans ce cas de figure, *v-model* correspond à ce que l'utilisateur écrit dans la zone de texte. L'élément "p" va reprendre le *v-model* pour l'intégrer à l'emplacement *{{réponse}}*. De ce fait, si l'utilisateur écrit "merveilleuse", le texte affichera : "Votre réponse est merveilleuse".
 
@@ -23,7 +23,7 @@ Pour le second, *Quasar* rend le code plus dynamique, en préfabriquant des comp
 ```HTML
 <q-btn label="Clique" />
 ```
-[^btnSource]
+[^quasarSource]
 
 ```{figure} ../source/figures/btn.png
 ```
@@ -169,7 +169,7 @@ Les lettres en majuscule signifient que l'élément de la page a une position fi
   </q-layout>
 </template>
 ```
-[^defaultSource]
+[^defaultSource2]
 
 Chaque bloque de lettres correspond à une ligne du tableau. Les lettres *h* et *H* configurent la forme de l'en-tête. Le *l* et le *L* sont pour le menu déroulant de gauche. Le *p* ne change jamais. Le *r* et le *R* donnent la position du menu déroulant de droite. Finalement, le *f* et le *F* représentent le bas de page.
 
@@ -188,7 +188,7 @@ Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
   <!-- header content -->
 </q-header>
 ```
-[^defaultSource]
+[^defaultSource3]
 
 Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière plan. La couleur primary est la couleur de référence du site.
 
@@ -226,7 +226,7 @@ Ces composants servent à définir le titre principale du site, qui apparait con
   </q-toolbar-title>
 </q-toolbar>
 ```
-[^defaultSource]
+[^defaultSource4]
 
 *q-toolbar* contient toutes les informations qui apparaissent dans l'en-tête. Il y a tout d'abord un bouton, *q-btn*, qui permet de faire apparaitre le menu déroulant. Ce bouton a comme propriété d'avoir l'icone *menu*, qu'il est rond, qu'il doit inverser la valeur de *drawerLeft* s'il est pressé, etc. Les autres propriétés sont moyens importantes.
 
@@ -251,7 +251,7 @@ Ce composant contient tous les éléments qui définissent le menu déroulant.
   <!-- drawer content -->
 </q-drawer>
 ```
-[^defaultSource]
+[^defaultSource5]
 
 La directive *v-model* donne comme référence au tiroir la constante *drawerLeft*. Si cette constante change, le tiroir est influencé.
 
@@ -261,7 +261,7 @@ C'est ici que le bouton de l'en-tête est utilisé. La valeur de la constante *d
 import {ref} from 'vue'
 const drawerLeft = ref<boolean>(false)
 ```
-[^defaultSource]
+[^defaultSource6]
 
 *Overlay* signifie que lorsque le menu apparait, il n'influence pas la position du texte présent sur la page.
 
@@ -270,7 +270,7 @@ L'instruction ci-dessous permet d'avoir le menu du côté gauche de l'écran.
 ```HTML
 side="left"
 ```
-[^defaultSource]
+[^defaultSource7]
 
 *Bordered* sert à mettre des bordures pour les éléments du menu.
 
@@ -283,7 +283,7 @@ Ce composant fabrique une liste dans laquelle il est possible d'ajouter plusieur
   <!-- list content -->
 </q-list>
 ```
-[^defaultSource]
+[^defaultSource8]
 
 Entre chaque élément, il y a une séparation, faite à partir de *separator*.
 
@@ -302,7 +302,7 @@ Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous va fai
   </q-item>
 </template>
 ```
-[^defaultSource]
+[^defaultSource9]
 
 Ce modèle/*template* va puiser dans chaque élément de *generateRoutes*, avec la directive *v-for*. Le *template* se sert de chaque document figurant en premier lieu dans le dossier *pages*, se situant dans le dossier *src*.
 
@@ -312,7 +312,7 @@ import { useRouter } from 'vue-router'
 import generatedRoutes from 'virtual:generated-pages'
 const router = useRouter()
 ```
-[^defaultSource]
+[^defaultSource10]
 
 Chaque section d'objets contient un nom différent, qui fait référence à la page, qui lui est attribuée.
 
@@ -323,7 +323,7 @@ L'élément ci-dessous :
 ```HTML
 router.push({ path: item.path })
 ```
-[^defaultSource]
+[^defaultSource11]
 
 permet de changer l'url de la page, pour naviguer à travers les pages du site, lorsque l'utilisateur appuie sur la section.
 
@@ -348,7 +348,7 @@ Ce composant *Quasar* permet de donner le contenu par défaut que toutes les pag
   <!-- q-page-scroller content -->
 </q-page-container>
 ```
-[^defaultSource]
+[^defaultSource12]
 
 Tout d'abord, chaque page a pour le menu déroulant une animation qui est faite, lorsque le bouton 'menu', de l'en-tête, est pressé.
 
@@ -372,7 +372,7 @@ Il y a une animation pour faire apparaitre et disparaitre le menu, grâce à l'i
   opacity: 0;
 }
 ```
-[^defaultSource]
+[^defaultSource13]
 
 Dans un premier temps, *.slide-fade-enter* donne les informations du menu, lorsque ce dernier doit apparaitre, avec une position d'arrivée, ainsi que l'opacité de départ. Pour *.slide-fade-leave-to*, le même processus a lieu, mais pour disparaitre.
 
@@ -385,7 +385,7 @@ html {
   background-color: #e6e6e6;
 }
 ```
-[^defaultSource]
+[^defaultSource14]
 
 Elle est présente, pour donner un côté sobre au site et également pour fatiguer le moins possible l'oeil lorsque l'utilisateur passe beaucoup de temps sur chaque page.
 
@@ -402,7 +402,7 @@ Le style du contenu de la page est influencé par les paramètres suivants :
   max-width:40em;
 }
 ```
-[^defaultSource]
+[^defaultSource15]
 
 Ce composant possède une marge automatique. Il a seulement une marge de cinquante pixels en haut, pour chaque page. Le contenu est centré au milieu de la page, mais le texte aligné à gauche, avec une couleur d'arrière plan qui se rapproche du blanc, *#dedcdc*, et avec un texte bleu, *#33abd6*. Le conteneur de page a une largeur maximale de quarante "em", pour rendre le texte plus lisible et pour ne pas avoir une surcharge de mots par ligne.
 
@@ -427,7 +427,7 @@ Chaque page a un défileur de page, sous forme de bouton pour pouvoir défiler v
   </div>
 </q-page-scroller>
 ```
-[^defaultSource]
+[^defaultSource16]
 
 La *position* du défileur de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appelation *round* L'icone du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur vert clair, qui lui est attribuée par le mot "positive".
 
@@ -508,7 +508,7 @@ let action = reactive({
 <style lang="scss" scoped></style>
 
 ```
-[^quasarSource]
+[^indexSource]
 
 #### q-carousel et q-carousel-slide
 
@@ -546,7 +546,7 @@ L'image ci-dessus contient deux encadrés blanc, qui représente chacun un carro
   </q-carousel-slide>
 </q-carousel>
 ```
-[^quasarSource]
+[^quasarSource2]
 
 Dans le code ci-dessus, les deux carrousels ont une hauteur de deux-cent-cinquante pixels. Cette taille peut bien évidemment être changée pour que le contenu ne déborde pas du carrousel.
 
@@ -560,7 +560,7 @@ let action = reactive({
   slide2: ref('sommaire')
 })
 ```
-[^quasarSource]
+[^quasarSource3]
 
 Pour cette page, il n'y a qu'une seule diapositive par carrousel. Cependant, il est possible de faire plusieurs diapositives par carrousel.
 
@@ -575,7 +575,7 @@ Pour la page d'index, ce composant joue deux rôles.
   <q-btn icon="keyboard_arrow_right" to="/1.1 Introduction">1.1 Introduction</q-btn>
 </q-page-sticky>
 ```
-[^quasarSource]
+[^quasarSource4]
 
 La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière plan des boutons est d'une teinte presque transparente. L'icone utilisé est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
 
@@ -590,12 +590,54 @@ Pour chaque page, il y a des bouton qui ont des destinations différentes (un bo
   </q-toolbar>
 </q-page-sticky>
 ```
-[^quasarSource]
+[^quasarSource5]
 
 La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1.0 Index" est le titre de la page, qui se situe en dessous du titre de l'en-tête du site.
 
+[^vueSource]: documentation *Vue* [https://vuejs.org/](https://vuejs.org/)
+
 [^defaultSource]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource2]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource3]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource4]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource5]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource6]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource7]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource8]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource9]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource10]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource11]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource12]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource13]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource14]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource15]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^defaultSource16]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+
+[^indexSource]: index page [https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63](https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63)
 
 [^quasarSaasSource]: style quasar variables [https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8](https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8)
 
 [^quasarSource]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource2]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource3]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource4]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource5]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)

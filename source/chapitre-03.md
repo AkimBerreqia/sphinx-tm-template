@@ -33,6 +33,7 @@ import { ref } from 'vue'
 let section = ref(false)
 </script>
 ```
+[^quasarSource]
 
 En se servant de la directive *v-if*, il est possible de choisir quand est-ce que l'un des deux boutons doit apparaitre à l'écran.
 
@@ -43,6 +44,7 @@ Pour conclure chaque section, il y a une barre de séparation, qui est mise à l
 ```HTML
 <q-separator inset />
 ```
+[^quasarSource2]
 
 En ce qui concerne le dernier aspect basé sur la formation, il est combiné à d'autres outils pour composer des exercices, dans lesquels, l'utilisateur doit écrire du texte. Cet utilité est développée dans la prochaine section.
 
@@ -182,6 +184,7 @@ Pour la partie formation, il y a deux choix possibles de boutons. Soit il s'agit
   <q-btn color="blue" label="btn n° 2"></q-btn>
 </q-btn-group>
 ```
+[^quasarSource3]
 
 Dans l'image ci-dessous, les boutons "INDICES" et "AFFICHER LA RÉPONSE" font apparaitre un "pop-up" différent, suivant lequel des deux est enclenché.
 
@@ -249,6 +252,7 @@ Chaque carte est composée d'un titre et d'explications. Ces parties sont des se
 
 <!-- ... -->
 ```
+[^quasarSource4]
 
 Lorsque l'un des deux boutons est pressé, la fonction "onHide" se lance et le dialogue se met en marche.
 
@@ -297,7 +301,7 @@ export default {
 }
 <script>
 ```
-[^inputSource]
+[^inputSource2]
 
 L'exemple utilisé se nomme "Placholder", car il contient un emplacement intéressant pour renvoyer à l'élève sont résultat.
 
@@ -345,6 +349,7 @@ function respondAnswer(exercice, correctAnswer, maxLength){
 }
 </script>
 ```
+[^quasarSource5]
 
 La fonction prend ce que l'utilisateur écrit, pour contrôler le nombre de caractère qu'il y a. Pour la fonction, il s'agit de "exercice". Si le nombre de caractères n'est pas égal au maximum requis, la fonction renvoie "..." dans l'espace réservé au résultat. Si la longueur maximale est atteinte, alors la fonction renvoie soit "Bonne réponse, si "correctAnswer" est pareil que "exercice". Mais si "correctAnswer" et "exercice" sont différents, alors la fonction renvoie "Mauvaise réponse". Pour l'exercice avec Rodolphe, "exercice" fait référence à "myQuestions.rodolphe", "correctAnswer" correspond à "myQuestions.rodolpheCorrectAnswer" et finalement "maxLength" fait cinquante-six caractères.
 
@@ -391,6 +396,7 @@ De cette manière, la directive *v-html* est utilisée.
 ```HTML
 <p v-html="contentData.presentation"></p>
 ```
+[^vueSource]
 
 Cette directive remplie le même rôle que la fonction *innerHTML*.
 
@@ -554,6 +560,7 @@ const myQuizQuestions = reactive([
   }
 ])
 ```
+[^quizSource2]
 
 L'"id" permet de donner le numéro de question.
 
@@ -592,6 +599,7 @@ const answers = reactive([])
 // ...
 </script>
 ```
+[^quasarSource6]
 
 Pour donner le résultat à l'utilisateur, la constante "answers" stoque la réponse enregistrée par l'élève. Cette réponse est vérifiée pour choisir quel résultat il faut afficher à l'écran.
 
@@ -620,6 +628,7 @@ Pour donner le résultat à l'utilisateur, la constante "answers" stoque la rép
   </div>  
 </div>
 ```
+[^quizSource3]
 
 Tout ce qui est compris dans cette partie du code dépend de la constante "counter".
 
@@ -634,6 +643,7 @@ Les éléments de "myQuizQuestions" qui figurent dans le code *HTML* ci-dessus s
   <!-- div content -->
 </div>
 ```
+[^vueSource2]
 
 Il ne reste plus qu'à faire varier le compteur, pour changer de question. Voici donc l'intérêt des boutons "PRÉCÉDENT", "SUIVANT" ET "RECOMMENCER". Le premier fait baisser de un la valeur de "counter". Le deuxième rajoute un à la valeur de la constante et le troisième l'initie à zéro. Ces boutons se servent des fonctions suivantes pour procéder :
 
@@ -664,6 +674,7 @@ Ces fonctions sont liées aux boutons de la manière suivante :
   <q-btn label="Valider" @click="changeClick()"/>
 </q-btn-group>
 ```
+[^quasarSource7]
 
 Il reste encore à traiter la validation des réponses. Le bouton "VALIDER" a pour but de faire apparaitre le résultat. Les autres boutons possèdent tous dans leurs fonctions respectives "isClick.value = false". Cela sert à faire disparaitre le résultat du quiz, car sinon il resterait affiché tant que le bouton "VALIDER" n'est pas réutilisé. De cette manière, dès que la question change, le résultat n'est plus affiché.
 
@@ -964,7 +975,7 @@ terme.forEach(titleName => {
   rows.push({ titleName: titleName, articleName: signification[terme.indexOf(titleName)] })
 })
 ```
-[^lexiqueSource]
+[^lexiqueSource2]
 
 De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'intérieur d'un tableau différent. Ces tableaux sont fabriquées par le composant *q-table*.
 
@@ -999,7 +1010,7 @@ De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'i
   </template>
 </q-table>
 ```
-[^lexiqueSource]
+[^lexiqueSource3]
 
 Chaque section/*q-card-section* contient soit un titre, soit une explication. Dans la zone de texte, lorsque l'utilisateur écrit un mot clé, les résultats contiennent soit le mot clé dans le titre, soit dans l'explication.
 
@@ -1071,14 +1082,44 @@ function highLight(title, searchWord){
     return research
 }
 ```
-[^librarySource]
+[^librarySource2]
 
 Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie quelque un élément, alors il est écrit "Résultat pour ", puis le mot clé, puis les éléments correspondant.
 
+[^quasarSource]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource2]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource3]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource4]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource5]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource6]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^quasarSource7]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+
+[^vueSource]: documentation *Vue* [https://vuejs.org/](https://vuejs.org/)
+
+[^vueSource2]: documentation *Vue* [https://vuejs.org/](https://vuejs.org/)
+
 [^inputSource]: Standard, "Placeholder [https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)
+
+[^inputSource2]: Standard, "Placeholder [https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)
 
 [^quizSource]: quiz [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
 
+[^quizSource2]: quiz [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
+
+[^quizSource3]: quiz [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
+
 [^lexiqueSource]: Masonry like table grid [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)
 
+[^lexiqueSource2]: Masonry like table grid [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)
+
+[^lexiqueSource3]: Masonry like table grid [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)
+
 [^librarySource]: library [https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)
+
+[^librarySource2]: library [https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)
