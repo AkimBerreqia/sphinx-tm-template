@@ -1,6 +1,6 @@
 class TMConfig:
 
-    title = u"Cours d’introduction à la cryptographie"
+    title = u"Site interactif, apprenant la cryptologie"
     first_name = 'Akim'
     last_name = 'Berreqia'
     author = f'{first_name} {last_name}'
