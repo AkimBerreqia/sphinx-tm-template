@@ -22,6 +22,7 @@ Pour le second, *Quasar* rend le code plus dynamique, en pré-fabricant des comp
 [^quasarSource]
 
 ```{figure} ../source/figures/btn.png
+figure n°3
 ```
 
 Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour défini Le label est affiché à l'intérieur du bouton, uniquement avec des lettres en majuscule.
@@ -42,6 +43,7 @@ Le site *VueJS* comporte de base des outils qui permettent d'avoir une page d'ac
 L'image ci-dessous représente la page d'accueil par défaut qui est faite par Allen Lau.
 
 ```{figure} ../source/figures/homePageBefore.png
+figure n°4
 ```
 
 C'est à partir de là que le site interactif commence.
@@ -141,6 +143,7 @@ Le code qui suit a déjà été modifié, pour convenir aux besoins du site inte
 C'est à partir de ce fichier que les éléments généraux par défaut du site sont générés, comme par exemple la taille du texte, les marges, la couleur du font de la page, etc.
 
 ```{figure} ../source/figures/homePageNow.png
+figure n°5
 ```
 
 Voici, ci-dessus le rendu final de la page d'accueil, pour le site interactif.
@@ -154,6 +157,7 @@ Les premiers composants *Quasar* qui nous intéressent, servent à former l'aspe
 Le document *default.vue* contient, tout d'abord le plan de la page, autrement dit, le "layout". C'est à dire, que le composant va former la page, comme si elle est séparée en un tableau de trois parties sur trois.
 
 ```{figure} ../source/figures/layout.png
+figure n°6
 ```
 
 Les lettres en majuscule signifient que l'élément de la page a une position fixe, sur l'écran. C'est à dire que si la page défile vers le bas, ces éléments apparaissent toujours à l'endroit où ils sont de base. Pour le site interactif, le composant *q-layout* défini le plan comme ceci :
@@ -510,9 +514,10 @@ let action = reactive({
 
 Ce sont les premiers composants qui apparaissent dans le code pour la page d'index, mais ils sont aussi présents dans les prototypes des pages du cours (1.1 Introduction, 1.2 Le chiffre de César, etc).
 
-Le composant *q-carousel* va créer une zone qui est séparée en plusieurs pages/*q-carousel-slide*, se situant à l’intérieur du carousel. De ce fait, il est possible de naviguer entre chaque *q-carousel-slide*.
+Le composant *q-carousel* va créer une zone qui est séparée en plusieurs pages/*q-carousel-slide*, se situant à l’intérieur du carrousel. De ce fait, il est possible de naviguer entre chaque *q-carousel-slide*.
 
 ```{figure} ../source/figures/indexCarousel.png
+figure n°7
 ```
 
 L'image ci-dessus contient deux encadrés blancs, qui représente chacun un carrousel.

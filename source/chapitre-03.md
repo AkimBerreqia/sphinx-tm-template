@@ -12,11 +12,13 @@ Pour ce qui est de l'aspect de progression, un système de validation de section
 ---
 width: 50%
 ---
+figure n°8
 ```
 
 Une fois que l'utilisateur appuie sur ce bouton bleu, ce dernier devient vert, avec comme label, "SECTION VALIDÉE".
 
 ```{figure} ../source/figures/twoValidatorBtn.png
+figure n°9
 ```
 
 En réalité, il y a constamment deux boutons.
@@ -56,6 +58,7 @@ Voici un des exercices du site, qui figure au chapitre "1.2 Le chiffre de César
 ---
 width: 50%
 ---
+figure n°10
 ```
 
 ```HTML
@@ -166,9 +169,11 @@ function respondAnswer(exercice, correctAnswer, maxLength){
 Cet outil fonctionne de la manière suivante, l'utilisateur peut rentrer un nombre limité de caractères à l'intérieur de la zone de texte. Dans ce cas ci-dessus, il peut rentrer au maximum cinquante-six caractères. Pour ce type d'exercice, la réponse est écrite directement en majuscule, grâce à la fonction *.toUpperCase()*. La réponse de l'étudiant ne doit pas contenir d'espace, sinon il n'aura pas suffisamment de place pour écrire toute la réponse. Si l'élève a des difficultés, il peut se servir du bouton "INDICES" pour s'aider. Une fois que la réponse est complète, l'utilisateur peut voir si son résultat est correct.
 
 ```{figure} ../source/figures/goodAnswer.png
+figure n°11
 ```
 
 ```{figure} ../source/figures/wrongAnswer.png
+figure n°12
 ```
 
 ### q-btn-group, q-dialog, q-card, q-card-section et q-card-actions
@@ -176,6 +181,7 @@ Cet outil fonctionne de la manière suivante, l'utilisateur peut rentrer un nomb
 Pour la partie formation, il y a deux choix possibles de boutons. Soit il s'agit d'un seul bouton, soit il s'agit d'un groupe de plusieurs boutons. Pour cette deuxième situation, le composant *q-btn-group* permet de regrouper plusieurs boutons dans un seul cadre.
 
 ```{figure} ../source/figures/btnGroupExemple.png
+figure n°13
 ```
 
 ```HTML
@@ -189,6 +195,7 @@ Pour la partie formation, il y a deux choix possibles de boutons. Soit il s'agit
 Dans l'image ci-dessous, les boutons "INDICES" et "AFFICHER LA RÉPONSE" font apparaitre un "pop-up" différent, suivant lequel des deux est enclenché.
 
 ```{figure} ../source/figures/btnGroup.png
+figure n°14
 ```
 
 Pour le cours, ce genre de boutons est combiné avec le composant *q-dialog*, qui fait apparaitre une fenêtre/un "pop-up" à l'écran. Cette fenêtre est une *q-card*.
@@ -197,12 +204,14 @@ Pour le cours, ce genre de boutons est combiné avec le composant *q-dialog*, qu
 ---
 width: 50%
 ---
+figure n°15
 ```
 
 ```{figure} ../source/figures/reponse.png
 ---
 width: 50%
 ---
+figure n°16
 ```
 
 Chaque carte est composée d'un titre et d'explications. Ces parties sont des sections/*q-card-section*.
@@ -280,6 +289,7 @@ Pour cette dernière partie de section, le composant *q-input* met en place une 
 Ce *q-input* provient d'un des exemples présent dans la documentation *Quasar*.
 
 ```{figure} ../source/figures/inputExemple.png
+figure n°17
 ```
 
 ```HTML
@@ -507,6 +517,7 @@ function previous() {
 Les quiz font partie du deuxième système créé pour que l'élève puisse apprendre en s'exerçant. Ce système possède une structure assez simple.
 
 ```{figure} ../source/figures/quiz.png
+figure n°18
 ```
 
 Il y a tout d'abord le titre du quiz, en haut à gauche. Puis, tout le contenu de l'exercice est centré dans la page. Ce contenu est composé d'une numérotation pour la question en cours. En dessous, vient se rajouter la problématique posée, avec trois choix de réponses. Et enfin, la dernière partie du quiz est consacrée à plusieurs boutons.
@@ -514,14 +525,17 @@ Il y a tout d'abord le titre du quiz, en haut à gauche. Puis, tout le contenu d
 Pour ces boutons, chacun d'entre eux a une attribution différente. "PRÉCÉDENT" renvoie à la question précédente, mais si l'utilisateur se trouve à la première question du quiz, le bouton est inaccessible pour l'élève. Ensuite, le bouton "SUIVANT" fonctionne exactement comme le premier bouton, mais pour passer à la question suivante. Le troisième bouton se nomme "VALIDER" et il affiche le résultat de l'utilisateur.
 
 ```{figure} ../source/figures/quizCorrect.png
+figure n°19
 ```
 
 ```{figure} ../source/figures/quizWrong.png
+figure n°20
 ```
 
 Il existe un quatrième bouton qui s'appelle "RECOMMENCER".
 
 ```{figure} ../source/figures/quizRestart.png
+figure n°21
 ```
 
 Son usage est de ramener au début du quiz, pour le refaire si besoin. Il s'affiche dès que l'utilisateur a dépassé la première question.
@@ -925,9 +939,11 @@ function changeClick() {
 Pour comparer les deux visuels entre le lexique et la bibliothèque, voici un rendu de chacun :
 
 ```{figure} ../source/figures/lexique.png
+figure n°22
 ```
 
 ```{figure} ../source/figures/library.png
+figure n°23
 ```
 
 ### Lexique
@@ -1011,11 +1027,13 @@ De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'i
 Chaque section/*q-card-section* contient soit un titre, soit une explication. Dans la zone de texte, lorsque l'utilisateur écrit un mot clé, les résultats contiennent soit le mot clé dans le titre, soit dans l'explication.
 
 ```{figure} ../source/figures/lexiqueResult.png
+figure n°24
 ```
 
 Dans ce cas ci-dessus, il s'agit de "chiffre". Si "chiffre" est mis en évidence dans les résultats, voici à quoi cela ressemble :
 
 ```{figure} ../source/figures/lexiqueHighlight.png
+figure n°25
 ```
 
 ### Bibliothèque ("library")
@@ -1023,11 +1041,13 @@ Dans ce cas ci-dessus, il s'agit de "chiffre". Si "chiffre" est mis en évidence
 Pour la bibliothèque, la recherche doit être faite avec des mots clés qui ne contiennent que des caractères en minuscules.
 
 ```{figure} ../source/figures/libraryResult.png
+figure n°26
 ```
 
 Avec le mot clé "chiffre", voici le résultat :
 
 ```{figure} ../source/figures/libraryResultExemple.png
+figure n°27
 ```
 
 Lorsque le bouton "RECHERCHER" est enclenché, il fait apparaitre le résultat.

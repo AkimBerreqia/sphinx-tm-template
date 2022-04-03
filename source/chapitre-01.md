@@ -69,6 +69,7 @@ Monsieur Cédric Donner m'a demandé de suivre un cours en ligne pour apprendre 
 A partir de ce point, le prototype a commencé à prendre forme.
 
 ```{figure} ../source/figures/introProto.png
+figure n°1
 ```
 
 Pour le contenu du cours, tout le texte est écrit à l'intérieur des fichiers, dans lesquels le code de la page est développé. Cela rend le nombre de lignes de code assez grand, par document.
@@ -78,6 +79,7 @@ Chaque sous-chapitre (par exemple : "1.3.2 Activité 4") est contenu dans un car
 Quant à la version finale, elle reprend les mêmes éléments que le prototype, mais en diminuant considérablement le nombre de carrousels. Les seuls carrousels qui restent, sont dans l'index du cours.
 
 ```{figure} ../source/figures/introVF.png
+figure n°2
 ```
 
 ## Comment accéder au projet ?
