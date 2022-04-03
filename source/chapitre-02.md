@@ -595,50 +595,50 @@ Pour chaque page, il y a des bouton qui ont des destinations différentes (un bo
 
 La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1.0 Index" est le titre de la page, qui se situe en dessous du titre de l'en-tête du site.
 
-[^vueSource]: documentation *Vue* [https://vuejs.org/](https://vuejs.org/)
+[^indexSource]: ALLEN LAU, "code pour la page d'index du site", 2022, consulté le 3 avril 2022, <[https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63](https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63)>
 
-[^defaultSource]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource2]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource2]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource3]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource3]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource4]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource4]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource5]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource5]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource6]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource6]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource7]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource7]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource8]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource8]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource9]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource9]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource10]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource10]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource11]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource11]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource12]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource12]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource13]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource13]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource14]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource14]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource15]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource15]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource16]: default page [https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)
+[^defaultSource16]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^indexSource]: index page [https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63](https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63)
+[^quasarSaasSource]: ALLEN LAU, "code pour les différente couleur du site", 2022, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8](https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8)>
 
-[^quasarSaasSource]: style quasar variables [https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8](https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8)
+[^quasarSource]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource2]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource2]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource3]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource3]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource4]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource4]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource5]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource5]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^vueSource]: VUE.JS, "documentation de directives vuejs", 2022, consulté le 27 mars 2022, <[https://vuejs.org/](https://vuejs.org/)>

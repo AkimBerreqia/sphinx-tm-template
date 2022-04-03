@@ -1102,40 +1102,40 @@ function highLight(title, searchWord){
 
 Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie un autre élément "qu'aucun résultat", alors il est écrit 'Résultat pour ', puis le mot-clé, puis les éléments correspondant.
 
-[^quasarSource]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^librarySource]: DEVELOP PAPER, "utilisation de v-html pour mettre en évidence des mots-clés", 2021, consulté le 12 mars 2022, <[https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)>
 
-[^quasarSource2]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^librarySource2]: DEVELOP PAPER, "utilisation de v-html pour mettre en évidence des mots-clés", 2021, consulté le 12 mars 2022, <[https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)>
 
-[^quasarSource3]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource4]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource2]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource5]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource3]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource6]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource4]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^quasarSource7]: documentation *Quasar* [https://quasar.dev/](https://quasar.dev/)
+[^quasarSource5]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^vueSource]: documentation *Vue* [https://vuejs.org/](https://vuejs.org/)
+[^quasarSource6]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^vueSource2]: documentation *Vue* [https://vuejs.org/](https://vuejs.org/)
+[^quasarSource7]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
-[^inputSource]: Standard, "Placeholder [https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)
+[^inputSource]: QUASAR, "documentation quasar pour faire une zone de texte avec placeholder", 2022, consulté le 2 mars 2022, <[https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)>
 
-[^inputSource2]: Standard, "Placeholder [https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)
+[^inputSource2]: QUASAR, "documentation quasar pour faire une zone de texte avec placeholder", 2022, consulté le 2 mars 2022, <[https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)>
 
-[^quizSource]: quiz [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
+[^lexiqueSource]: QUASAR, "documentation quasar pour faire le lexique", 2022, consulté le 2 mars 2022, <[https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)>
 
-[^quizSource2]: quiz [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
+[^lexiqueSource2]: QUASAR, "documentation quasar pour faire le lexique", 2022, consulté le 2 mars 2022, <[https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)>
 
-[^quizSource3]: quiz [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
+[^lexiqueSource3]: QUASAR, "documentation quasar pour faire le lexique", 2022, consulté le 2 mars 2022, <[https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)>
 
-[^lexiqueSource]: Masonry like table grid [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)
+[^quizSource]: SIMPLE STEPS CODE, "comment faire de manière simple un quiz en javascript", 2022, consulté le 26 février 2022, <[https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)>
 
-[^lexiqueSource2]: Masonry like table grid [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)
+[^quizSource2]: SIMPLE STEPS CODE, "comment faire de manière simple un quiz en javascript", 2022, consulté le 26 février 2022, <[https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)>
 
-[^lexiqueSource3]: Masonry like table grid [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)
+[^quizSource3]: SIMPLE STEPS CODE, "comment faire de manière simple un quiz en javascript", 2022, consulté le 26 février 2022, <[https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)>
 
-[^librarySource]: library [https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)
+[^vueSource]: VUE.JS, "documentation de directives vuejs", 2022, consulté le 27 mars 2022, <[https://vuejs.org/](https://vuejs.org/)>
 
-[^librarySource2]: library [https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)
+[^vueSource2]: VUE.JS, "documentation de directives vuejs", 2022, consulté le 27 mars 2022, <[https://vuejs.org/](https://vuejs.org/)>
