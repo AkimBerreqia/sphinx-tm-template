@@ -304,7 +304,7 @@ Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous va fai
 ```
 [^defaultSource]
 
-Ce modèle/*template* va puiser dans chaque élément de *generateRoutes*, qui lui-même se sert de chaque document figurant en premier lieu dans le dossier *pages*, se situant dans le dossier *src*.
+Ce modèle/*template* va puiser dans chaque élément de *generateRoutes*, avec la directive *v-for*. Le *template* se sert de chaque document figurant en premier lieu dans le dossier *pages*, se situant dans le dossier *src*.
 
 ```JavaScript
 import { useRouter } from 'vue-router'

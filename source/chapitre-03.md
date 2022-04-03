@@ -406,7 +406,272 @@ A contrario, la première possibilité permet de ne pas interpréter le contenu 
 
 ## Système de quizs "myQuizQuestions"
 
+```{Admonition} A savoir
+Le code qui compose le quiz est très fortement inspiré d'un code déjà existant, qui se trouve dans un tutoriel, pour apprendre à faire un quiz en *JavaScript*. (lien vers le site : [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/))
+```
 
+```HTML
+<template>
+  <q-page class="pa-4 text-left">
+    <h1>Exemple de quiz</h1>
+    <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
+      <h2>Question numéro {{index + 1}}</h2>
+
+      <p class="question">
+      {{question.question}}
+      </p>
+
+      <div class="q-pa-md">
+        <div v-for="(value, key) in question.answers" class="q-gutter-sm">
+          <q-radio v-model="answers[index]" :key="key" :val="value" :label="value"/>
+        </div>
+        
+        <div v-show="isClick === true">
+          <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
+            <p class="q-px-sm" style="color:green;">Bonne réponse</p>
+          </div>
+
+          <div v-else>
+            <p class="q-px-sm" style="color:red;">Mauvaise réponse</p>
+          </div>
+        </div>   
+      </div>  
+    </div>
+    <q-btn-group>
+      <q-btn :disable="counter === 0" label="Précédent" @click="previous()"/>
+      <q-btn :disable="counter === 1" label="Suivant" @click="next()"/>
+      <q-btn v-if="counter > 0" label="Recommencer" @click="restart()"/>
+      <q-btn label="Valider" @click="changeClick()"/>
+    </q-btn-group>
+  </q-page>
+</template>
+
+<script setup lang="ts">
+import { ref, reactive } from "vue"
+
+const myQuizQuestions = reactive([
+  {
+      id: ref(0),
+    question: "What is 10/2?",
+    answers: {
+      a: '3',
+      b: '5',
+      c: '115'
+    },
+    choice: ref(''),
+    correctAnswer: '5'
+  },
+  {
+      id: ref(1),
+    question: "What is 30/3?",
+    answers: {
+      a: '3',
+      b: '5',
+      c: '10'
+    },
+    choice: ref(''),
+    correctAnswer: '10'
+  }
+])
+
+const answers = reactive([])
+
+const isClick = ref(false)
+
+function changeClick() {
+  isClick.value = !isClick.value
+}
+
+const counter = ref(0)
+
+function restart() {
+  counter.value = 0
+  isClick.value = false
+}
+
+function next() {
+  counter.value++
+  isClick.value = false
+}
+
+function previous() {
+  counter.value--
+  isClick.value = false
+}
+</script>
+```
+[^quizSource]
+
+Les quizs font partie du deuxième système créé pour que l'élève puisse apprendre en s'exerçant. Ce système possède une structure assez simple.
+
+```{figure} ../source/figures/quiz.png
+```
+
+Il y a tout d'abord le titre du quiz, en haut à gauche. Puis, tout le contenu de l'exercice est centré dans la page. Ce contenu est composé d'une numérotation pour la question en cours. En dessous, vient se rajouter la problématique posée, avec trois choix de réponses. Et enfin, la dernière partie du quiz est consacrée à plusieurs boutons. Pour ces boutons, chacun d'entre eux a une attribution différente. "PRÉCÉDENT" renvoie à la question précédente, mais si l'utilisateur se trouve à la première question du quiz, le bouton est inaccessible pour l'élève. Ensuite, le bouton "SUIVANT" fonctionne exactement comme le premier bouton, mais pour passer à la question suivante. Le troisième bouton est se nomme "VALIDER" et il affiche le résultat de l'utilisateur.
+
+```{figure} ../source/figures/quizCorrect.png
+```
+
+```{figure} ../source/figures/quizWrong.png
+```
+
+Il existe un quatrième bouton qui s'appelle "RECOMMENCER".
+
+```{figure} ../source/figures/quizRestart.png
+```
+
+Son usage est de ramener à la première question. Il s'affiche dès que la question numéro une est passée.
+
+Pour ce qui est du code, la constante "myQuizQuestions" contient tout les éléments importants, pour la formation du quiz.
+
+```JavaScript
+import { ref, reactive } from "vue"
+
+const myQuizQuestions = reactive([
+  {
+    id: ref(0),
+    question: "What is 10/2?",
+    answers: {
+      a: '3',
+      b: '5',
+      c: '115'
+    },
+    choice: ref(''),
+    correctAnswer: '5'
+  },
+  {
+    id: ref(1),
+    question: "What is 30/3?",
+    answers: {
+      a: '3',
+      b: '5',
+      c: '10'
+    },
+    choice: ref(''),
+    correctAnswer: '10'
+  }
+])
+```
+
+L'"id" permet de donner le numéro de question.
+
+```HTML
+<h2>Question numéro {{index + 1}}</h2>
+```
+
+Cet élément est aussi utile pour faire apparaitre à l'écran les questions et réponses voulues.
+
+```HTML
+<template>
+  <!-- ... -->
+      <div class="q-pa-md">
+        <div v-for="(value, key) in question.answers" class="q-gutter-sm">
+          <q-radio v-model="answers[index]" :key="key" :val="value" :label="value"/>
+        </div>
+        
+        <div v-show="isClick === true">
+          <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
+            <p class="q-px-sm" style="color:green;">Bonne réponse</p>
+          </div>
+
+          <div v-else>
+            <p class="q-px-sm" style="color:red;">Mauvaise réponse</p>
+          </div>
+        </div>
+      </div>
+  <!-- ... -->
+</template>
+
+<script setup lang="ts">
+// ...
+
+const answers = reactive([])
+
+// ...
+</script>
+```
+
+Pour donner le résultat à l'utilisateur, la constante "answers" stoque la réponse enregistrée par l'élève. Cette réponse est vérifiée pour choisir quel résultat il faut afficher à l'écran.
+
+```HTML
+<div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
+  <h2>Question numéro {{index + 1}}</h2>
+
+  <p class="question">
+  {{question.question}}
+  </p>
+
+  <div class="q-pa-md">
+    <div v-for="(value, key) in question.answers" class="q-gutter-sm">
+      <q-radio v-model="answers[index]" :key="key" :val="value" :label="value"/>
+    </div>
+    
+    <div v-show="isClick === true">
+      <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
+        <p class="q-px-sm" style="color:green;">Bonne réponse</p>
+      </div>
+
+      <div v-else>
+        <p class="q-px-sm" style="color:red;">Mauvaise réponse</p>
+      </div>
+    </div>   
+  </div>  
+</div>
+```
+
+Tout ce qui est compris dans cette partie du code dépend de la constante "counter".
+
+```JavaScript
+const counter = ref(0)
+```
+
+Les éléments de "myQuizQuestions" qui figurent dans le code *HTML* ci-dessus sont remplacés par d'autres éléments de cette même constante, lorsque l'utilisateur change de question. L'index correspond à l'"id" dans la boucle *v-for* et il permet cette variation d'éléments. Par exemple, pour que la deuxième question apparaisse à l'écran, il faut que son "id"/index et que le compteur aient la même valeur.
+
+```HTML
+<div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
+  <!-- div content -->
+</div>
+```
+
+Il ne reste plus qu'à faire varier le compteur, pour changer de question. Voici donc l'intérêt des boutons "PRÉCÉDENT", "SUIVANT" ET "RECOMMENCER". Le premier fait baisser de un la valeur de "counter". Le deuxième rajoute un à la valeur de la constante et le troisième l'initie à zéro. Ces boutons se servent des fonctions suivantes pour procéder :
+
+```JavaScript
+function restart() {
+  counter.value = 0
+  isClick.value = false
+}
+
+function next() {
+  counter.value++
+  isClick.value = false
+}
+
+function previous() {
+  counter.value--
+  isClick.value = false
+}
+```
+
+Ces fonctions sont liées aux boutons de la manière suivante :
+
+```HTML
+<q-btn-group>
+  <q-btn :disable="counter === 0" label="Précédent" @click="previous()"/>
+  <q-btn :disable="counter === 1" label="Suivant" @click="next()"/>
+  <q-btn v-if="counter > 0" label="Recommencer" @click="restart()"/>
+  <q-btn label="Valider" @click="changeClick()"/>
+</q-btn-group>
+```
+
+Il reste encore à traiter la validation des réponses. Le bouton "VALIDER" a pour but de faire apparaitre le résultat. Pour les autres boutons, ils possèdent tous dans leurs fonctions respectives "isClick.value = false". Cela sert à faire disparaitre le résultat du quiz, car sinon il apparaitrait dès que le quiz apparait.
+
+```JavaScript
+const isClick = ref(false)
+
+function changeClick() {
+  isClick.value = !isClick.value
+}
+```
 
 ## Système de recherche par mots clés "library"
 
@@ -415,3 +680,4 @@ A contrario, la première possibilité permet de ne pas interpréter le contenu 
 
 
 [^inputSource]: Standard, "Placeholder [https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)
+[^quizSource]: [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
