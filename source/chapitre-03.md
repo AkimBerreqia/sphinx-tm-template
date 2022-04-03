@@ -507,7 +507,9 @@ Les quizs font partie du deuxième système créé pour que l'élève puisse app
 ```{figure} ../source/figures/quiz.png
 ```
 
-Il y a tout d'abord le titre du quiz, en haut à gauche. Puis, tout le contenu de l'exercice est centré dans la page. Ce contenu est composé d'une numérotation pour la question en cours. En dessous, vient se rajouter la problématique posée, avec trois choix de réponses. Et enfin, la dernière partie du quiz est consacrée à plusieurs boutons. Pour ces boutons, chacun d'entre eux a une attribution différente. "PRÉCÉDENT" renvoie à la question précédente, mais si l'utilisateur se trouve à la première question du quiz, le bouton est inaccessible pour l'élève. Ensuite, le bouton "SUIVANT" fonctionne exactement comme le premier bouton, mais pour passer à la question suivante. Le troisième bouton est se nomme "VALIDER" et il affiche le résultat de l'utilisateur.
+Il y a tout d'abord le titre du quiz, en haut à gauche. Puis, tout le contenu de l'exercice est centré dans la page. Ce contenu est composé d'une numérotation pour la question en cours. En dessous, vient se rajouter la problématique posée, avec trois choix de réponses. Et enfin, la dernière partie du quiz est consacrée à plusieurs boutons.
+
+Pour ces boutons, chacun d'entre eux a une attribution différente. "PRÉCÉDENT" renvoie à la question précédente, mais si l'utilisateur se trouve à la première question du quiz, le bouton est inaccessible pour l'élève. Ensuite, le bouton "SUIVANT" fonctionne exactement comme le premier bouton, mais pour passer à la question suivante. Le troisième bouton se nomme "VALIDER" et il affiche le résultat de l'utilisateur.
 
 ```{figure} ../source/figures/quizCorrect.png
 ```
@@ -520,9 +522,9 @@ Il existe un quatrième bouton qui s'appelle "RECOMMENCER".
 ```{figure} ../source/figures/quizRestart.png
 ```
 
-Son usage est de ramener à la première question. Il s'affiche dès que la question numéro une est passée.
+Son usage est de ramener au début du quiz, pour le refaire si besoin. Il s'affiche dès que l'utilisateur a dépassé la première question.
 
-Pour ce qui est du code, la constante "myQuizQuestions" contient tout les éléments importants, pour la formation du quiz.
+Pour ce qui est du code, la constante "myQuizQuestions" contient tous les éléments importants, pour la formation du quiz.
 
 ```JavaScript
 import { ref, reactive } from "vue"
@@ -625,7 +627,7 @@ Tout ce qui est compris dans cette partie du code dépend de la constante "count
 const counter = ref(0)
 ```
 
-Les éléments de "myQuizQuestions" qui figurent dans le code *HTML* ci-dessus sont remplacés par d'autres éléments de cette même constante, lorsque l'utilisateur change de question. L'index correspond à l'"id" dans la boucle *v-for* et il permet cette variation d'éléments. Par exemple, pour que la deuxième question apparaisse à l'écran, il faut que son "id"/index et que le compteur aient la même valeur.
+Les éléments de "myQuizQuestions" qui figurent dans le code *HTML* ci-dessus sont remplacés par d'autres éléments appartenant à "myQuizQuestions", lorsque l'utilisateur change de question. L'index correspond à l'"id" dans la boucle *v-for* et il permet cette variation d'éléments. Par exemple, pour que la deuxième question apparaisse à l'écran, il faut que l'"id"/index de la question ait la même valeur que le compteur. Dans ce cas-ci, la valeur des deux paramètres doit être égale à un.
 
 ```HTML
 <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
@@ -663,7 +665,7 @@ Ces fonctions sont liées aux boutons de la manière suivante :
 </q-btn-group>
 ```
 
-Il reste encore à traiter la validation des réponses. Le bouton "VALIDER" a pour but de faire apparaitre le résultat. Pour les autres boutons, ils possèdent tous dans leurs fonctions respectives "isClick.value = false". Cela sert à faire disparaitre le résultat du quiz, car sinon il apparaitrait dès que le quiz apparait.
+Il reste encore à traiter la validation des réponses. Le bouton "VALIDER" a pour but de faire apparaitre le résultat. Les autres boutons possèdent tous dans leurs fonctions respectives "isClick.value = false". Cela sert à faire disparaitre le résultat du quiz, car sinon il resterait affiché tant que le bouton "VALIDER" n'est pas réutilisé. De cette manière, dès que la question change, le résultat n'est plus affiché.
 
 ```JavaScript
 const isClick = ref(false)
@@ -675,9 +677,408 @@ function changeClick() {
 
 ## Système de recherche par mots clés "library"
 
-### q-table/search/lexique/terme/signification/rows
+```{Tip}
+Cet outil sera intégré dans le document "default.vue", quand tout le contenu du cours sera en format *JSON*. L'outil pourra puiser à l'intérieur de ce dernier, pour fonctionner avec chaque page du cours.
+```
+
+```{Admonition} A savoir
+Le code est inspiré d'un exemple se trouvant sur le site de documentation *Quasar*. Il s'agit d'une liste de différents desserts, avec des indications différentes. Ils est possible de rechercher un des desserts, dans une zone de texte dédiée à cela. Une fois la recherche effectuée, il ne reste que les résultats de cette recherche affichés à l'écran. (lien vers l'exemple : [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns))
+```
+
+Le chapitre "1.6" du cours se sert déjà de l'exemple *Quasar* mentionné précédemment. Le code a été adapté pour servir de lexique à la cryptologie.
+
+```HTML
+<template>
+  <q-page class="pa-4">
+    <div class="q-pa-md">
+      <q-table
+        grid
+        title="Termes"
+        :rows="rows"
+        row-key="name"
+        :filter="filter"
+      >
+        <template v-slot:top-right>
+          <q-input borderless dense debounce="300" v-model="filter" placeholder="Chercher">
+            <template v-slot:append>
+              <q-icon name="search" />
+            </template>
+          </q-input>
+        </template>
+
+        <template v-slot:item="props">
+          <div class="card align-center">
+            <q-card>
+              <q-card-section class="text-center">
+                <strong>{{ props.row.titleName }}</strong>
+              </q-card-section>
+              <q-separator />
+              <q-card-section class="flex flex-left" :style="{ fontSize: props.row.articleName + 'px' }">
+                <div>Signification : {{ props.row.articleName }} </div>
+              </q-card-section>
+            </q-card>
+          </div>
+        </template>
+      </q-table>
+    </div><br><br>
 
 
+    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
+      <q-btn icon="home" to="/"></q-btn>
+      <q-btn icon="keyboard_arrow_left" to="/1.5 Attaque par fréquence">1.5 Attaque par fréquence</q-btn>
+    </q-page-sticky>
+    
+    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
+      <q-toolbar>
+        <q-toolbar-title>1.6 Petit lexique de la cryptologie</q-toolbar-title>
+      </q-toolbar>
+    </q-page-sticky>
+  </q-page>
+  
+</template>
+
+<script setup lang="ts">
+
+import { useQuasar } from 'quasar'
+import { ref } from 'vue'
+
+const filter = ref('')
+
+const terme = [
+  'Cryptographie',
+  'Cryptanalyse',
+  'Cryptologie',
+  'Chiffre',
+  'Texte en clair',
+  'Texte chiffré',
+  'Chiffrer / crypter',
+  'Déchiffrer / décrypter',
+  'Clé de chiffement',
+  'Chiffre par substitution monoalphabétique'
+]
+
+const signification = [
+  'Art d’inventer et d’appliquer des méthodes de chiffrement (codes secrets) sûrs et pratiques d’utilisation. Il s’agit aussi de vérifier et prouver la sécurité des codes secrets utilisés / proposés.',
+  'Art de casser des codes secrets, à savoir déchiffrer des messages chiffrés sans connaître la clé de déchiffrement et / ou la méthode de chiffrement utilisée.',
+  'Science des codes secrets qui regroupe la cryptographie ou la cryptanalyse. La cryptologie consiste donc autant à inventer des codes secrets qu’à essayer de casser les codes secrets d’autres personnes.',
+  'Un chiffre est un code secret particulier, par exemple le Chiffre de César, le chiffre de Polybe ou le chiffre de Vigenère',
+  'Le texte en clair est le message à chiffrer, lisible par tout le monde.',
+  'Le texte chiffré est illisible',
+  'Transformer un texte en clair en son équivalent chiffré.',
+  'Rétablir le texte en clair à partir d’un message chiffré',
+  'Pour pouvoir déchiffrer un message, il faut connaître le chiffre à l’aide duquel il a été chiffré (généralement très connu) ainsi qu’une information secrète supplémentaire appelée clé de chiffrement ou tout simplement clé.',
+  'Un chiffre par substitution monoalphabétique est un code secret dans lequel chaque caractère du message en clair est remplacé par une autre lettre. Le chiffre de César est un exemple classique de chiffre monoalphabétique qui décale simplement les lettres d’un certain nombre de positions dans l’alphabet.'
+]
+
+const rows = []
+
+terme.forEach(titleName => {
+  rows.push({ titleName: titleName, articleName: signification[terme.indexOf(titleName)] })
+})
+
+</script>
+
+<style lang="sass">
+.grid-masonry
+  flex-direction: column
+  height: 700px
+
+  &--2
+    > div
+      &:nth-child(2n + 1)
+        order: 1
+      &:nth-child(2n)
+        order: 2
+
+    &:before
+      content: ''
+      flex: 1 0 100% !important
+      width: 0 !important
+      order: 1
+  &--3
+    > div
+      &:nth-child(3n + 1)
+        order: 1
+      &:nth-child(3n + 2)
+        order: 2
+      &:nth-child(3n)
+        order: 3
+
+    &:before,
+    &:after
+      content: ''
+      flex: 1 0 100% !important
+      width: 0 !important
+      order: 2
+
+.card
+  margin: 10px
+</style>
+```
+[^lexiqueSource]
+
+Pour ce qui est du système de "library", le code est comme ceci :
+
+```HTML
+<template>
+    <q-page>
+        <p v-show="isClick === true">{{researchSmth(Titles, SearchWord.text)}}<strong>{{SearchWord.text}}</strong> <i v-show="visible.find === true" style="color:grey;">{{highLight(Titles, SearchWord.text)}}</i></p><br>
+
+        <q-input v-model="SearchWord.text" onKeyPress="isClick = false" filled/><br>
+
+        <q-btn filled label="rechercher" style="color:accent;" @click="trigger()" />
+
+        <div class="q-pa-md">
+            <q-ajax-bar
+            ref="bar"
+            position="bottom"
+            color="accent"
+            size="10px"
+            skip-hijack
+            />
+        </div>
+    </q-page>
+</template>
+
+<script setup lang="ts">
+
+import { ref, reactive } from 'vue'
+
+let visible = reactive ({
+    find: ref(false)
+})
+
+let SearchWord = reactive({
+  text: ref('')
+})
+
+const Titles = [
+    "five hundred years ago, the monkey king caused havoc in heaven",
+    "I love you colonel Sanders",
+    "le chiffrement"
+]
+
+function researchSmth(title, searchWord) {
+    if (highLight(title, searchWord) !== "aucun résultat") {
+        return "Résultat pour "
+    }
+}
+
+function highLight(title, searchWord){
+
+    let research = ""
+
+    if (visible.find = true) {
+
+        research += ""
+        
+        if (searchWord.length > 0) {
+            for (let i = 0; i < title.length; i++) {
+
+                if (title[i].toLowerCase().includes(searchWord)) {
+                    
+                research += title[i] + " // "
+                }
+            }
+        }
+        
+
+        if (searchWord.length === 0) {
+            research += "aucun résultat"
+        }   
+    }
+
+    return research
+}
+
+const bar = ref(null)
+
+function trigger () {
+    changeClick()
+    const barRef = bar.value
+    barRef.start()
+
+    setTimeout(() => {
+    const barRef = bar.value
+    if (barRef) {
+        barRef.stop()
+    }
+    })
+}
+
+const isClick = ref(false)
+
+function changeClick() {
+  isClick.value = !isClick.value
+}
+</script>
+```
+[^librarySource]
+
+Pour comparer les deux visuels entre le lexique et la bibliothèque, voici un rendu de chacun :
+
+```{figure} ../source/figures/lexique.png
+```
+
+```{figure} ../source/figures/library.png
+```
+
+### Lexique
+
+Pour le premier, les constantes "terme" et "signification" contiennent les titres et définitions du lexique.
+
+```JavaScript
+const terme = [
+  'Cryptographie',
+  'Cryptanalyse',
+  'Cryptologie',
+  'Chiffre',
+  'Texte en clair',
+  'Texte chiffré',
+  'Chiffrer / crypter',
+  'Déchiffrer / décrypter',
+  'Clé de chiffement',
+  'Chiffre par substitution monoalphabétique'
+]
+
+const signification = [
+  'Art d’inventer et d’appliquer des méthodes de chiffrement (codes secrets) sûrs et pratiques d’utilisation. Il s’agit aussi de vérifier et prouver la sécurité des codes secrets utilisés / proposés.',
+  'Art de casser des codes secrets, à savoir déchiffrer des messages chiffrés sans connaître la clé de déchiffrement et / ou la méthode de chiffrement utilisée.',
+  'Science des codes secrets qui regroupe la cryptographie ou la cryptanalyse. La cryptologie consiste donc autant à inventer des codes secrets qu’à essayer de casser les codes secrets d’autres personnes.',
+  'Un chiffre est un code secret particulier, par exemple le Chiffre de César, le chiffre de Polybe ou le chiffre de Vigenère',
+  'Le texte en clair est le message à chiffrer, lisible par tout le monde.',
+  'Le texte chiffré est illisible',
+  'Transformer un texte en clair en son équivalent chiffré.',
+  'Rétablir le texte en clair à partir d’un message chiffré',
+  'Pour pouvoir déchiffrer un message, il faut connaître le chiffre à l’aide duquel il a été chiffré (généralement très connu) ainsi qu’une information secrète supplémentaire appelée clé de chiffrement ou tout simplement clé.',
+  'Un chiffre par substitution monoalphabétique est un code secret dans lequel chaque caractère du message en clair est remplacé par une autre lettre. Le chiffre de César est un exemple classique de chiffre monoalphabétique qui décale simplement les lettres d’un certain nombre de positions dans l’alphabet.'
+]
+```
+
+Grâce à l'instruction suivante, chaque titre et définition qui vont de pair, sont introduits en liste dans la constante "rows".
+
+```Javascript
+const rows = []
+
+terme.forEach(titleName => {
+  rows.push({ titleName: titleName, articleName: signification[terme.indexOf(titleName)] })
+})
+```
+[^lexiqueSource]
+
+De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'intérieur d'un tableau différent. Ces tableaux sont fabriquées par le composant *q-table*.
+
+```HTML
+<q-table
+  grid
+  title="Termes"
+  :rows="rows"
+  row-key="name"
+  :filter="filter"
+>
+  <template v-slot:top-right>
+    <q-input borderless dense debounce="300" v-model="filter" placeholder="Chercher">
+      <template v-slot:append>
+        <q-icon name="search" />
+      </template>
+    </q-input>
+  </template>
+
+  <template v-slot:item="props">
+    <div class="card align-center">
+      <q-card>
+        <q-card-section class="text-center">
+          <strong>{{ props.row.titleName }}</strong>
+        </q-card-section>
+        <q-separator />
+        <q-card-section class="flex flex-left" :style="{ fontSize: props.row.articleName + 'px' }">
+          <div>Signification : {{ props.row.articleName }} </div>
+        </q-card-section>
+      </q-card>
+    </div>
+  </template>
+</q-table>
+```
+[^lexiqueSource]
+
+Chaque section/*q-card-section* contient soit un titre, soit une explication. Dans la zone de texte, lorsque l'utilisateur écrit un mot clé, les résultats contiennent soit le mot clé dans le titre, soit dans l'explication.
+
+```{figure} ../source/figures/lexiqueResult.png
+```
+
+Dans ce cas ci-dessus, il s'agit de "chiffre". Si "chiffre" est mis en évidence dans les résultat, voici à quoi cela ressemble :
+
+```{figure} ../source/figures/lexiqueHighlight.png
+```
+
+### Bibliothèque ("library")
+
+Pour la bibliothèque, la recherche doit être faite avec des mots clés qui ne contiennent que des caractères minuscules.
+
+```{figure} ../source/figures/libraryResult.png
+```
+
+Avec le mot clé "chiffre", voici le résultat :
+
+```{figure} ../source/figures/libraryResultExemple.png
+```
+
+Lorsque le bouton "RECHERCHER" est enclenché, il fait apparaitre le résultat.
+
+La fonction "highLight()" vérifie que le mot clé/"SearchWord" figure dans l'un des élément de la constante "Titles". Si c'est vrai, la fonction renvoie tous les éléments qui contiennent le mot clé, sinon, la fonction renvoie "aucun résultat".
+
+```JavaScript
+let SearchWord = reactive({
+  text: ref('')
+})
+
+const Titles = [
+    "five hundred years ago, the monkey king caused havoc in heaven",
+    "I love you colonel Sanders",
+    "le chiffrement"
+]
+
+function researchSmth(title, searchWord) {
+    if (highLight(title, searchWord) !== "aucun résultat") {
+        return "Résultat pour "
+    }
+}
+
+function highLight(title, searchWord){
+
+    let research = ""
+
+    if (visible.find = true) {
+
+        research += ""
+        
+        if (searchWord.length > 0) {
+            for (let i = 0; i < title.length; i++) {
+
+                if (title[i].toLowerCase().includes(searchWord)) {
+                    
+                research += title[i] + " // "
+                }
+            }
+        }
+        
+
+        if (searchWord.length === 0) {
+            research += "aucun résultat"
+        }   
+    }
+
+    return research
+}
+```
+[^librarySource]
+
+Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie quelque un élément, alors il est écrit "Résultat pour ", puis le mot clé, puis les éléments correspondant.
 
 [^inputSource]: Standard, "Placeholder [https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)
-[^quizSource]: [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
+
+[^quizSource]: quiz [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)
+
+[^lexiqueSource]: Masonry like table grid [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)
+
+[^librarySource]: library [https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)
