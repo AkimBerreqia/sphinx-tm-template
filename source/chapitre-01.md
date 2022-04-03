@@ -40,10 +40,15 @@ La page sur l'attaque par fréquence n'est pas encore finie. Elle sera prête po
 
 #### Difficultés envisagées
 
-- Contenu du cours
-- Problèmes de développement de certains outils
-- Manque de connaissances pour confronter rapidement certains problèmes de code (opération ne se passe pas comme prévu, une idée qui est compliquée à réaliser, par exemple manque d'informations sur un sujet)
-- Difficultés à trouver les réponses aux problèmes (problèmes de documentation)
+Il y a certaines difficultés qui étaient à craindre, en février.
+
+La première était le temps que devrait prendre les recherches, pour écrire le contenu du cours.
+
+La deuxième était tous les différents problèmes de développement des outils du site. Par exemple, s'il y a une erreur qui empêche la page de se lancer.
+
+Il y avait également des craintes au niveau du manque de connaissances en la matière. Cela pourrait provoquer un manque d'efficacité lors de la création du projet.
+
+Il y aurait possiblement une prise de retard, pour pouvoir trouver certaines solutions, en se documentant. Mais il pourrait aussi y avoir des soucis dans la documentation. Il suffit de ne pas bien savoir se documenter pour perdre du temps.
 
 #### Parcours de l'étudiant
 
