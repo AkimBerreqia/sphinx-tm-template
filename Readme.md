@@ -1,5 +1,8 @@
 # Lancer le projet
 
-Pour cela, il suffit d'aller dans le dossier source et d'ouvrir sur un navigateur web le document "tuto1.html", du dossier tuto.
+La commande suivante sert à lancer le site en serveur local :
 
-(SPHINX-TM-TEMPLATE/source/tuto/tuto1.html)
+```
+yarn install
+yarn dev
+```
