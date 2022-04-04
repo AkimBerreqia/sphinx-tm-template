@@ -1,4 +1,4 @@
-# 1. Introduction
+# Description du projet
 
 ## Présentation du projet
 
@@ -32,13 +32,13 @@ Il y a un dépôt *GitHub* pour la partie écrite du travail de maturité, qui e
 
 Il a fallu, tout d'abord, chercher s'il existe déjà des tutoriels qui existent, dans la même gamme, pour ne pas recopier la partie visuelle de ces cours.
 
-Il se trouve que *Unity* possède plusieurs sources d'inspirations pour ce séminaire, à ce niveau. [^1]
+Il se trouve que *Unity* possède plusieurs sources d'inspirations pour ce séminaire, à ce niveau. [^unitySource]
 
-*Unity* est un moteur de jeu assez populaire qui exploite principalement les langages *C#* et *C++*, pour sa partie de programmation. [^1]
+*Unity* est un moteur de jeu assez populaire qui exploite principalement les langages *C#* et *C++*, pour sa partie de programmation. [^unitySource]
 
-Ces cours sont structurés en plusieurs chapitres, qui sont eux-mêmes composés de plusieurs sous-chapitres. De cette manière, il est possible de progresser sur une fenêtre déroulante, menant jusqu'à la fin du chapitre principal. [^1]
+Ces cours sont structurés en plusieurs chapitres, qui sont eux-mêmes composés de plusieurs sous-chapitres. De cette manière, il est possible de progresser sur une fenêtre déroulante, menant jusqu'à la fin du chapitre principal. [^unitySource]
 
-Cette conception est assez intéressante, sachant que ces pages sont accompagnées d'illustrations pour le sujet présenté. [^1]
+Cette conception est assez intéressante, sachant que ces pages sont accompagnées d'illustrations pour le sujet présenté. [^unitySource]
 
 ### Développement de l'espace d'étude pour l'élève
 
@@ -46,5 +46,4 @@ Dans un premier temps, le contenu *HTML* de la page comprend des zones de texte 
 
 Suite à cela, la partie *CSS* servent à l'esthétique de la page et finalement le code en *JavaScript* supporte les différents algorithmes exploités par la page.
 
-## Notes de bas de page
-[^1] : UNITY LEARN, "Tutoriels Unity". Consulté le 30 décembre 2021. <https://learn.unity.com/?_ga=2.135839737.951800538.1642373266-847038774.1640958251>
+[^unitySource] : UNITY LEARN, "Tutoriels Unity". Consulté le 30 décembre 2021. <https://learn.unity.com/?_ga=2.135839737.951800538.1642373266-847038774.1640958251>
