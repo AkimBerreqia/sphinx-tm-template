@@ -4,13 +4,13 @@
 
 ### Motivations personnelles
 
-L'idée de base était de créer un jeu vidéo, avec Romain De Groote. Chacun devait apprendre un domaine lié à l'informatique. Romain s'occupait d'enseigner la compression de données, alors que je m'occupais d'enseigner la cryptologie. Malheureusement, il a fallu à plusieurs reprises modifier le travail, suite à des problèmes d'organisation.
+L'idée de base était de créer un jeu vidéo, avec Romain De Groote. Chacun devait apprendre un domaine lié à l'informatique. Romain s'occupait d'enseigner la compression de données, alors que je m'occupais d'enseigner la cryptologie. Malheureusement, il a fallu à plusieurs reprises modifier le travail, à la suite de problèmes d'organisation.
 
 Il a d'abord fallu laisser tomber le concept de jeu vidéo, pour se concentrer exclusivement sur la matière à enseigner, car le projet stagnait de plus en plus. Mais finalement, à cause du retard accumulé pendant la première partie de l'année scolaire et à cause des insuffisances scolaires de chacun, il a été préférable de séparer le groupe en deux nouveaux travaux de maturité différents, pour ne pas pénaliser l'autre. Pour chacun, le contenu à communiquer est resté le même, mais l'approche pour le faire apprendre a changé. De cette manière, le site de cours interactif sur la cryptologie a démarré.
 
 A ce moment, la situation était assez décourageante. L'option d'arrêter le travail de maturité était présente. Cependant, la décision prise a été de ne pas baisser les bras et de recommencer un projet, qui suit toujours l'idée de base, enseigner la cryptologie, mais il fallait faire un projet dans un laps de temps restreint.
 
-Suite à cela, la période qui s'est écoulée, à partir du mois de février jusqu'à ce jour, m'a été bénéfique en ce qui concerne les connaissances acquises dans le domaine de la création de site, ainsi que dans le domaine des langages de programmation appris.
+Pour donner suite à cela, la période qui s'est écoulée, à partir du mois de février jusqu'à ce jour, m'a été bénéfique en ce qui concerne les connaissances acquises dans le domaine de la création de site, ainsi que dans le domaine des langages de programmation appris.
 
 ### Structure du site et description du projet
 
@@ -20,7 +20,7 @@ Le projet a pour but d'apporter un aspect plus neuf au site de Monsieur Cédric 
 
 #### Technologies utilisées
 
-Les technologies de développement du projet comportent *le Javascript*, *l'HTML*, *le CSS*, et *Quasar* au travers de *VueJS*, qui sert également à héberger le projet. Une grande partie des recherches du développement du code a été faite à partir d'informations réunies sur internet et qui sont sourcées directement dans les documents *.vue*, ou à partir d'informations provenant de livres, qui abordent le domaine de la cryptologie.
+Les technologies de développement du projet comportent *le Javascript*, *l'HTML*, *le CSS*. *Quasar* et *Vue.js* fonctionnent au travers de *Vue3*, qui sert également à héberger le projet. Une grande partie des recherches du développement du code a été faite à partir d'informations réunies sur internet et qui sont sourcées directement dans les documents *.vue*, ou à partir d'informations provenant de livres, qui abordent le domaine de la cryptologie.
 
 La partie écrite du travail de maturité est rédigée dans des fichiers *markdown*, depuis *GitPod.io* avec le langage de programmation *LaTeX*, qui suit la documentation *Sphinx*. Il y a également un dépôt *GitHub*, qui sert à suivre l'évolution du projet.
 
@@ -40,7 +40,7 @@ Il y a certaines difficultés qui étaient à craindre, en février.
 
 La première était le temps que devrait prendre les recherches, pour écrire le contenu du cours.
 
-La deuxième était tous les différents problèmes de développement des outils du site. Par exemple, s'il y a une erreur qui empêche la page de se lancer.
+La deuxième était tous les différents problèmes de développement des outils du site, par exemple s'il y a une erreur qui empêche la page de se lancer.
 
 Il y avait également des craintes au niveau du manque de connaissances en la matière. Cela pourrait provoquer un manque d'efficacité lors de la création du projet.
 
@@ -56,13 +56,13 @@ Le travail de l'élève est de parcourir les différentes pages théoriques et p
 
 #### Procédure
 
-Pour arriver à ce projet, il a fallu passer par plusieurs étapes.
+Ce projet a évolué de plusieurs manières.
 
-Tout d'abord, il a fallu apprendre comment fonctionnent les directives *Vue*, ainsi que les composants *Quasar*.
+Tout d'abord, il a fallu apprendre comment fonctionnent les directives *Vue.js*, ainsi que les composants *Quasar*.
 
 ##### Présentation du site (prototype et version finale)
 
-Le site est passé par plusieurs étapes. Depuis la réédition de la version intermédiaire, il a fallu se familiariser avec la technologie *Vue*.
+Le site est passé par plusieurs étapes. Depuis la réédition de la version intermédiaire, il a fallu se familiariser avec la technologie *Vue.js*.
 
 Monsieur Cédric Donner m'a demandé de suivre un cours en ligne pour apprendre à me servir de *Vue.js* (lien du cours : [https://vuejs.org/tutorial/#step-1](https://vuejs.org/tutorial/#step-1)).
 
@@ -76,7 +76,7 @@ Pour le contenu du cours, tout le texte est écrit à l'intérieur des fichiers,
 
 Chaque sous-chapitre (par exemple : "1.3.2 Activité 4") est contenu dans un carrousel/*q-carousel* (ce composant *Quasar* est développé plus en détail dans la suite du travail de maturité). C'est la grande différence qu'il y a entre le prototype et la version finale.
 
-Quant à la version finale, elle reprend les mêmes éléments que le prototype, mais en diminuant considérablement le nombre de carrousels. Les seuls carrousels qui restent, sont dans l'index du cours.
+Quant à la version finale, elle reprend les mêmes éléments que le prototype, mais en diminuant considérablement le nombre de carrousels. Les seuls carrousels qui restent, sont dans l'index du cours et pour la page d’accueil.
 
 ```{figure} ../source/figures/introVF.png
 figure n°2
@@ -93,4 +93,4 @@ yarn install
 yarn dev
 ```
 
-La première sert à installer l'extension "yarn" et la seconde sert à lancer le site sur le serveur local de l'ordinateur que l'utilisateur utilise.
+La première sert à installer l'extension "npm" permettant de générer le site en serveur local et la seconde sert à lancer le site.
