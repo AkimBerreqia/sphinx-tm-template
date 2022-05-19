@@ -1,4 +1,4 @@
-# 1. Cheminement du projet / Introduction
+# 1. Introduction
 
 ## Présentation du projet
 

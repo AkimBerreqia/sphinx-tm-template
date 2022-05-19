@@ -4,6 +4,8 @@
 
 ```{admonition} Information
 Le tutoriel consiste à confronter l'élève face à plusieurs algorithmes de chiffrement de données, pour qu'il soit capables de comprendre et de pouvoir utiliser la cryptanalyse, servant à trouver le fonctionnement d'un cryptosystème.
+
+A terme, le site interactif permettra à d'autres professeurs du Collège du Sud de concevoir eux-mêmes leurs propres cours sur ce site, sans la nécessité de savoir coder. Il y aura un interface, sur lequel il sera possible d'écrire le contenu du cours, ainsi que de choisir les titres des pages. Le contenu des exercices pourra également être modifier, pour les besoins de chaque professeur.
 ```
 
 ### Parcours de l'étudiant
