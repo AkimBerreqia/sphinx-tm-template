@@ -85,7 +85,7 @@ Les lettres majuscules signifient que l'élément de la page a une position fixe
   </q-layout>
 </template>
 ```
-[^defaultSource2]
+[^defaultSource]
 
 Chaque bloc de lettres correspond à une ligne du tableau. Les lettres *h* et *H* configurent la forme de l'en-tête. Le *l* et le *L* sont pour le menu déroulant de gauche. Le *p* ne change jamais. Le *r* et le *R* donnent la position du menu déroulant de droite. Finalement, le *f* et le *F* représentent le bas de page.
 
@@ -104,7 +104,7 @@ Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
   <!-- header content -->
 </q-header>
 ```
-[^defaultSource3]
+[^defaultSource2]
 
 Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière-plan. La couleur *primary* est la couleur de référence du site.
 
@@ -142,7 +142,7 @@ Ces composants servent à définir le titre principal du site, qui apparait cons
   </q-toolbar-title>
 </q-toolbar>
 ```
-[^defaultSource4]
+[^defaultSource3]
 
 *q-toolbar* contient toutes les informations qui apparaissent dans l'en-tête. Il y a tout d'abord un bouton, *q-btn*, qui permet de faire apparaitre le menu déroulant. Ce bouton a comme propriété d'avoir l'icône *menu*, qu'il est rond, qu'il doit inverser la valeur de *drawerLeft* s'il est pressé, etc. Les autres propriétés sont moins importantes.
 
@@ -167,7 +167,7 @@ Ce composant contient tous les éléments qui définissent le menu déroulant.
   <!-- drawer content -->
 </q-drawer>
 ```
-[^defaultSource5]
+[^defaultSource4]
 
 La directive *v-model* donne comme référence au tiroir la constante *drawerLeft*. Si cette constante change, le tiroir est influencé.
 
@@ -177,7 +177,7 @@ C'est ici que le bouton de l'en-tête est utilisé. La valeur de la constante *d
 import {ref} from 'vue'
 const drawerLeft = ref<boolean>(false)
 ```
-[^defaultSource6]
+[^defaultSource5]
 
 *Overlay* signifie que lorsque le menu apparait, il n'influence pas la position du texte présent sur la page.
 
@@ -186,7 +186,7 @@ L'instruction ci-dessous permet d'avoir le menu du côté gauche de l'écran.
 ```HTML
 side="left"
 ```
-[^defaultSource7]
+[^defaultSource6]
 
 *Bordered* sert à mettre des bordures pour les éléments du menu.
 
@@ -199,7 +199,7 @@ Ce composant fabrique une liste dans laquelle il est possible d'ajouter plusieur
   <!-- list content -->
 </q-list>
 ```
-[^defaultSource8]
+[^defaultSource7]
 
 Entre chaque élément, il y a une séparation, faite à partir de *separator*.
 
@@ -218,7 +218,7 @@ Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous fait p
   </q-item>
 </template>
 ```
-[^defaultSource9]
+[^defaultSource8]
 
 Ce modèle/*template* va puiser dans chaque élément de *generateRoutes*, avec la directive *v-for*. Le *template* se sert de chaque document figurant en premier lieu dans le dossier *pages*, se situant dans le dossier *src* 'src/pages/(...).vue'.
 
@@ -228,7 +228,7 @@ import { useRouter } from 'vue-router'
 import generatedRoutes from 'virtual:generated-pages'
 const router = useRouter()
 ```
-[^defaultSource10]
+[^defaultSource9]
 
 Chaque section d'objets contient un nom différent, qui fait référence à la page, qui lui est attribuée.
 
@@ -239,7 +239,7 @@ L'élément ci-dessous :
 ```HTML
 router.push({ path: item.path })
 ```
-[^defaultSource11]
+[^defaultSource10]
 
 permet de changer l'url de la page, pour naviguer à travers les pages du site, lorsque l'utilisateur appuie sur la section.
 
@@ -251,7 +251,7 @@ Pour le générateur d'itinéraires, il se sert également des documents 'index.
 
 #### *q-page-container*
 
-Ce composant *Quasar* permet de donner le contenu par défaut que toutes les pages du site possèdent.
+Ce composant *Quasar* permet de donner le contenu par défaut que toutes les pages que le site possède.
 
 ```HTML
 <q-page-container>
@@ -264,15 +264,15 @@ Ce composant *Quasar* permet de donner le contenu par défaut que toutes les pag
   <!-- q-page-scroller content -->
 </q-page-container>
 ```
-[^defaultSource12]
+[^defaultSource11]
 
 Tout d'abord, chaque page a pour le menu déroulant une animation qui est faite, lorsque le bouton 'menu', de l'en-tête, est pressé.
 
 Il y a une animation pour faire apparaitre et disparaitre le menu, grâce à l'intitulé *transition*.
 
-*Transition* fait appel au code CSS suivant :
+*Transition* fait appel au code SCSS suivant :
 
-```CSS
+```SCSS
 .slide-fade-enter {
   transform: translateX(10px);
   opacity: 0;
@@ -288,26 +288,26 @@ Il y a une animation pour faire apparaitre et disparaitre le menu, grâce à l'i
   opacity: 0;
 }
 ```
-[^defaultSource13]
+[^defaultSource12]
 
-Dans un premier temps, *.slide-fade-enter* donne les informations du menu, lorsque ce dernier doit apparaitre, avec une position d'arrivée, ainsi que l'opacité de départ. Pour *.slide-fade-leave-to*, le même processus a lieu, mais pour disparaitre.
+Dans un premier temps, *.slide-fade-enter* donne les informations du menu, lorsque ce dernier doit apparaitre, avec une position d'arrivée, ainsi qu’avec l'opacité de départ. Pour *.slide-fade-leave-to*, le même processus a lieu, mais pour disparaitre.
 
 Dans un second temps, *.slide-fade-enter-active* et *.slide-fade-leave-active* donnent le temps que la transition d'apparition et celle de disparition mettent pour exécuter l'action.
 
 La couleur d'arrière-plan du site est la suivante :
 
-```CSS
+```SCSS
 html { 
   background-color: #e6e6e6;
 }
 ```
-[^defaultSource14]
+[^defaultSource13]
 
 Elle est présente, pour donner un côté sobre au site et également pour fatiguer le moins possible l'oeil lorsque l'utilisateur passe beaucoup de temps sur chaque page.
 
 Le style du contenu de la page est influencé par les paramètres suivants :
 
-```CSS
+```SCSS
 .q-page-container {
   margin: auto;
   margin-top: 50px;
@@ -318,14 +318,14 @@ Le style du contenu de la page est influencé par les paramètres suivants :
   max-width:40em;
 }
 ```
-[^defaultSource15]
+[^defaultSource14]
 
-Ce composant possède une marge automatique. Il a seulement une marge de cinquante pixels en haut, pour chaque page. Le contenu est centré au milieu de la page, mais le texte aligné à gauche, avec une couleur d'arrière-plan qui se rapproche du blanc, *#dedcdc*, et avec un texte bleu, *#33abd6*. Le conteneur de page a une largeur maximale de quarante "em", pour rendre le texte plus lisible et pour ne pas avoir une surcharge de mots par ligne.
+Ce composant possède une marge automatique. Il a seulement une marge de cinquante pixels en haut, pour chaque page. Le contenu est centré au milieu de la page, mais le texte est aligné à gauche, avec une couleur d'arrière-plan qui se rapproche du blanc, *#dedcdc*, et avec un texte bleu, *#33abd6*. Le conteneur de page a une largeur maximale de quarante "em", pour rendre le texte plus lisible et pour ne pas avoir une surcharge de mots par ligne.
 
-"Em" est une unité de mesure qui existe en *CSS* et qui est aussi appelée, unité relative. Bien évidemment, ce n'est pas la seule unité qui est utilisée. Il faut distinguer les unités relatives et les unités absolues. Elles jouent chacunes un rôle différent dans le style d'un site.
+"Em" est une unité de mesure qui existe en *CSS*/*SCSS* et qui est aussi appelée, unité relative. Bien évidemment, ce n'est pas la seule unité qui est utilisée. Il faut distinguer les unités relatives et les unités absolues. Elles jouent chacune un rôle différent dans le style d'un site.
 
 ```{Warning}
-Il existe également des unités relatives au viewport, mais la commande viewport est devenue obsolète, avec le temps. De ce fait, pour le reste du travail de maturité, les unités relatives au texte et au viewport sont identifiées comme étant des unités relatives.
+Il existe également des unités relatives au *viewport*, mais la commande *viewport* est devenue obsolète, avec le temps. De ce fait, pour le reste du travail de maturité, les unités relatives au texte et au *viewport* sont identifiés comme étant des unités relatives.
 ```
 
 Les différentes unités relatives sont "em", "rem", "ex", "ch", "lh", "vw", "vh", "vmin" et "vmax". L'unité "em" reste celle qui est le plus souvent utilisée.
@@ -343,93 +343,19 @@ Chaque page a un *scroller* de page, sous forme de bouton pour pouvoir défiler 
   </div>
 </q-page-scroller>
 ```
-[^defaultSource16]
+[^defaultSource15]
 
-La *position* du *scroller* de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appellation *round* L'icône du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur "vert clair", qui lui est attribuée par le mot "positive".
+La *position* du *scroller* de page est en bas à droite de l'écran. La forme du bouton est ronde, grâce à l'appellation *round* L'icône du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur "vert clair", qui lui est attribuée par le mot "positive".
 
 ## Composants *Quasar* du fichier *index.vue*
 
-Le code de la page se présente comme ceci :
-
-```HTML
-<template>
-  <q-page>    
-    <div class="column flex-center pa-4">
-      <h2></h2>
-
-      <div class="q-gutter-md">
-        <q-carousel
-          v-model="action.slide1"
-          animated
-          padding
-          arrows
-          height="250px"
-          class="shadow-1 rounded-borders"
-        >
-          <q-carousel-slide name="presentation" class="column no-wrap">
-              <h2>1.0.1 Présentation</h2>
-
-              <p>Bienvenue au cours interactif de cryptographie. Pour commencer votre apprentissage, cliquez sur le bouton ci-dessous, ou alors, servez vous du sommaire pour naviguer entre les sections.</p><br>
-      
-              <q-btn elevated rounded><router-link to="/1.1 Introduction">Commencer le cours</router-link></q-btn>
-          </q-carousel-slide>
-        </q-carousel>
-
-        <q-carousel
-          v-model="action.slide2"
-          animated
-          padding
-          arrows
-          height="250px"
-          class="shadow-1 rounded-borders"
-        >
-          <q-carousel-slide name="sommaire" class="column no-wrap">
-              <h2>1.0.2 Sommaire</h2>
-
-              <ul style="color:darkblue;">
-                <li><router-link to="/1.1 Introduction">1.1 Introduction</router-link></li>
-                <li><router-link to="/1.2 Le chiffre de César">1.2 Le chiffre de César</router-link></li>
-                <li><router-link to="/1.3 Attaque par force brute">1.3 Attaque par force brute</router-link></li>
-                <li><router-link to="/1.4 Systèmes de substitution monoalphabétique">1.4 Systèmes de substitution monoalphabétique</router-link></li>
-                <li><router-link to="/1.5 Attaque par fréquence">1.5 Attaque par fréquence</router-link></li>
-                <li><router-link to="/1.6 Petit lexique de la cryptologie">1.6 Petit lexique de la cryptologie</router-link></li>
-              </ul>
-          </q-carousel-slide>
-        </q-carousel>
-      </div>
-    </div>
-
-    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="bg-#cccccccc">
-      <q-btn icon="keyboard_arrow_right" to="/1.1 Introduction">1.1 Introduction</q-btn>
-    </q-page-sticky>
-    
-    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
-      <q-toolbar>
-        <q-toolbar-title>1.0 Index</q-toolbar-title>
-      </q-toolbar>
-    </q-page-sticky>
-  </q-page>
-</template>
-
-<script setup lang="ts">
-import { ref, reactive } from 'vue'
-
-let action = reactive({
-    slide1: ref('presentation'),
-    slide2: ref('sommaire')
-})
-</script>
-
-<style lang="scss" scoped></style>
-
-```
-[^indexSource]
+Le code de la page se trouve à l’emplacement 'src/pages/index.vue'.
 
 #### q-carousel et q-carousel-slide
 
 Ce sont les premiers composants qui apparaissent dans le code pour la page d'index, mais ils sont aussi présents dans les prototypes des pages du cours (1.1 Introduction, 1.2 Le chiffre de César, etc).
 
-Le composant *q-carousel* va créer une zone qui est séparée en plusieurs pages/*q-carousel-slide*, se situant à l’intérieur du carrousel. De ce fait, il est possible de naviguer entre chaque *q-carousel-slide*.
+Le composant *q-carousel* va créer une zone qui est séparée en plusieurs pages / *q-carousel-slide*, se situant à l’intérieur du carrousel. De ce fait, il est possible de naviguer entre chaque *q-carousel-slide*.
 
 ```{figure} ../source/figures/indexCarousel.png
 figure n°7
@@ -496,7 +422,7 @@ Pour la page d'index, ce composant joue deux rôles.
 La première fois, il sert à afficher un bouton qui permet de passer à la page suivante. La couleur d'arrière-plan des boutons est d'une teinte presque transparente. L'icône utilisée est une flèche qui pointe vers la droite, pour signaler que le bouton redirige vers la prochaine page.
 
 ```{admonition} Important
-Pour chaque page, il y a des bouton qui ont des destinations différentes (un bouton qui renvoie à la page d'accueil, un autre pour accéder à la page précédente et un dernier pour passer à la page suivante), mais la base du code reste la même.
+Pour chaque page, il y a des boutons qui ont des destinations différentes (un bouton qui renvoie à la page d'accueil, un autre pour accéder à la page précédente et un dernier pour passer à la page suivante), mais la base du code reste la même.
 ```
 
 ```HTML
@@ -510,7 +436,7 @@ Pour chaque page, il y a des bouton qui ont des destinations différentes (un bo
 
 La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1.0 Index" est le titre de la page, qui se situe en dessous du titre de l'en-tête du site.
 
-[^indexSource]: ALLEN LAU, "code pour la page d'index du site", 2022, consulté le 3 avril 2022, <[https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63](https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63)>
+[^defaultSource]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
 [^defaultSource2]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
@@ -540,8 +466,6 @@ La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1
 
 [^defaultSource15]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
-[^defaultSource16]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
-
 [^quasarSaasSource]: ALLEN LAU, "code pour les différente couleur du site", 2022, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8](https://github.com/AkimBerreqia/vite-quasar/commit/7fbe534dc6d95d63d8f41ec6a1d0855db3f11ce8)>
 
 [^quasarSource]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
@@ -555,3 +479,4 @@ La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1
 [^quasarSource5]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
 [^vueSource]: VUE.JS, "documentation de directives vuejs", 2022, consulté le 27 mars 2022, <[https://vuejs.org/](https://vuejs.org/)>
+
