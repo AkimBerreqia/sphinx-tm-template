@@ -61,111 +61,6 @@ width: 50%
 figure n°10
 ```
 
-```HTML
-<template>
-  <q-page class="pa-4">
-    <p>
-    Rodolphe utilise la même méthode de chiffrement que Robert pour chiffrer un message. 
-    Voici le message chiffré qu’il envoie à Julie. 
-    Essayez de déchiffrer ce message:
-    </p><br>
-    
-    <p class="text-center bg-info rounded-borders">
-    KFUJOWJUFBVDJOFNBEFNBJOTPJSBWJOHUIFVSFTSFKPJOTNPJBMBHBSF
-    </p><br>
-
-    <div class="q-pa-md">
-      <div class="q-gutter-y-md column" style="max-width: 1050px">
-        <q-input bottom-slots v-model="myQuestions.rodolphe" label="Réponse :" counter maxlength="56" :dense="dense" style='text-transform:uppercase'>
-          <template v-slot:hint>
-            <p>{{respondAnswer(myQuestions.rodolphe, myQuestions.rodolpheCorrectAnswer, 56)}}</p>
-          </template>
-        </q-input>
-      </div>
-    </div>
-    
-    <q-btn-group unelevated rounded>
-      <q-btn label="INDICES" color="accent" @click="dialogVisible.indice1 = true" />
-
-      <q-dialog v-model="dialogVisible.indice1" @hide="onHide">
-      <q-card>
-        <q-card-section class="row items-center q-pb-none">
-        <strong class="text-h6" style="color:accent;">Q-Rodolphe: Indices</strong>
-        <q-space />
-        </q-card-section>
-
-        <q-card-section style="color:accent;">
-        <ul style="color:accent;">
-          <li>Toutes les lettres se suivent sans espace.</li><br>
-          <li>Il te sera plus simple de décrypter cette phrase en te servant d'une feuille et d'un crayon.</li><br>
-          <li>Le début du texte en clair est : "<strong>JETINVITE</strong>".</li>
-        </ul>
-        </q-card-section>
-        <q-card-actions align="right">
-          <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.indice1 = false" />
-        </q-card-actions>
-      </q-card>
-      </q-dialog>
-
-      <q-btn label="AFFICHER LA RÉPONSE" color="orange" @click="dialogVisible.respond2 = true" />
-
-      <q-dialog v-model="dialogVisible.respond2" @hide="onHide">
-      <q-card>
-        <q-card-section class="row items-center q-pb-none">
-        <strong class="text-h6" style="color:orange;">Q-Rodolphe: Réponse</strong>
-        <q-space />
-        </q-card-section>
-
-        <q-card-section style="color:orange;">
-        <strong>JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE</strong>
-        </q-card-section>
-        <q-card-actions align="right">
-          <q-btn flat label="ok" color="primary" v-close-popup @click="dialogVisible.respond2 = false" />
-        </q-card-actions>
-      </q-card>
-      </q-dialog>
-    </q-btn-group>
-  </q-page>
-</template>
-
-<script setup lang="ts">
-import { ref, reactive } from 'vue'
-
-let dialogVisible = reactive({
-  respond2: ref(false),
-  indice1: ref(false)
-})
-
-function onHide(order) {
-  dialogVisible.order.value = false
-}
-
-const dense = ref(false)
-
-const myQuestions = reactive({
-  rodolphe: '',
-  rodolpheCorrectAnswer: 'JETINVITEAUCINEMADEMAINSOIRAVINGTHEURESREJOINSMOIALAGARE'
-})
-
-function respondAnswer(exercice, correctAnswer, maxLength){
-
-  if (exercice.length === maxLength) {
-    if (exercice.toUpperCase() === correctAnswer) {
-      return "Bonne réponse"
-    }
-    else if (exercice.toUpperCase() !== correctAnswer) {
-      return "Mauvaise réponse"
-    }
-  }
-
-  else if (exercice.length !== maxLength) {
-    return "..."
-  }
-}
-</script>
-```
-[^inputSource]
-
 Cet outil fonctionne de la manière suivante, l'utilisateur peut rentrer un nombre limité de caractères à l'intérieur de la zone de texte. Dans ce cas ci-dessus, il peut rentrer au maximum cinquante-six caractères. Pour ce type d'exercice, la réponse est écrite directement en majuscule, grâce à la fonction *.toUpperCase()*. La réponse de l'étudiant ne doit pas contenir d'espace, sinon il n'aura pas suffisamment de place pour écrire toute la réponse. Si l'élève a des difficultés, il peut se servir du bouton "INDICES" pour s'aider. Une fois que la réponse est complète, l'utilisateur peut voir si son résultat est correct.
 
 ```{figure} ../source/figures/goodAnswer.png
@@ -286,7 +181,7 @@ Le bouton orange est destiné aux réponses et celui qui est violet sert à donn
 
 Pour cette dernière partie de section, le composant *q-input* met en place une zone de texte qui renvoie à l'utilisateur si sa réponse est juste ou fausse, grâce à la fonction "respondAnswer".
 
-Ce *q-input* provient d'un des exemples présent dans la documentation *Quasar*.
+Ce *q-input* provient d'un des exemples présents dans la documentation *Quasar*.
 
 ```{figure} ../source/figures/inputExemple.png
 figure n°17
@@ -311,7 +206,7 @@ export default {
 }
 <script>
 ```
-[^inputSource2]
+[^inputSource]
 
 L'exemple utilisé se nomme "Placholder", car il contient un emplacement intéressant pour renvoyer à l'élève sont résultat.
 
@@ -412,107 +307,15 @@ Il aurait été plus facile de simplement écrire comme ci-dessous.
 <p>{{contentData.presentation}}</p>
 ```
 
-Cependant, le problème est que dans le contenu *JSON*, il y a des balises *HTML*, comme par exemple : "\[...] la \<b>cryptanalyse\</b> qui consiste à \<i>casser les codes secrets\</i> utilisés par \[...]". Dans ce cas de figure, les balises *\<b>* et *\<i>* posent problèmes, car si la deuxième possibilité est exécutée, les balises seraient inclues dans le texte et une fois sur le site, les balises apparaitraient à l'écran.
+Cependant, le problème est que dans le contenu *JSON*, il y a des balises *HTML*, comme : "\[...] la \<b>cryptanalyse\</b> qui consiste à \<i>casser les codes secrets\</i> utilisés par \[...]". Dans ce cas de figure, les balises *\<b>* et *\<i>* posent problèmes, car si la deuxième possibilité est exécutée, les balises seraient inclues dans le texte et une fois sur le site, les balises apparaitraient à l'écran.
 
 A contrario, la première possibilité permet de ne pas interpréter le contenu *JSON* comme du texte. Cela mène à garder la propriété des balises citées précédemment et donc d'avoir du texte en gras et en italique, aux endroits souhaités.
 
 ## Système de quiz "myQuizQuestions"
 
 ```{Admonition} A savoir
-Le code qui compose le quiz est très fortement inspiré d'un code déjà existant, qui se trouve dans un tutoriel, pour apprendre à faire un quiz en *JavaScript*. (lien vers le site : [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/))
+Le code qui compose le quiz est très fortement inspiré d'un code déjà existant, qui se trouve dans un tutoriel, pour apprendre à faire un quiz en *JavaScript* (lien vers le site : [https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)).
 ```
-
-```HTML
-<template>
-  <q-page class="pa-4 text-left">
-    <h1>Exemple de quiz</h1>
-    <div v-show="index === counter" v-for="(question, index) in myQuizQuestions" :key="question.id">
-      <h2>Question numéro {{index + 1}}</h2>
-
-      <p class="question">
-      {{question.question}}
-      </p>
-
-      <div class="q-pa-md">
-        <div v-for="(value, key) in question.answers" class="q-gutter-sm">
-          <q-radio v-model="answers[index]" :key="key" :val="value" :label="value"/>
-        </div>
-        
-        <div v-show="isClick === true">
-          <div v-if="myQuizQuestions[index].correctAnswer === answers[index]">
-            <p class="q-px-sm" style="color:green;">Bonne réponse</p>
-          </div>
-
-          <div v-else>
-            <p class="q-px-sm" style="color:red;">Mauvaise réponse</p>
-          </div>
-        </div>   
-      </div>  
-    </div>
-    <q-btn-group>
-      <q-btn :disable="counter === 0" label="Précédent" @click="previous()"/>
-      <q-btn :disable="counter === 1" label="Suivant" @click="next()"/>
-      <q-btn v-if="counter > 0" label="Recommencer" @click="restart()"/>
-      <q-btn label="Valider" @click="changeClick()"/>
-    </q-btn-group>
-  </q-page>
-</template>
-
-<script setup lang="ts">
-import { ref, reactive } from "vue"
-
-const myQuizQuestions = reactive([
-  {
-      id: ref(0),
-    question: "What is 10/2?",
-    answers: {
-      a: '3',
-      b: '5',
-      c: '115'
-    },
-    choice: ref(''),
-    correctAnswer: '5'
-  },
-  {
-      id: ref(1),
-    question: "What is 30/3?",
-    answers: {
-      a: '3',
-      b: '5',
-      c: '10'
-    },
-    choice: ref(''),
-    correctAnswer: '10'
-  }
-])
-
-const answers = reactive([])
-
-const isClick = ref(false)
-
-function changeClick() {
-  isClick.value = !isClick.value
-}
-
-const counter = ref(0)
-
-function restart() {
-  counter.value = 0
-  isClick.value = false
-}
-
-function next() {
-  counter.value++
-  isClick.value = false
-}
-
-function previous() {
-  counter.value--
-  isClick.value = false
-}
-</script>
-```
-[^quizSource]
 
 Les quiz font partie du deuxième système créé pour que l'élève puisse apprendre en s'exerçant. Ce système possède une structure assez simple.
 
@@ -570,7 +373,7 @@ const myQuizQuestions = reactive([
   }
 ])
 ```
-[^quizSource2]
+[^quizSource]
 
 L'"id" permet de donner le numéro de question.
 
@@ -638,7 +441,7 @@ Pour donner le résultat à l'utilisateur, la constante "answers" stocke la rép
   </div>  
 </div>
 ```
-[^quizSource3]
+[^quizSource2]
 
 Tout ce qui est compris dans cette partie du code dépend de la constante "counter".
 
@@ -655,7 +458,7 @@ Les éléments de "myQuizQuestions" qui figurent dans le code *HTML* ci-dessus s
 ```
 [^vueSource2]
 
-Il ne reste plus qu'à faire varier le compteur, pour changer de question. Voici donc l'intérêt des boutons "PRÉCÉDENT", "SUIVANT" ET "RECOMMENCER". Le premier fait baisser de un la valeur de "counter". Le deuxième rajoute un à la valeur de la constante et le troisième l'initie à zéro. Ces boutons se servent des fonctions suivantes pour procéder :
+Il ne reste plus qu'à faire varier le compteur, pour changer de question. Voici donc l'intérêt des boutons "PRÉCÉDENT", "SUIVANT" ET "RECOMMENCER". Le premier fait baisser d’un la valeur de "counter". Le deuxième rajoute un à la valeur de la constante et le troisième l'initie à zéro. Ces boutons se servent des fonctions suivantes pour procéder :
 
 ```JavaScript
 function restart() {
@@ -703,238 +506,10 @@ Cet outil sera intégré dans le document "default.vue", quand tout le contenu d
 ```
 
 ```{Admonition} A savoir
-Le code est inspiré d'un exemple se trouvant sur le site de documentation *Quasar*. Il s'agit d'une liste de différents desserts, avec des indications différentes. Ils est possible de rechercher un des desserts, dans une zone de texte dédiée à cela. Une fois la recherche effectuée, il ne reste que les résultats de cette recherche affichés à l'écran. (lien vers l'exemple : [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns))
+Le code est inspiré d'un exemple se trouvant sur le site de documentation *Quasar*. Il s'agit d'une liste de différents desserts, avec des indications différentes. Il est possible de rechercher un des desserts, dans une zone de texte dédiée à cela. Une fois la recherche effectuée, il ne reste que les résultats de cette recherche affichés à l'écran (lien vers l'exemple : [https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)).
 ```
 
 Le chapitre "1.6" du cours se sert déjà de l'exemple *Quasar* mentionné précédemment. Le code a été adapté pour servir de lexique à la cryptologie.
-
-```HTML
-<template>
-  <q-page class="pa-4">
-    <div class="q-pa-md">
-      <q-table
-        grid
-        title="Termes"
-        :rows="rows"
-        row-key="name"
-        :filter="filter"
-      >
-        <template v-slot:top-right>
-          <q-input borderless dense debounce="300" v-model="filter" placeholder="Chercher">
-            <template v-slot:append>
-              <q-icon name="search" />
-            </template>
-          </q-input>
-        </template>
-
-        <template v-slot:item="props">
-          <div class="card align-center">
-            <q-card>
-              <q-card-section class="text-center">
-                <strong>{{ props.row.titleName }}</strong>
-              </q-card-section>
-              <q-separator />
-              <q-card-section class="flex flex-left" :style="{ fontSize: props.row.articleName + 'px' }">
-                <div>Signification : {{ props.row.articleName }} </div>
-              </q-card-section>
-            </q-card>
-          </div>
-        </template>
-      </q-table>
-    </div><br><br>
-
-
-    <q-page-sticky position="bottom-left" :offset="[5, 5]" class="text-primary bg-#cccccccc">
-      <q-btn icon="home" to="/"></q-btn>
-      <q-btn icon="keyboard_arrow_left" to="/1.5 Attaque par fréquence">1.5 Attaque par fréquence</q-btn>
-    </q-page-sticky>
-    
-    <q-page-sticky position="top" expand class="bg-positive text-white text-center">
-      <q-toolbar>
-        <q-toolbar-title>1.6 Petit lexique de la cryptologie</q-toolbar-title>
-      </q-toolbar>
-    </q-page-sticky>
-  </q-page>
-  
-</template>
-
-<script setup lang="ts">
-
-import { useQuasar } from 'quasar'
-import { ref } from 'vue'
-
-const filter = ref('')
-
-const terme = [
-  'Cryptographie',
-  'Cryptanalyse',
-  'Cryptologie',
-  'Chiffre',
-  'Texte en clair',
-  'Texte chiffré',
-  'Chiffrer / crypter',
-  'Déchiffrer / décrypter',
-  'Clé de chiffement',
-  'Chiffre par substitution monoalphabétique'
-]
-
-const signification = [
-  'Art d’inventer et d’appliquer des méthodes de chiffrement (codes secrets) sûrs et pratiques d’utilisation. Il s’agit aussi de vérifier et prouver la sécurité des codes secrets utilisés / proposés.',
-  'Art de casser des codes secrets, à savoir déchiffrer des messages chiffrés sans connaître la clé de déchiffrement et / ou la méthode de chiffrement utilisée.',
-  'Science des codes secrets qui regroupe la cryptographie ou la cryptanalyse. La cryptologie consiste donc autant à inventer des codes secrets qu’à essayer de casser les codes secrets d’autres personnes.',
-  'Un chiffre est un code secret particulier, par exemple le chiffre de César, le chiffre de Polybe ou le chiffre de Vigenère',
-  'Le texte en clair est le message à chiffrer, lisible par tout le monde.',
-  'Le texte chiffré est illisible',
-  'Transformer un texte en clair en son équivalent chiffré.',
-  'Rétablir le texte en clair à partir d’un message chiffré',
-  'Pour pouvoir déchiffrer un message, il faut connaître le chiffre à l’aide duquel il a été chiffré (généralement très connu) ainsi qu’une information secrète supplémentaire appelée clé de chiffrement ou tout simplement clé.',
-  'Un chiffre par substitution monoalphabétique est un code secret dans lequel chaque caractère du message en clair est remplacé par une autre lettre. Le chiffre de César est un exemple classique de chiffre monoalphabétique qui décale simplement les lettres d’un certain nombre de positions dans l’alphabet.'
-]
-
-const rows = []
-
-terme.forEach(titleName => {
-  rows.push({ titleName: titleName, articleName: signification[terme.indexOf(titleName)] })
-})
-
-</script>
-
-<style lang="sass">
-.grid-masonry
-  flex-direction: column
-  height: 700px
-
-  &--2
-    > div
-      &:nth-child(2n + 1)
-        order: 1
-      &:nth-child(2n)
-        order: 2
-
-    &:before
-      content: ''
-      flex: 1 0 100% !important
-      width: 0 !important
-      order: 1
-  &--3
-    > div
-      &:nth-child(3n + 1)
-        order: 1
-      &:nth-child(3n + 2)
-        order: 2
-      &:nth-child(3n)
-        order: 3
-
-    &:before,
-    &:after
-      content: ''
-      flex: 1 0 100% !important
-      width: 0 !important
-      order: 2
-
-.card
-  margin: 10px
-</style>
-```
-[^lexiqueSource]
-
-Pour ce qui est du système de "library", le code est comme ceci :
-
-```HTML
-<template>
-    <q-page>
-        <p v-show="isClick === true">{{researchSmth(Titles, SearchWord.text)}}<strong>{{SearchWord.text}}</strong> <i v-show="visible.find === true" style="color:grey;">{{highLight(Titles, SearchWord.text)}}</i></p><br>
-
-        <q-input v-model="SearchWord.text" onKeyPress="isClick = false" filled/><br>
-
-        <q-btn filled label="rechercher" style="color:accent;" @click="trigger()" />
-
-        <div class="q-pa-md">
-            <q-ajax-bar
-            ref="bar"
-            position="bottom"
-            color="accent"
-            size="10px"
-            skip-hijack
-            />
-        </div>
-    </q-page>
-</template>
-
-<script setup lang="ts">
-
-import { ref, reactive } from 'vue'
-
-let visible = reactive ({
-    find: ref(false)
-})
-
-let SearchWord = reactive({
-  text: ref('')
-})
-
-const Titles = [
-    "five hundred years ago, the monkey king caused havoc in heaven",
-    "I love you colonel Sanders",
-    "le chiffrement"
-]
-
-function researchSmth(title, searchWord) {
-    if (highLight(title, searchWord) !== "aucun résultat") {
-        return "Résultat pour "
-    }
-}
-
-function highLight(title, searchWord){
-
-    let research = ""
-
-    if (visible.find = true) {
-
-        research += ""
-        
-        if (searchWord.length > 0) {
-            for (let i = 0; i < title.length; i++) {
-
-                if (title[i].toLowerCase().includes(searchWord)) {
-                    
-                research += title[i] + " // "
-                }
-            }
-        }
-        
-
-        if (searchWord.length === 0) {
-            research += "aucun résultat"
-        }   
-    }
-
-    return research
-}
-
-const bar = ref(null)
-
-function trigger () {
-    changeClick()
-    const barRef = bar.value
-    barRef.start()
-
-    setTimeout(() => {
-    const barRef = bar.value
-    if (barRef) {
-        barRef.stop()
-    }
-    })
-}
-
-const isClick = ref(false)
-
-function changeClick() {
-  isClick.value = !isClick.value
-}
-</script>
-```
-[^librarySource]
 
 Pour comparer les deux visuels entre le lexique et la bibliothèque, voici un rendu de chacun :
 
@@ -987,7 +562,7 @@ terme.forEach(titleName => {
   rows.push({ titleName: titleName, articleName: signification[terme.indexOf(titleName)] })
 })
 ```
-[^lexiqueSource2]
+[^lexiqueSource]
 
 De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'intérieur d'un tableau différent. Ces tableaux sont fabriqués par le composant *q-table*.
 
@@ -1022,7 +597,7 @@ De cette manière, il suffit de faire une boucle qui affiche chaque liste à l'i
   </template>
 </q-table>
 ```
-[^lexiqueSource3]
+[^lexiqueSource2]
 
 Chaque section/*q-card-section* contient soit un titre, soit une explication. Dans la zone de texte, lorsque l'utilisateur écrit un mot-clé, les résultats contiennent soit le mot-clé dans le titre, soit dans l'explication.
 
@@ -1098,13 +673,11 @@ function highLight(title, searchWord){
     return research
 }
 ```
-[^librarySource2]
+[^librarySource]
 
 Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie un autre élément "qu'aucun résultat", alors il est écrit 'Résultat pour ', puis le mot-clé, puis les éléments correspondant.
 
 [^librarySource]: DEVELOP PAPER, "utilisation de v-html pour mettre en évidence des mots-clés", 2021, consulté le 12 mars 2022, <[https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)>
-
-[^librarySource2]: DEVELOP PAPER, "utilisation de v-html pour mettre en évidence des mots-clés", 2021, consulté le 12 mars 2022, <[https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/](https://developpaper.com/vue-uses-v-html-to-highlight-keywords-words-in-a-string/)>
 
 [^quasarSource]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
@@ -1122,19 +695,13 @@ Pour ce qui est de la fonction "researchSmth()", si "highLight()" renvoie un aut
 
 [^inputSource]: QUASAR, "documentation quasar pour faire une zone de texte avec placeholder", 2022, consulté le 2 mars 2022, <[https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)>
 
-[^inputSource2]: QUASAR, "documentation quasar pour faire une zone de texte avec placeholder", 2022, consulté le 2 mars 2022, <[https://quasar.dev/vue-components/input#standard](https://quasar.dev/vue-components/input#standard)>
-
 [^lexiqueSource]: QUASAR, "documentation quasar pour faire le lexique", 2022, consulté le 2 mars 2022, <[https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)>
 
 [^lexiqueSource2]: QUASAR, "documentation quasar pour faire le lexique", 2022, consulté le 2 mars 2022, <[https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)>
 
-[^lexiqueSource3]: QUASAR, "documentation quasar pour faire le lexique", 2022, consulté le 2 mars 2022, <[https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns](https://quasar.dev/layout/grid/flexbox-patterns#masonry-with-pseudo-selectors-to-break-rows-columns)>
-
 [^quizSource]: SIMPLE STEPS CODE, "comment faire de manière simple un quiz en javascript", 2022, consulté le 26 février 2022, <[https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)>
 
 [^quizSource2]: SIMPLE STEPS CODE, "comment faire de manière simple un quiz en javascript", 2022, consulté le 26 février 2022, <[https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)>
-
-[^quizSource3]: SIMPLE STEPS CODE, "comment faire de manière simple un quiz en javascript", 2022, consulté le 26 février 2022, <[https://simplestepscode.com/javascript-quiz-tutorial/](https://simplestepscode.com/javascript-quiz-tutorial/)>
 
 [^vueSource]: VUE.JS, "documentation de directives vuejs", 2022, consulté le 27 mars 2022, <[https://vuejs.org/](https://vuejs.org/)>
 
