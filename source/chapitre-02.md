@@ -66,6 +66,8 @@ Les premiers composants *Quasar* qui nous intéressent, servent à former l'aspe
 
 ## Composants *Quasar* du fichier *default.vue*
 
+Le fichier *default.vue* se situe à l’emplacement 'src/layouts/default.vue'.
+
 #### *q-layout*
 
 Le document *default.vue* contient, tout d'abord le plan de la page, autrement dit, le "layout". C'est à dire, que le composant va former la page, comme si elle est séparée en un tableau de trois parties sur trois.
@@ -88,7 +90,7 @@ Les lettres majuscules signifient que l'élément de la page a une position fixe
 Chaque bloc de lettres correspond à une ligne du tableau. Les lettres *h* et *H* configurent la forme de l'en-tête. Le *l* et le *L* sont pour le menu déroulant de gauche. Le *p* ne change jamais. Le *r* et le *R* donnent la position du menu déroulant de droite. Finalement, le *f* et le *F* représentent le bas de page.
 
 ```{Admonition} A savoir
-Il n'est pas obligatoire d'avoir de menus déroulant pour faire un site. Dans ce cas, il ne faut pas rajouter de composants *q-drawer* à la suite de l'instruction du plan du site. De cette manière, les instructions données dans le *q-layout* pour les menus déroulant n'impactent pas la suite du code.
+Il n'est pas obligatoire d'avoir de menus déroulants pour faire un site. Dans ce cas, il ne faut pas rajouter de composants *q-drawer* à la suite de l'instruction du plan du site. De cette manière, les instructions données dans le *q-layout* pour les menus déroulants n'impactent pas la suite du code.
 ```
 
 ### En-tête
@@ -104,9 +106,9 @@ Ensuite, le composant *q-header* permet de configurer l'en-tête comme ceci :
 ```
 [^defaultSource3]
 
-Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière-plan. La couleur primary est la couleur de référence du site.
+Dans ce cas de figure, le contenu qui se trouve entre les guillemets de *class*, exprime les propriétés de l'en-tête. Par exemple, *bg-primary* est la couleur de l'arrière-plan. La couleur *primary* est la couleur de référence du site.
 
-Dans le fichier *quasar-variables.sass* à l'emplacement 'src/assets/style/quasar-variables.sass', il est possible de définir une infinité de couleurs en se servant à chaque fois d'un certain mot pour lui attribuer une couleur. Dans ce cas de figure, *primary* fait référence à la couleur #33abd6, générée en hexadécimal. Voici ci-dessous tous les exemples disponibles pour le site :
+Dans le fichier *quasar-variables.sass* à l'emplacement 'src/assets/style/quasar-variables.sass', il est possible de définir une infinité de couleurs en se servant à chaque fois d'un certain mot pour lui attribuer une couleur. Dans ce cas de figure, *primary* fait référence à la couleur #33abd6, générée en hexadécimal. Voici ci-dessous toutes les couleurs du site :
 
 ```SASS
 $primary   : #33abd6
@@ -144,7 +146,7 @@ Ces composants servent à définir le titre principal du site, qui apparait cons
 
 *q-toolbar* contient toutes les informations qui apparaissent dans l'en-tête. Il y a tout d'abord un bouton, *q-btn*, qui permet de faire apparaitre le menu déroulant. Ce bouton a comme propriété d'avoir l'icône *menu*, qu'il est rond, qu'il doit inverser la valeur de *drawerLeft* s'il est pressé, etc. Les autres propriétés sont moins importantes.
 
-Pour ce qui est du titre de la barre d'outils, *q-toolbar-title*, il est nommé comme étant : "1 Cryptologie et codage de l’information".
+Pour ce qui est du titre de la barre d'outils *q-toolbar-title*, il est nommé comme étant : "1 Cryptologie et codage de l’information".
 
 Le lien du routeur, *router-link* permet, lorsque l'utilisateur appuie sur le titre, de changer de page, sans devoir recharger le site, grâce au paramètre :
 
@@ -152,7 +154,7 @@ Le lien du routeur, *router-link* permet, lorsque l'utilisateur appuie sur le ti
 to="..."
 ```
 
-Dans ce cas, la destination est "/". Il est configuré que "/" est la page d'index du site, autrement dit, la page d'accueil."
+Dans ce cas, la destination est "/". Cette destination est attribuée à la page d'index du site, autrement dit, la page d'accueil."
 
 ### Menu déroulant
 
@@ -205,7 +207,7 @@ Pour *class*, il est indiqué que chaque élément ne peut pas avoir de largeur 
 
 #### *q-item et q-item-section*
 
-Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous va faire pour chaque *item*, qui correspond à chaque page, un système qui permet de pouvoir accéder à la page souhaitée lorsque la section d'objets souhaitée est appuyée avec le curseur.
+Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous fait pour chaque *item*, qui correspond à chaque page, un système qui permet d'accéder à la page souhaitée lorsque la section d'objets souhaités est appuyée avec le curseur.
 
 ```HTML
 <template v-for="(item, index) in generatedRoutes">
@@ -218,7 +220,7 @@ Pour cette dernière partie sur le menu déroulant, le modèle ci-dessous va fai
 ```
 [^defaultSource9]
 
-Ce modèle/*template* va puiser dans chaque élément de *generateRoutes*, avec la directive *v-for*. Le *template* se sert de chaque document figurant en premier lieu dans le dossier *pages*, se situant dans le dossier *src*.
+Ce modèle/*template* va puiser dans chaque élément de *generateRoutes*, avec la directive *v-for*. Le *template* se sert de chaque document figurant en premier lieu dans le dossier *pages*, se situant dans le dossier *src* 'src/pages/(...).vue'.
 
 ```JavaScript
 import { useRouter } from 'vue-router'
@@ -553,4 +555,3 @@ La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1
 [^quasarSource5]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
 [^vueSource]: VUE.JS, "documentation de directives vuejs", 2022, consulté le 27 mars 2022, <[https://vuejs.org/](https://vuejs.org/)>
-
