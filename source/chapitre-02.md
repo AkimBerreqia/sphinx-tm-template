@@ -150,7 +150,7 @@ Voici, ci-dessus le rendu final de la page d'accueil, pour le site interactif.
 
 Les premiers composants *Quasar* qui nous intéressent, servent à former l'aspect visuel du site, comme par exemple l'en-tête du site, ainsi que le menu déroulant sur la gauche de l'écran. Il y a également les liaisons pour naviguer entre les différentes sections du cours.
 
-## Composants *Quasar* utilisés pour former les paramètres par défaut du site
+## Composants *Quasar* du fichier *default.vue*
 
 #### *q-layout*
 
@@ -431,7 +431,7 @@ Chaque page a un *scroller* de page, sous forme de bouton pour pouvoir défiler 
 
 La *position* du *scroller* de page est en bas à droite de l'écran. La forme du bouton est ronde, avec l'appellation *round* L'icône du bouton est une flèche qui pointe vers le haut et ce bouton a une couleur "vert clair", qui lui est attribuée par le mot "positive".
 
-## Composants *Quasar* utilisés pour former la page d'accueil/*index.vue*
+## Composants *Quasar* du fichier *index.vue*
 
 Le code de la page se présente comme ceci :
 

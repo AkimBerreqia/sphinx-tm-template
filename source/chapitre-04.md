@@ -42,7 +42,7 @@ Pour les problèmes techniques, il y a eu des difficultés dans la documentation
 
 Le manque de connaissances a énormément ralenti l'avancement du projet, car la technologie a été apprise au sein du travail de maturité et dans un délai assez court.
 
-## Ajout à faire comme bonus pour l'oral du travail de maturité
+## Pistes d'ajouts à préparer pour la présentation orale
 
 Il reste encore quelques détails à développer pour finir entièrement le projet.
 
