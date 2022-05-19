@@ -11,5 +11,3 @@ Je remercie mon oncle Christian Solioz, qui m'a donné plusieurs conseils pour p
 Je remercie une seconde fois Romain De Groote, pour l'aide qu'il m'a apporté et aussi pour sa bonne humeur, lorsque nous partagions encore la même problématique.
 
 Et finalement, je remercie Monsieur Cédric Donner pour la patience et le courage qu'il a su garder tout au long de l'année scolaire envers moi et les autres membres du séminaire.
-
-Je fais une mention honorable au livre de Julien Grandchamp qui ne doit sûrement pas encore être arrivé chez lui, à l'heure de la réédition de la version finale du travail de maturité.
