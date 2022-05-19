@@ -1,10 +1,10 @@
-# 2. Concepts de base utilisés avec *Quasar* et *VueJS*
+# 2. Concepts de base utilisés avec *Quasar* et *Vue.js*
 
 ```{admonition} Information
-Il fallait plusieurs moyens pour que l'utilisateur puisse interagir avec une panoplie de possibilités. Il y a donc plusieurs outils *Quasar* et *VueJS* qui ont été exploités pour cela.
+Il était nécessaire de se servir de plusieurs technologies de programmation pour que l'utilisateur puisse interagir avec une panoplie de possibilités. Il y a donc plusieurs outils *Quasar* et *Vue.js* qui ont été exploités pour cela.
 ```
 
-*VueJs* et *Quasar* sont des outils de fabrication de site qui pour le premier, simplifie la manière d'écrire le code. Par exemple, la directive *v-model* sert à donner une identité à l'élément auquel elle appartient.
+*Vue.js* et *Quasar* sont des outils de fabrication de site qui pour le premier, simplifie la manière d'écrire le code. Par exemple, la directive *v-model* sert à donner une identité à l'élément auquel elle appartient.
 
 ```HTML
 <input v-model="réponse" placeholder="Veuillez écrire la réponse ici">
@@ -25,7 +25,7 @@ Pour le second, *Quasar* rend le code plus dynamique, en pré-fabricant des comp
 figure n°3
 ```
 
-Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour défini. Le label est affiché à l'intérieur du bouton, uniquement avec des lettres en majuscule.
+Dans l'exemple ci-dessus, le bouton a déjà une forme et un contour définis. Le label est affiché à l'intérieur du bouton, uniquement avec des lettres majuscules.
 
 Avec *q-btn*, il n'est pas nécessaire de définir une classe ou un style dans l'élément, car le bouton a déjà ces informations définies par défaut. Il reste le label à indiquer, ou alors la couleur, mais ce n'est pas obligatoire, pour que le bouton apparaisse à l'écran.
 
@@ -38,7 +38,7 @@ Tout le code de cette section provient d'un dépôt *GitHub*, que Monsieur Cédr
 Cependant, il y a quelques changements qui ont été apportés pour permettre au site interactif d'avoir l'aspect qu'il a aujourd'hui.
 ```
 
-Le site *VueJS* comporte de base des outils qui permettent d'avoir une page d'accueil et un menu déroulant sur le côté de l'écran.
+Le site *Vue3* comporte de base des outils qui permettent d'avoir une page d'accueil et un menu déroulant sur le côté de l'écran.
 
 L'image ci-dessous représente la page d'accueil par défaut qui est faite par Allen Lau.
 
@@ -46,101 +46,15 @@ L'image ci-dessous représente la page d'accueil par défaut qui est faite par A
 figure n°4
 ```
 
-C'est à partir de là que le site interactif commence.
+C'est à partir de là que le site interactif se forme.
 
-Dans les fichiers de base de la page *VueJS*, il y a le fichier "default.vue", qui se trouve dans le dossier "layouts".
+Dans les fichiers de base de la page *Vue3*, il y a le fichier "default.vue", qui se trouve dans le dossier "layouts".
 
 ```{Admonition} A savoir
-Le code qui suit a déjà été modifié, pour convenir aux besoins du site interactif, mais la base du code provient de *Vue*.
+Le code qui suit dans la prochaine section a déjà été modifié, pour convenir aux besoins du site interactif, mais la base du code provient de *Vue3*.
 ```
 
-```HTML
-<template>
-  <q-layout view="hHh lpr fFf">
-    <q-header elevated class="bg-primary text-white text-left">
-      <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="drawerLeft = !drawerLeft" />
-        <q-toolbar-title>
-          <router-link to="/">1 Cryptologie et codage de l’information</router-link>
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer show-if-above v-model="drawerLeft" side="left" overlay class="bg-grey-5 text-white" bordered>
-      <!-- drawer content -->
-      <q-list bordered separator class="min-w-25 pa-4">
-        <template v-for="(item, index) in generatedRoutes">
-          <q-item clickable :key="index" v-if="item.name != 'index'" class="flex-col">
-            <q-item-section class="cursor-pointer" @click="router.push({ path: item.path })">
-              {{ item.name }}
-            </q-item-section>
-          </q-item>
-        </template>
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
-      <router-view v-slot="{ Component }">
-        <transition name="slide-fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-
-      <q-page-scroller position="bottom-right" :offset="[0, 0]" :scroll-offset="0">
-        <div class="col cursor-pointer q-pa-sm text-white">
-          <q-btn round icon="arrow_forward" class="rotate-270" color="positive"></q-btn>
-        </div>
-      </q-page-scroller>
-    </q-page-container>
-  </q-layout>
-</template>
-
-<script setup lang="ts">
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
-
-  import generatedRoutes from 'virtual:generated-pages'
-  const router = useRouter()
-
-  const drawerLeft = ref<boolean>(false)
-</script>
-
-<style lang="scss">
-
-  html { 
-    background-color: #e6e6e6;
-    }
-
-  .slide-fade-enter {
-    transform: translateX(10px);
-    opacity: 0;
-  }
-
-  .slide-fade-enter-active,
-  .slide-fade-leave-active {
-    transition: all 0.2s ease;
-  }
-
-  .slide-fade-leave-to {
-    transform: translateX(-10px);
-    opacity: 0;
-  }
-
-  .q-page-container {
-    margin: auto;
-    margin-top: 50px;
-    text-align: left;
-    align: center;
-    color: #33abd6;
-    background-color: #dedcdc;
-    max-width:40em;
-    
-  }
-</style>
-```
-[^defaultSource]
-
-C'est à partir de ce fichier que les éléments généraux par défaut du site sont générés, comme par exemple la taille du texte, les marges, la couleur du font de la page, etc.
+C'est à partir de ce fichier que les éléments généraux par défaut du site sont générés, comme la taille du texte, les marges, la couleur du font de la page, etc.
 
 ```{figure} ../source/figures/homePageNow.png
 figure n°5
@@ -148,7 +62,7 @@ figure n°5
 
 Voici, ci-dessus le rendu final de la page d'accueil, pour le site interactif.
 
-Les premiers composants *Quasar* qui nous intéressent, servent à former l'aspect visuel du site, comme par exemple l'en-tête du site, ainsi que le menu déroulant sur la gauche de l'écran. Il y a également les liaisons pour naviguer entre les différentes sections du cours.
+Les premiers composants *Quasar* qui nous intéressent, servent à former l'aspect visuel du site, comme l'en-tête du site, ainsi que le menu déroulant sur la gauche de l'écran. Il y a également les liaisons pour naviguer entre les différentes sections du cours.
 
 ## Composants *Quasar* du fichier *default.vue*
 
@@ -160,7 +74,7 @@ Le document *default.vue* contient, tout d'abord le plan de la page, autrement d
 figure n°6
 ```
 
-Les lettres en majuscule signifient que l'élément de la page a une position fixe, sur l'écran. C'est à dire que si la page défile vers le bas, ces éléments apparaissent toujours à l'endroit où ils sont de base. Pour le site interactif, le composant *q-layout* défini le plan comme ceci :
+Les lettres majuscules signifient que l'élément de la page a une position fixe, sur l'écran. C'est à dire que si la page défile vers le bas, ces éléments apparaissent toujours à l'endroit où ils sont de base. Pour le site interactif, le composant *q-layout* défini le plan comme ceci :
 
 ```HTML
 <template>
@@ -483,7 +397,6 @@ Le code de la page se présente comme ceci :
       </div>
     </div>
 
-
     <q-page-sticky position="bottom-left" :offset="[5, 5]" class="bg-#cccccccc">
       <q-btn icon="keyboard_arrow_right" to="/1.1 Introduction">1.1 Introduction</q-btn>
     </q-page-sticky>
@@ -597,8 +510,6 @@ La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1
 
 [^indexSource]: ALLEN LAU, "code pour la page d'index du site", 2022, consulté le 3 avril 2022, <[https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63](https://github.com/fyeeme/vite-quasar/commit/0f0884c340b6a1a29b7ae30657ad86d28974af63)>
 
-[^defaultSource]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
-
 [^defaultSource2]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
 
 [^defaultSource3]: ALLEN LAU, "code pour la page par défaut du site", 2021, consulté le 3 avril 2022, <[https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0](https://github.com/AkimBerreqia/vite-quasar/commit/dd8b033a09c79167c66c5d90a6c7325dde1dd5d0)>
@@ -642,3 +553,4 @@ La deuxième fois, son rôle est d'afficher le titre de la page. Dans ce cas, "1
 [^quasarSource5]: QUASAR, "documentation de composants quasar", 2022, consulté le 26 mars 2022, <[https://quasar.dev/](https://quasar.dev/)>
 
 [^vueSource]: VUE.JS, "documentation de directives vuejs", 2022, consulté le 27 mars 2022, <[https://vuejs.org/](https://vuejs.org/)>
+
