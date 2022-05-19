@@ -16,7 +16,7 @@ Pour donner suite à cela, la période qui s'est écoulée, à partir du mois de
 
 #### Objectifs initiaux
 
-Le projet a pour but d'apporter un aspect plus neuf au site de Monsieur Cédric Donner, pour le cours sur la cryptologie, afin qu'il soit plus simple d'apprendre ce domaine aux élèves du Collège du Sud et de manière plus ludique. Bien évidemment, il s'agit surtout d'une base de site, alors il est également possible de reprendre le code présent pour ajouter, à tout moment, des chapitres supplémentaires.
+Le projet a pour but d'apporter un aspect plus neuf au site de Monsieur Cédric Donner, pour le cours sur la cryptologie. C'est pourquoi, le contenu actuel du cours provient du site de Monsieur Donner. Le site interactif a pour but de simplifier l'apprentissage de ce domaine de l'informatique aux élèves du Collège du Sud et de manière plus ludique. Bien évidemment, il s'agit surtout d'une base de site, alors il est également possible de reprendre le code présent pour ajouter, à tout moment, des chapitres supplémentaires.
 
 #### Technologies utilisées
 
